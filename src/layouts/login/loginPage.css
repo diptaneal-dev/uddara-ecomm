@@ -1,0 +1,92 @@
+.modal-title {
+    text-transform: none;
+    /* Prevent automatic uppercase */
+    font-size: 1.5rem;
+    /* Optional: Adjust font size */
+    font-weight: bold;
+    /* Make it visually distinct */
+}
+
+input.form-control-sm {
+    height: 32px;
+    /* Ensure all inputs are the same height */
+    line-height: 1.5;
+    /* Consistent vertical alignment */
+    padding: 5px 10px;
+    /* Padding for better clickability */
+    box-sizing: border-box;
+    /* Ensure borders and padding don't affect size */
+}
+
+button {
+    font-size: 0.9rem;
+}
+
+.alert {
+    font-size: 0.85rem;
+}
+
+.modal-footer {
+    border-top: none !important;
+    /* Remove footer separator */
+    padding-top: 10px !important;
+}
+
+/* Dark Theme Modal */
+.modal-content {
+    background-color: #121212;
+    /* Dark background */
+    color: hsl(0, 0%, 100%);
+    /* Light text color */
+    border-color: #444;
+    /* Subtle dark border */
+}
+
+/* Light Theme Modal */
+.bg-light .modal-content {
+    background-color: #ffffff;
+    /* Light background */
+    color: #000000;
+    /* Dark text color */
+    border-color: #ddd;
+    /* Subtle light border */
+}
+
+/* Scope styles to the LoginModal only */
+.login-modal .btn-login-modal {
+    background-color: #007bff; /* Standard blue for login */
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.login-modal .btn-login-modal:hover {
+    background-color: #0056b3; /* Slightly darker blue */
+    color: white;
+}
+
+/* Scoped styles for Google button */
+.login-modal .btn-google {
+    background-color: #db4437; /* Google red */
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.login-modal .btn-google:hover {
+    background-color: #c23321; /* Darker Google red */
+    color: white;
+}
+
+/* Scoped styles for Facebook button */
+.login-modal .btn-facebook {
+    background-color: #4267B2; /* Facebook blue */
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.login-modal .btn-facebook:hover {
+    background-color: #365899; /* Darker Facebook blue */
+    color: white;
+}

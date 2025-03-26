@@ -1,0 +1,24 @@
+.favorite-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    padding: 0.5rem; /* Ensures better tap target */
+}
+
+.favorite-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .favorite-btn {
+        padding: 0.3rem;
+    }
+
+    .favorite-btn svg {
+        width: 1.2rem !important;  /* Smaller on smaller screens */
+        height: 1.2rem !important;
+    }
+}

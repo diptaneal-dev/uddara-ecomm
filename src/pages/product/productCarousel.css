@@ -1,0 +1,103 @@
+.product-carousel-section {
+    width: 100%;
+    position: relative;
+}
+
+.product-card {
+    width: 95%;
+    max-height: 430px;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: white; /* Ensure cards are visible on all backgrounds */
+}
+
+.product-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-prev, .slick-next {
+    font-size: 30px !important;
+    z-index: 10000;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Light Mode Arrows */
+.slick-prev, .slick-next {
+    color: white; /* Change to white for better visibility */
+    background: rgba(0, 0, 0, 0.7); /* Dark background for contrast */
+}
+
+/* Dark Mode Arrows */
+.dark-mode .slick-prev, 
+.dark-mode .slick-next {
+    color: black; /* Change to black for better visibility */
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Adjust Arrow Positions */
+.slick-prev {
+    left: -50px !important;
+}
+
+.slick-next {
+    right: -50px !important;
+}
+
+/* Hover Effect */
+.slick-prev:hover, .slick-next:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+.dark-mode .slick-prev:hover, 
+.dark-mode .slick-next:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .product-card {
+        max-width: 400px;
+    }
+
+    .product-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        max-width: 350px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .slick-prev {
+        left: -30px !important;
+    }
+
+    .slick-next {
+        right: -30px !important;
+    }
+}

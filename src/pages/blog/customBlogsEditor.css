@@ -1,0 +1,72 @@
+.image-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.resizable-image-container {
+    display: inline-block;
+    position: relative;
+    resize: both;
+    overflow: hidden;
+    cursor: grab;
+    border: 1px dashed gray;
+    padding: 5px;
+}
+
+.image-controls {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.size-btn {
+    background: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.size-btn:hover {
+    background: #ddd;
+}
+
+.size-btn.active-size {
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+body, .editor-container {
+    direction: ltr !important; /* Forces LTR text globally */
+    text-align: left !important;
+}
+.custom-modal {
+    width: 280px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    outline: none;
+}
+
+.custom-modal-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+[contenteditable] {
+    direction: ltr !important; /* ✅ Forces LTR text direction */
+    text-align: left !important; /* ✅ Ensures text starts from the left */
+}

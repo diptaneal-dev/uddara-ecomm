@@ -1,0 +1,46 @@
+/* 🔹 User Profile Dropdown */
+.user-profile-dropdown .dropdown-toggle {
+    background: none !important;
+    border: none !important;
+  }
+  
+  .user-profile-dropdown .dropdown-toggle img:hover {
+    border-color: #007bff; /* Blue border on hover */
+  }
+  
+  /* 🔹 Dropdown Menu Styling */
+  .dropdown-menu {
+    border-radius: 10px;
+    border: none;
+    padding: 8px;
+    animation: fadeIn 0.2s ease-in-out;
+  }
+  
+  /* 🔹 Dropdown Items */
+  .dropdown-item {
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  /* 🔹 Logout Button */
+  .dropdown-item.text-danger:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+  }
+  
+  /* 🔹 Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  

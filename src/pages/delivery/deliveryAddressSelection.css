@@ -1,0 +1,145 @@
+.custom-carousel-arrow {
+    font-size: 2rem;
+    color: black !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Default positioning for large screens */
+.carousel-control-prev {
+    left: -50px !important;
+}
+
+.carousel-control-next {
+    right: -50px !important;
+}
+
+.shipping-address-title {
+    margin-top: 20px;
+    /* Adjust as needed */
+}
+
+/* Ensure all cards are evenly spaced */
+.delivery-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+    min-height: 200px;
+    max-height: 100%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    border: 2px solid #2E4F35;
+    /* Border color */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    color: #2E4F35;
+    /* Font color */
+    margin: 10px;
+    /* Adds space between the cards */
+}
+
+/* Ensure cards have consistent spacing */
+.carousel-item .d-flex {
+    gap: 20px;
+    /* Adds space between cards */
+}
+
+/* Font styling */
+.delivery-card p {
+    margin: 0;
+    /* Remove default margins */
+    text-align: center;
+    color: #2E4F35;
+    /* Ensure all text uses this color */
+}
+
+/* Smaller font size for second line */
+.delivery-card .address-line {
+    font-size: 0.9rem;
+    /* Adjust as needed */
+    color: #2E4F35;
+}
+
+/* Align button position */
+.delivery-card .btn-container {
+    margin-top: 20px;
+    /* Adjust to align buttons consistently */
+}
+
+/* Custom styling for the Deliver Here button */
+.delivery-card .btn-outline-primary {
+    color: #2E4F35 !important; /* Change text color */
+    border-color: #2E4F35 !important; /* Change border color */
+}
+
+/* Change background color on hover */
+.delivery-card .btn-outline-primary:hover {
+    background-color: #2E4F35 !important;
+    color: white !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .delivery-card {
+        width: 100%;
+        /* Stack single cards in smaller screens */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .carousel-control-prev {
+        left: 10px !important;
+        /* Bring closer on tablets */
+    }
+
+    .carousel-control-next {
+        right: 10px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-carousel-arrow {
+        width: 40px;
+        /* Reduce arrow size for smaller screens */
+        height: 40px;
+        font-size: 1.5rem;
+        /* Reduce font size */
+    }
+
+    .carousel-control-prev {
+        left: 5px !important;
+        /* Keep within safe margins */
+    }
+
+    .carousel-control-next {
+        right: 5px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-carousel-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .carousel-control-prev {
+        left: 2px !important;
+    }
+
+    .carousel-control-next {
+        right: 2px !important;
+    }
+}

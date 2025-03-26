@@ -1,0 +1,24 @@
+.resizable-image-container {
+    position: relative;
+    display: inline-block; /* Default display, adjusted dynamically */
+}
+
+.resizable-image {
+    user-select: none; /* Prevent text selection while dragging */
+}
+
+.resize-handle {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background: #000; /* Black square for visibility */
+    cursor: se-resize; /* Southeast resize cursor */
+    z-index: 10; /* Ensure it's above the image */
+}
+
+.resize-handle:hover {
+    background: #333; /* Slightly lighter on hover for feedback */
+}
+

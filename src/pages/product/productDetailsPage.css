@@ -1,0 +1,72 @@
+:root {
+    --dropdown-hover-light: #7cf19d;
+    --dropdown-hover-dark: #6088a3;
+}
+
+[data-theme="light"] .dropdown-item:hover {
+    background-color: var(--dropdown-hover-light) !important;
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background-color: var(--dropdown-hover-dark) !important;
+}
+
+/* productDetailsPage.css */
+
+.product-details-page * {
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.product-details-page h1,
+.product-details-page h2,
+.product-details-page h3,
+.product-details-page h4,
+.product-details-page h5,
+.product-details-page h6 {
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+}
+
+.product-details-page p,
+.product-details-page li,
+.product-details-page button,
+.product-details-page input {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+}
+
+.modal-dialog {
+    width: 40%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content-small {
+    max-width: 400px;
+    /* Keeps the modal compact */
+    margin: auto;
+    /* Centers it */
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .modal-content-small {
+        width: 80%;
+    }
+}
