@@ -64,10 +64,10 @@ const FeaturedProduct = () => {
             </div>
 
             <ButtonGroup>
-              <Button variant="secondary" outline onClick={() => navigate(`/product/${selectedProduct.id}`)}>
+              <Button $variant="secondary" $outline onClick={() => navigate(`/product/${selectedProduct.id}`)}>
                 Know More
               </Button>
-              <Button variant="primary">Add to Cart</Button>
+              <Button $variant="primary">Add to Cart</Button>
             </ButtonGroup>
           </InfoCol>
         </Row>

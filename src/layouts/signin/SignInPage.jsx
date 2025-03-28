@@ -94,7 +94,7 @@ const SignInPage = () => {
               <Label htmlFor="keepSignedIn">Keep me signed in</Label>
             </div>
 
-            <Button type="submit" variant="primary" className="w-100">
+            <Button type="submit" $variant="primary" className="w-100">
               Sign In
             </Button>
 
@@ -116,8 +116,8 @@ const SignInPage = () => {
             <ListItem>✔ Personalized shopping experience</ListItem>
           </List>
           <Button
-            variant="secondary"
-            outline
+            $variant="secondary"
+            $outline
             className="w-100 mt-4"
             onClick={() => navigate("/register")}
           >

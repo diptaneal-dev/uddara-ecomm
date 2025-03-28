@@ -10,6 +10,7 @@ import { UserProvider, useUserContext } from "./hooks/UserContext";
 import FavoriteProvider from "./components/FavouriteButton/FavouriteContext";
 import { ToastContainer } from "react-toastify";
 import { theme } from "./theme";
+
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 

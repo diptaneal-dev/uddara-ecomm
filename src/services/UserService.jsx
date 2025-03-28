@@ -24,12 +24,13 @@ const userService = {
             const response = await API.post(`${AUTH_API_URL}/login/internal`, { username, password });
             console.log("Login Response:", response.data);
             
-            const { userContext } = response.data;
+            const { userContext, expiresAt } = response.data;
 
             // Store only user context, NOT the JWT
             localStorage.setItem(USER_CONTEXT_KEY, JSON.stringify(userContext));
-
-            return { userContext };
+            localStorage.setItem("tokenExpiry", expiresAt);
+            
+            return { userContext, expiresAt };
         } catch (error) {
             console.error("Login Failed:", error.response?.data || error.message);
             throw error.response?.data || "Login failed";

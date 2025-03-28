@@ -10,21 +10,6 @@ import FeaturedProduct from '../product/FeaturedProduct';
 
 const LandingPage = () => {
     const { darkMode } = useTheme();
-    const [email, setEmail] = useState('');
-    const [error, setError] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Email validation regex
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setError('Please enter a valid email address.');
-        } else {
-            setError('');
-            alert('Thank you for subscribing!');
-            setEmail('');
-        }
-    };
 
     return (
         <div className={`container-fluid px-0 ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
@@ -33,7 +18,6 @@ const LandingPage = () => {
             <LandingPageHeroSection />
 
             <FeaturedProduct />
-
 
             {/* About Brand Section */}
             <AboutBrand />

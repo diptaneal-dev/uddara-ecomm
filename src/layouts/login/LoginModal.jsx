@@ -31,10 +31,10 @@ const LoginModal = ({ isOpen, onRequestClose }) => {
         try {
             // Call login function (JWT is handled via HttpOnly Cookie)
             console.log("Calling login");
-            const { userContext } = await userService.login(username, password);
+            const { userContext, expiresAt } = await userService.login(username, password);
     
             // Update context and store only user info (No JWT handling)
-            login(userContext);  
+            login(userContext, expiresAt); 
     
             onRequestClose();
             navigate("/home");

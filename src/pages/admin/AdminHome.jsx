@@ -2,7 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
+
 const ADMIN_FEATURES = [
+  { title: "Store Management", route: "/admin/stores", icon: "🏬" }, 
   { title: "Payment Dashboard", route: "/admin/payments", icon: "📊" },
   { title: "User Management", route: "/admin/users", icon: "👤" },
   { title: "Order Management", route: "/admin/orders", icon: "📦" },
@@ -10,7 +12,7 @@ const ADMIN_FEATURES = [
   { title: "Availability Marking", route: "/admin/availability", icon: "📅" },
   { title: "Product Management", route: "/admin/productmgmt", icon: "📦" },
   { title: "Blogs Management", route: "/admin/blogsmgmt", icon: "📝" },
-  { title: "Client Management", route: "/admin/clients", icon: "🧑‍🤝‍🧑" }, // ✅ New Feature Added
+  { title: "Client Management", route: "/admin/clients", icon: "🧑‍🤝‍🧑" },
 ];
 
 const AdminHome = () => {

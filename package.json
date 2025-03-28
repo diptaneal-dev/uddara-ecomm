@@ -22,6 +22,7 @@
     "react-bootstrap-icons": "^1.10.0",
     "react-datepicker": "^4.9.0",
     "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.6",
     "react-heart": "^1.0.6",
     "react-hook-form": "^7.43.5",
     "react-icons": "^4.12.0",

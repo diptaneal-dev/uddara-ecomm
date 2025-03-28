@@ -183,10 +183,10 @@ const AddressForm = ({
         </FormRow>
 
         <ButtonRow>
-          <Button variant="secondary" outline onClick={() => setShowForm(false)} type="button">
+          <Button $variant="secondary" $outline onClick={() => setShowForm(false)} type="button">
             Cancel
           </Button>
-          <Button variant="primary" type="submit">
+          <Button $variant="primary" type="submit">
             Save Address
           </Button>
         </ButtonRow>

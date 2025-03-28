@@ -5,12 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../../context/CartContext";
 import { useTheme } from "../../context/ThemeContext";
+import { IconButton } from "../../components/Button/IconButton";
+
 import {
   PageWrapper,
-  Title,
   CategoryFilter,
   ProductGrid,
   ProductCard,
+  FilterButton,
+  CartNavButton,
   CartPanel,
   CartHeader,
   CartBody,
@@ -44,20 +47,21 @@ const ProductList = () => {
 
       <CategoryFilter>
         {["All", "Snacks", "Spices", "Nuts"].map((cat) => (
-          <Button
+          <FilterButton
             key={cat}
-            size="sm" variant="primary"
-            outline={selectedCategory !== cat}
+            $size="xs"
+            $outline={selectedCategory !== cat}
             onClick={() => setSelectedCategory(cat)}
           >
             {cat}
-          </Button>
+          </FilterButton>
         ))}
       </CategoryFilter>
 
-      <Button variant="primary" onClick={() => setShowCart(true)} style={{ marginBottom: "2rem" }}>
-        View Cart ({cart.length})
-      </Button>
+
+      <CartNavButton $size="sm" onClick={() => setShowCart(true)} style={{ marginBottom: "2rem" }}>
+        View Cart
+      </CartNavButton>
 
       <ProductGrid>
         {filteredProducts.map((product) => (
@@ -78,7 +82,7 @@ const ProductList = () => {
                 </span>
                 {product.discount && <span className="badge">-{product.discount}%</span>}
               </p>
-              <Button variant="primary" onClick={() => addToCart(product)}>
+              <Button $size="xs" $variant="primary" onClick={() => addToCart(product)}>
                 Add to Cart
               </Button>
             </div>
@@ -87,10 +91,11 @@ const ProductList = () => {
       </ProductGrid>
 
       {/* Cart Panel */}
-      <CartPanel show={showCart} darkMode={darkMode}>
+      <CartPanel $show={showCart} darkMode={darkMode}>
         <CartHeader>
           <h5>Cart Summary</h5>
-          <Button variant="outline" onClick={() => setShowCart(false)}>
+
+          <Button $size="xs" $variant="primary" $outline onClick={() => setShowCart(false)}>
             ←
           </Button>
         </CartHeader>
@@ -113,13 +118,9 @@ const ProductList = () => {
                     <div className="d-flex justify-content-between align-items-center">
                       <span>Qty: {item.quantity}</span>
                       <span>{formatCurrency(item.price, item.currency)}</span>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => removeFromCart(item.id)}
-                      >
+                      <IconButton onClick={() => removeFromCart(item.id)}>
                         <FontAwesomeIcon icon={faTrash} />
-                      </Button>
+                      </IconButton>
                     </div>
                   </div>
                 </li>
@@ -133,11 +134,11 @@ const ProductList = () => {
               Sub Total: {formatCurrency(cartSubTotal, cart[0]?.currency || "USD")}
             </div>
             <div className="actions">
-              <Button variant="secondary" onClick={() => navigate("/cart")}>
+              <Button $variant="secondary" $outline onClick={() => navigate("/cart")}>
                 View Cart
               </Button>
               <Button
-                variant="primary"
+                $variant="primary"
                 onClick={() =>
                   navigate("/checkout", {
                     state: {

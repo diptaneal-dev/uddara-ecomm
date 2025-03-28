@@ -32,10 +32,10 @@ const AddressList = ({ addresses, onSelect, onAddNew, onCancel }) => {
       )}
 
       <ButtonGroup>
-        <Button variant="primary" onClick={onAddNew}>
+        <Button $variant="primary" onClick={onAddNew}>
           Add New Address
         </Button>
-        <Button variant="secondary" outline onClick={onCancel}>
+        <Button $variant="secondary" $outline onClick={onCancel}>
           Cancel
         </Button>
       </ButtonGroup>

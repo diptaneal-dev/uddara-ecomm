@@ -27,14 +27,14 @@ const LandingPageHeroSection = () => {
 
         <HeroBottomSection>
           <Button
-            variant="primary"
+            $variant="primary"
             onClick={() => window.location.href = '/explore-products'}
           >
             Explore Products
           </Button>
 
           <Button
-            variant="secondary"
+            $variant="secondary"
             onClick={() => window.location.href = '/shop'}
           >
             Shop Now

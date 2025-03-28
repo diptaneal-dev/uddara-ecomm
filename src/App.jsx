@@ -13,6 +13,7 @@ import SignInPage from './layouts/signin/SignInPage';
 import LandingPage from './pages/landingPage/LandingPage';
 import AboutUs from './pages/about/AboutUs';
 import FavoritesPage from './components/FavouriteButton/FavouritesPage';
+import SessionTimerWidget from "./components/Widgets/SessionTimerWidget";
 
 // Blogs
 import BlogEditor from './pages/blog/BlogEditor';
@@ -30,6 +31,7 @@ import ProductAdminLayout from './pages/admin/productmanagement/ProductAdminLayo
 import ProductView from './pages/admin/productmanagement/ProductView';
 import ProductDashboard from './pages/admin/productmanagement/ProductDashboard';
 import Pricing from './pages/admin/productmanagement/ProductManagement';
+import StoreManagementPage from './pages/admin/storemanagement/StoreManagementPage';
 
 // Ecommerce
 import { Explore } from './pages/Explore';
@@ -75,16 +77,17 @@ const App = () => {
 
                         {/* Blogs Support */}
                         <Route path="/blog" element={<BlogEditor />} />
-                        <Route path="/blog/:id" element={<BlogView />} /> 
-                        <Route path="/blog/list" element={<BlogsListPage />} /> 
+                        <Route path="/blog/:id" element={<BlogView />} />
+                        <Route path="/blog/list" element={<BlogsListPage />} />
 
-                        <Route path="/blogsdash" element={<BlogsPage />} /> 
+                        <Route path="/blogsdash" element={<BlogsPage />} />
 
                         {/* ✅ Admin Routes (Protected) */}
                         <Route path="/admin" element={<PrivateRoute><AdminHome /></PrivateRoute>} />
                         <Route path="/admin/payments" element={<PrivateRoute><PaymentDashboard /></PrivateRoute>} />
                         <Route path="/admin/availability" element={<PrivateRoute><AdminAvailability /></PrivateRoute>} />
                         <Route path="/admin/clients" element={<PrivateRoute><ClientManagement /></PrivateRoute>} />
+                        <Route path="/admin/stores" element={<PrivateRoute><StoreManagementPage /></PrivateRoute>} />
 
                         {/* ✅ Product Management Routes (Under ProductAdminLayout) */}
                         <Route path="/admin/productmgmt" element={<PrivateRoute><ProductAdminLayout /></PrivateRoute>}>
@@ -123,6 +126,8 @@ const App = () => {
                 </main>
                 <Footer />
             </Router>
+            <SessionTimerWidget />
+
         </div>
     );
 };

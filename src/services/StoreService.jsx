@@ -1,3 +1,4 @@
+import { sleep } from "openai/core";
 import API from "./ApiService";
 
 const STORE_API_URL = 'http://localhost:8091/api/stores';
@@ -12,10 +13,42 @@ const storeService = {
         const response = await API.get(`${STORE_API_URL}/user/${username}`);
         return response.data;
     },
+    // --- Store Group APIs ---
+    createStoreGroup: async (groupData) => {
+        const response = await API.post(`${STORE_API_URL}/create-group`, groupData);
+        return response.data;
+    },
+
+    updateStoreGroup: async (id, groupData) => {
+        const response = await API.put(`${STORE_API_URL}/group/${id}`, groupData);
+        return response.data;
+    },
+
+    deleteStoreGroup: async (id) => {
+        const response = await API.delete(`${STORE_API_URL}/group/${id}`);
+        return response.data;
+    },
+
+    getMyStoreGroups: async () => {
+        const response = await API.get(`${STORE_API_URL}/groups/me`);
+        console.log("Group information:", response.data);
+        return response.data;
+    },
+
+    getStoreGroupById: async (id) => {
+        const response = await API.get(`${STORE_API_URL}/group/${id}`);
+        console.log("Response received:", response.data);
+        return response.data;
+    },
+
+    getMyStores: async () => {
+        const response = await API.get(`${STORE_API_URL}/me`);
+        console.log("Fetching stores:", response.data);
+        return response.data;
+    },
+
     submitExpirationPolicies: (storeId, expirationPolicies) => {
         const url = `${STORE_API_URL}/expiration-policies/${storeId}`;
-        console.log(`URL: ${url}`);
-        console.log(`Submitting expiration policies for store ID: ${storeId}`, expirationPolicies);
         return API.post(url, expirationPolicies);
     },
     getExpirationPoliciesByStoreId: async (storeId) => {
@@ -56,7 +89,7 @@ const storeService = {
             throw new Error("Failed to reset seating capacity.");
         }
     },
-    
+
     /** Subscribe Users to Store Newsletter */
     subscribeToNewsletter: async (storeId, email) => {
         try {

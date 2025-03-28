@@ -188,7 +188,7 @@ export const UserProvider = ({ children }) => {
         }
     };
 
-    const login = async (userDetails) => {
+    const login = async (userDetails, expiresAt) => {
         try {
             // Fetch full user context from the backend
             const fullContext = await userService.fetchUserContext(userDetails.userId);
@@ -214,7 +214,7 @@ export const UserProvider = ({ children }) => {
                 ...fullContext,
                 preferences: mergedPreferences,
                 expirationPolicies: policiesMap, // Store policies by storeId
-                expirationTime: Date.now() + 15 * 60 * 1000, // Assume JWT expires in 15 minutes
+                expirationTime: expiresAt, 
             };
 
             // Save user details to local storage (No JWT stored)

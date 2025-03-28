@@ -1,5 +1,6 @@
 // src/components/product/ProductList.Styles.js
 import styled from 'styled-components';
+import { Button } from '../../components/Button/Button';
 
 export const PageWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundPrimary};
@@ -90,9 +91,9 @@ export const CartPanel = styled.div`
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
-  left: ${({ show }) => (show ? "0" : "-400px")};
+  left: ${({ $show }) => ($show ? "0" : "-400px")};
   height: 100%;
-  z-index: 1000;
+  z-index: 100000;
   transition: left 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -125,5 +126,45 @@ export const CartFooter = styled.div`
   .actions {
     display: flex;
     gap: 1rem;
+  }
+`;
+
+
+// 🎯 1. Teal Filter Button
+export const FilterButton = styled(Button)`
+  ${({ theme, $outline }) =>
+    $outline
+      ? `
+    background-color: transparent;
+    color: ${theme.colors.teal};
+    border: 1px solid ${theme.colors.teal};
+
+    &:hover {
+      background-color: ${theme.colors.teal};
+      color: ${theme.colors.white};
+    }
+  `
+      : `
+    background-color: ${theme.colors.teal};
+    color: ${theme.colors.white};
+    border: 1px solid ${theme.colors.teal};
+
+    &:hover {
+      opacity: 0.9;
+    }
+  `}
+  border-radius: 999px;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+`;
+
+// 🎯 2. Navy Cart Navigation Button
+export const CartNavButton = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.navy};
+  color: ${({ theme }) => theme.colors.white};
+  border: 2px solid ${({ theme }) => theme.colors.navy};
+  border-radius: 100px;
+  &:hover {
+    opacity: 0.9;
   }
 `;
