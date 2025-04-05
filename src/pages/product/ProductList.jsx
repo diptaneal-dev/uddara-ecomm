@@ -43,7 +43,7 @@ const ProductList = () => {
   const cartSubTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <PageWrapper darkMode={darkMode}>
+    <PageWrapper $darkMode={darkMode}>
 
       <CategoryFilter>
         {["All", "Snacks", "Spices", "Nuts"].map((cat) => (
@@ -91,7 +91,7 @@ const ProductList = () => {
       </ProductGrid>
 
       {/* Cart Panel */}
-      <CartPanel $show={showCart} darkMode={darkMode}>
+      <CartPanel $show={showCart} $darkMode={darkMode}>
         <CartHeader>
           <h5>Cart Summary</h5>
 

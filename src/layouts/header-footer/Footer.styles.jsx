@@ -3,15 +3,15 @@ import styled from "styled-components";
 /* Outer Container */
 export const FooterContainer = styled.footer`
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.headerfootercolor};
-  color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.purple};
+  color: ${({ theme }) => theme.colors.white};
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
 `;
 
 /* Grid Layout */
 export const FooterGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(4, 1fr) 1.5fr; // 4 normal columns + 1 wider for newsletter
   gap: 1rem;
   padding: 1.5rem 1rem;
   align-items: start;
@@ -45,7 +45,7 @@ export const FooterColumn = styled.div`
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: ${({ theme }) => theme.colors.navy};
+    color: ${({ theme }) => theme.colors.white};
     font-family: ${({ theme }) => theme.typography.fontPrimary};
 
     svg {
@@ -62,7 +62,7 @@ export const FooterColumn = styled.div`
       margin-bottom: 0.4rem;
 
       a {
-        color: ${({ theme }) => theme.colors.black};
+        color: ${({ theme }) => theme.colors.white};
         text-decoration: none;
         font-family: ${({ theme }) => theme.typography.fontSecondary};
         font-size: 0.9rem;
@@ -75,13 +75,31 @@ export const FooterColumn = styled.div`
       em {
         font-style: italic;
         font-size: 0.9rem;
-        color: ${({ theme }) => theme.colors.grey};
+        color: ${({ theme }) => theme.colors.white};
       }
     }
   }
 `;
 
 /* Logo + Social */
+export const StyledLogoCircle = styled.div`
+  background-color: ${({ theme }) => theme.colors.white};
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+
+  @media (max-width: 768px) {
+    width: 90px;
+    height: 90px;
+    padding: 6px;
+  }
+`;
+
 export const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -100,8 +118,8 @@ export const SocialTray = styled.div`
 export const IconCircle = styled.div`
   width: 30px;
   height: 30px;
-  background: ${({ theme }) => theme.colors.navy};
-  color: white;
+  background: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.black};
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -118,7 +136,7 @@ export const IconCircle = styled.div`
 /* Footer Bottom */
 export const FooterBottom = styled.div`
   padding: 1rem 1.5rem;
-  background-color: ${({ theme }) => theme.colors.headerfootercolor};
+  background-color: ${({ theme }) => theme.colors.purple};
   text-align: center;
 `;
 
@@ -135,12 +153,12 @@ export const FooterBottomRow = styled.div`
     flex-wrap: wrap;
     gap: 0.75rem;
     justify-content: center;
-    font-family: ${({ theme }) => theme.typography.fontSecondary};
-    color: ${({ theme }) => theme.colors.black};
+    font-family: ${({ theme }) => theme.typography.fontPrimary};
+    color: ${({ theme }) => theme.colors.white};
 
     a {
       text-decoration: none;
-      color: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.colors.white};
 
       &:hover {
         text-decoration: underline;
@@ -148,7 +166,7 @@ export const FooterBottomRow = styled.div`
     }
 
     span {
-      color: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.colors.white};
     }
   }
 
@@ -159,6 +177,64 @@ export const FooterBottomRow = styled.div`
 
     div {
       justify-content: center;
+    }
+  }
+`;
+
+export const NewsletterColumn = styled(FooterColumn)`
+  text-align: left;
+
+  h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: ${({ theme }) => theme.colors.white};
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    input[type="email"] {
+      flex: 1;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    button {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px; // <-- square with soft corners
+      border: none;
+      background-color: ${({ theme }) => theme.colors.teal};
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.pink};
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    form {
+      flex-direction: column;
+      align-items: stretch;
+
+      button {
+        width: 100%;
+        height: 40px;
+        border-radius: 6px;
+      }
     }
   }
 `;

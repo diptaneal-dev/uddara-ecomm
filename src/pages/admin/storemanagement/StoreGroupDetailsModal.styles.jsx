@@ -4,7 +4,7 @@ export const ModalOverlay = styled.div`
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 10500;
+  z-index: 2000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,6 +86,12 @@ export const GroupDetailTitle = styled.h3`
   font-weight: ${({ theme }) => theme.typography.subHeadingSmall.fontWeight};
   color: ${({ theme }) => theme.colors.navy};
   margin-bottom: 1.5rem;
+`;
+
+export const ScrollableBody = styled.div`
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
 `;
 
 export const GroupDetailsList = ModalGrid;

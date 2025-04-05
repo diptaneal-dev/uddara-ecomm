@@ -1,105 +1,105 @@
 import axios from "axios";
 import userService from "./UserService";
+import { toast } from "react-toastify";
 
-const API_GATEWAY_URL = "http://localhost:8091"; // Use API Gateway for all requests
+const API_GATEWAY_URL = "http://localhost:8091";
 
 const API = axios.create({
-    baseURL: API_GATEWAY_URL,
-    headers: { "Content-Type": "application/json" },
-    withCredentials: true, 
+  baseURL: API_GATEWAY_URL,
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
 });
 
 let isRefreshing = false;
 let refreshSubscribers = [];
 
-// Function to add subscribers to re-execute failed requests
 const subscribeTokenRefresh = (callback) => {
-    refreshSubscribers.push(callback);
+  refreshSubscribers.push(callback);
 };
 
-// Notify subscribers that token has been refreshed
 const onTokenRefreshed = () => {
-    refreshSubscribers.forEach((callback) => callback());
-    refreshSubscribers = [];
+  refreshSubscribers.forEach((callback) => callback());
+  refreshSubscribers = [];
 };
 
-// ✅ Improved Global Error Handling
 API.interceptors.response.use(
-    (response) => response,
-    async (error) => {
-        console.error("🔴 API Error Detected:", {
-            url: error.config?.url,
-            method: error.config?.method,
-            status: error.response?.status,
-            responseData: error.response?.data,
-        });
+  (response) => response,
+  async (error) => {
+    console.error("🔴 API Error Detected:", {
+      url: error.config?.url,
+      method: error.config?.method,
+      status: error.response?.status,
+      responseData: error.response?.data,
+    });
 
-        if (!error.response) {
-            console.error("⚠️ Network Error: Server unreachable.");
-            return Promise.reject(error);
-        }
-
-        const originalRequest = error.config;
-
-        // 🔴 Handle 401: Unauthorized (Token Expired)
-        if (error.response.status === 401) {
-            console.warn("🛑 Unauthorized request. Attempting token refresh...");
-
-            if (originalRequest._retry) {
-                console.warn("🔄 Token refresh retry failed. Logging out.");
-                userService.logout();
-                window.location.href = "/login";
-                return Promise.reject(error);
-            }
-
-            originalRequest._retry = true;
-
-            if (!isRefreshing) {
-                isRefreshing = true;
-                try {
-                    console.log("🔄 Refreshing token...");
-                    await userService.refreshToken();
-                    isRefreshing = false;
-                    console.log("✅ Token refreshed.");
-
-                    onTokenRefreshed();
-                } catch (refreshError) {
-                    isRefreshing = false;
-                    refreshSubscribers = [];
-
-                    console.error("⛔ Token refresh failed:", {
-                        status: refreshError.response?.status,
-                        responseData: refreshError.response?.data,
-                    });
-
-                    userService.logout();
-                    window.location.href = "/login"; // Redirect immediately
-                    return Promise.reject(refreshError);
-                }
-            }
-
-            return new Promise((resolve) => {
-                subscribeTokenRefresh(() => {
-                    resolve(API(originalRequest));
-                });
-            });
-        }
-
-        // 🔴 Handle 403: Forbidden (Session Expired)
-        if (error.response.status === 403) {
-            console.error("🚨 Session expired. Logging out.");
-            userService.logout();
-            window.location.href = "/login"; // Immediate redirect
-            return Promise.reject(error);
-        }
-
-        // 🔴 Handle 500: Internal Server Error
-        if (error.response.status === 500) {
-            console.error("🚨 Server Error:", error.response.data);
-        }
-
-        return Promise.reject(error);
+    if (!error.response) {
+      toast.error("⚠️ Network error: Server unreachable.");
+      return Promise.reject(error);
     }
+
+    const originalRequest = error.config;
+
+    // 🔐 Handle 401 Unauthorized (attempt token refresh)
+    if (error.response.status === 401) {
+      if (originalRequest._retry) {
+        userService.logout();
+        window.location.href = "/login";
+        return Promise.reject(error);
+      }
+
+      originalRequest._retry = true;
+
+      if (!isRefreshing) {
+        isRefreshing = true;
+        try {
+          await userService.refreshToken();
+          isRefreshing = false;
+          onTokenRefreshed();
+        } catch (refreshError) {
+          isRefreshing = false;
+          refreshSubscribers = [];
+          toast.error("Session expired. Please log in again.");
+          userService.logout();
+          window.location.href = "/login";
+          return Promise.reject(refreshError);
+        }
+      }
+
+      return new Promise((resolve) => {
+        subscribeTokenRefresh(() => {
+          resolve(API(originalRequest));
+        });
+      });
+    }
+
+    // 🔒 Handle 403 Forbidden
+    if (error.response.status === 403) {
+      const message = error.response?.data?.message || error.response?.data?.error || "Access denied.";
+
+      const isBusiness403 =
+        message.includes("Only SUPERADMIN") ||
+        message.includes("permission") ||
+        message.includes("not allowed") ||
+        message.includes("access denied");
+
+      if (isBusiness403) {
+        toast.error(`🚫 ${message}`);
+        return Promise.reject(error);
+      }
+
+      toast.error("Your session has expired.");
+      userService.logout();
+      window.location.href = "/login";
+      return Promise.reject(error);
+    }
+
+    // 💥 Handle 500 Internal Server Error
+    if (error.response.status === 500) {
+      toast.error("🔥 Server error occurred. Please try again later.");
+    }
+
+    return Promise.reject(error);
+  }
 );
 
 export default API;

@@ -10,9 +10,10 @@ const UserContext = createContext();
 const defaultGuestUser = {
     userId: 'guest',
     username: 'guest',
-    role: 'GUEST',
     currentStoreId: null,
     stores: [],
+    storeGroups: [],
+    scopedRoles: [],
     preferences: {
         global: {
             theme: { darkMode: false },
@@ -212,9 +213,11 @@ export const UserProvider = ({ children }) => {
             // Create user object with full context
             const userWithFullContext = {
                 ...fullContext,
+                scopedRoles: fullContext.scopedRoles || [],
+                storeGroups: fullContext.storeGroups || [], 
                 preferences: mergedPreferences,
                 expirationPolicies: policiesMap, // Store policies by storeId
-                expirationTime: expiresAt, 
+                expirationTime: expiresAt,
             };
 
             // Save user details to local storage (No JWT stored)
@@ -277,6 +280,58 @@ export const UserProvider = ({ children }) => {
         }
     };
 
+    const hasRole = (role, scopeType, scopeId = null) => {
+        return user?.scopedRoles?.some((r) => {
+            return (
+                r.role === role &&
+                r.scopeType === scopeType &&
+                (scopeId === null || String(r.scopeId) === String(scopeId))
+            );
+        });
+    };
+    
+    const hasStoreRole = (role, storeId = currentStoreId) =>
+        hasRole(role, "STORE", String(storeId));
+    
+    const hasGroupRole = (role, groupId = null) => {
+        const groupIdToUse = groupId || getCurrentStore()?.storeGroupId;
+        return hasRole(role, "GROUP", String(groupIdToUse));
+    };
+    
+    const hasGroupAccess = (groupId) => {
+        return user?.storeGroups?.some((group) => group.id === groupId);
+    };
+    
+    const getGroupRole = (groupId) => {
+        return user?.storeGroups?.find((g) => g.id === groupId)?.role;
+    };
+    
+    const isSuperAdmin = () =>
+        hasRole("SUPERADMIN", "PLATFORM", "global");
+
+    const ROLE_ORDER = {
+        SUPERADMIN: 0,
+        SUPPORT: 1,
+        GROUPADMIN: 2,
+        STOREADMIN: 3,
+        STAFF: 4,
+        CUSTOMER: 5,
+        GUEST: 6,
+      };
+      
+      const getHighestRole = () => {
+          if (!user?.scopedRoles?.length) return null;
+          return user.scopedRoles.reduce((prev, curr) => {
+              return ROLE_ORDER[prev.role] < ROLE_ORDER[curr.role] ? prev : curr;
+          }).role;
+      };
+    
+      const isAnyAdmin = () => {
+        const role = getHighestRole();
+        return ["SUPERADMIN", "SUPPORT", "GROUPADMIN", "STOREADMIN"].includes(role);
+      };
+      
+
     useEffect(() => {
         if (user.currentStoreId) {
             fetchExpirationPolicies(user.currentStoreId);
@@ -330,6 +385,7 @@ export const UserProvider = ({ children }) => {
             value={{
                 user,
                 stores,
+                storeGroups: user?.storeGroups || [],
                 currentStoreId,
                 setCurrentStoreId,
                 updatePreferences,
@@ -346,6 +402,12 @@ export const UserProvider = ({ children }) => {
                 getUserPreferences,
                 getAllStores,
                 getCurrentStorePoliciesByType,
+                hasRole,
+                hasStoreRole,
+                hasGroupRole,
+                isAnyAdmin,
+                isSuperAdmin,
+                getHighestRole,
                 loading,
                 error,
             }}

@@ -1,6 +1,7 @@
 // src/components/navbar/Navbar.jsx
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useUserContext } from "../../hooks/UserContext";
 import {
   NavContainer,
   NavList,
@@ -10,10 +11,11 @@ import {
 
 const Navbar = ({ menuItems = [], isAuthenticated, user }) => {
   const location = useLocation();
+  const { isAnyAdmin } = useUserContext();
 
+  const isAdmin = isAuthenticated && isAnyAdmin();
   const mergedMenuItems = [...menuItems];
-  const isAdmin = isAuthenticated && user?.role?.toLowerCase() === "admin";
-
+  
   return (
     <NavContainer>
       <NavList>

@@ -6,7 +6,7 @@ export const PageWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundPrimary};
   min-height: 100vh;
   padding: 3rem 2rem;
-  color: ${({ theme, darkMode }) => (darkMode ? theme.colors.white : theme.colors.black)};
+  color: ${({ theme, $darkMode }) => ($darkMode ? theme.colors.white : theme.colors.black)};
 `;
 
 export const Title = styled.h2`
@@ -34,7 +34,7 @@ export const ProductGrid = styled.div`
 
 export const ProductCard = styled.div`
   flex: 1 1 30%;
-  min-width: 280px;
+  min-width: 250px;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -45,11 +45,13 @@ export const ProductCard = styled.div`
     transform: translateY(-4px);
   }
 
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
+img {
+  aspect-ratio: 112 / 95;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
 
   .card-body {
     padding: 1rem;

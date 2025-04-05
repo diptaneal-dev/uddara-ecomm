@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import StoreCard from "./StoreCard";
 import { Button } from "../../../components/Button/Button";
@@ -15,6 +15,20 @@ import {
 } from "./StoreListModal.styles";
 
 export default function StoreListModal({ stores, onClose, onEdit, onDelete, onView }) {
+
+  // 🔐 Escape key listener
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
+
+
   return (
     <ModalOverlay className="modal fade show d-block" tabIndex="-1" onClick={onClose}>
       <ModalDialog className="modal-dialog modal-dialog-centered modal-dialog-scrollable" onClick={(e) => e.stopPropagation()}>

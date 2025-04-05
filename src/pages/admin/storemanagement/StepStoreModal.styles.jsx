@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const ModalOverlay = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 105000;
+  z-index: 2000;
   position: fixed;
   top: 0;
   left: 0;
@@ -58,17 +58,28 @@ export const ModalFooter = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundPrimary};
 `;
 
-export const ProgressBar = styled.div`
-  background-color: #f1f1f1;
-  border-radius: 0.25rem;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
+export const ProgressBarWrapper = styled.div`
+  margin-bottom: 2rem;
+`;
 
-  .progress-bar {
-    background-color: ${({ theme }) => theme.colors.pink};
-    height: 8px;
-    transition: width 0.3s ease-in-out;
+export const StepLabels = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.grey};
+  margin-bottom: 0.5rem;
+
+  span.active {
+    color: ${({ theme }) => theme.colors.navy};
   }
+`;
+
+export const StepSegment = styled.div`
+  flex: 1;
+  transition: background-color 0.3s;
+  background-color: ${({ theme, isActive, stepColor }) =>
+    isActive ? theme.colors[stepColor] : "#e0e0e0"};
 `;
 
 export const FormGrid = styled.div`

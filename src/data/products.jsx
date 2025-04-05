@@ -98,7 +98,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Peri peri",
+      "Plant Based",
+      "Foxnut Feast",
+      "30g",
+      "Rich in Calcium & Protein",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 10,
+      "netQuantity": "30.0 gram",
+      "unit": "30g",
+      "discount": 17,
+      "flavour": "Peri peri",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 2,
@@ -111,6 +131,7 @@ const products = [
     "price": 12,
     "oldPrice": 14,
     "discount": 14,
+    "isNew": true,
     "currency": "INR",
     "category": "foxnuts",
     "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
@@ -167,7 +188,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Peri peri",
+      "Plant Based",
+      "Foxnut Feast",
+      "Rich in Calcium & Protein",
+      "80g",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 12,
+      "netQuantity": "80.0 gram",
+      "unit": "80g",
+      "discount": 14,
+      "flavour": "Peri peri",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 3,
@@ -236,7 +277,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Peri peri",
+      "Plant Based",
+      "Foxnut Feast",
+      "Rich in Calcium & Protein",
+      "150g",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 14,
+      "netQuantity": "150.0 gram",
+      "unit": "150g",
+      "discount": 12,
+      "flavour": "Peri peri",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 4,
@@ -249,6 +310,7 @@ const products = [
     "price": 16,
     "oldPrice": 18,
     "discount": 11,
+    "isNew": true,
     "currency": "INR",
     "category": "foxnuts",
     "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
@@ -305,7 +367,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "Himalyan Salt and Pepper",
+      "30g",
+      "Rich in Calcium & Protein",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 16,
+      "netQuantity": "30.0 gram",
+      "unit": "30g",
+      "discount": 11,
+      "flavour": "Himalyan Salt and Pepper",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 5,
@@ -374,7 +456,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "Himalyan Salt and Pepper",
+      "Rich in Calcium & Protein",
+      "80g",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 18,
+      "netQuantity": "80.0 gram",
+      "unit": "80g",
+      "discount": 10,
+      "flavour": "Himalyan Salt and Pepper",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 6,
@@ -443,7 +545,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "Himalyan Salt and Pepper",
+      "Rich in Calcium & Protein",
+      "150g",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 20,
+      "netQuantity": "150.0 gram",
+      "unit": "150g",
+      "discount": 9,
+      "flavour": "Himalyan Salt and Pepper",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 7,
@@ -512,7 +634,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "30g",
+      "Rich in Calcium & Protein",
+      "Cream and Onion",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 22,
+      "netQuantity": "30.0 gram",
+      "unit": "30g",
+      "discount": 8,
+      "flavour": "Cream and Onion",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 8,
@@ -581,7 +723,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "80g",
+      "Rich in Calcium & Protein",
+      "Cream and Onion",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 24,
+      "netQuantity": "80.0 gram",
+      "unit": "80g",
+      "discount": 8,
+      "flavour": "Cream and Onion",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 9,
@@ -650,7 +812,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "Rich in Calcium & Protein",
+      "150g",
+      "Cream and Onion",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 26,
+      "netQuantity": "150.0 gram",
+      "unit": "150g",
+      "discount": 7,
+      "flavour": "Cream and Onion",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 10,
@@ -719,7 +901,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Jaggery",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "30g",
+      "Rich in Calcium & Protein",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 28,
+      "netQuantity": "30.0 gram",
+      "unit": "30g",
+      "discount": 7,
+      "flavour": "Jaggery",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 11,
@@ -788,7 +990,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Jaggery",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "Rich in Calcium & Protein",
+      "80g",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 30,
+      "netQuantity": "80.0 gram",
+      "unit": "80g",
+      "discount": 6,
+      "flavour": "Jaggery",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 12,
@@ -857,7 +1079,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Jaggery",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "Rich in Calcium & Protein",
+      "150g",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 32,
+      "netQuantity": "150.0 gram",
+      "unit": "150g",
+      "discount": 6,
+      "flavour": "Jaggery",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 13,
@@ -926,7 +1168,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Dryfruit Trail Mix",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "30g",
+      "Rich in Calcium & Protein",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 34,
+      "netQuantity": "30.0 gram",
+      "unit": "30g",
+      "discount": 6,
+      "flavour": "Dryfruit Trail Mix",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 14,
@@ -995,7 +1257,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Dryfruit Trail Mix",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "Rich in Calcium & Protein",
+      "80g",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 36,
+      "netQuantity": "80.0 gram",
+      "unit": "80g",
+      "discount": 5,
+      "flavour": "Dryfruit Trail Mix",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 15,
@@ -1064,7 +1346,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Dryfruit Trail Mix",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "Rich in Calcium & Protein",
+      "150g",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 38,
+      "netQuantity": "150.0 gram",
+      "unit": "150g",
+      "discount": 5,
+      "flavour": "Dryfruit Trail Mix",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Nitrogen & Zip Packed"
+    }
   },
   {
     "id": 16,
@@ -1133,7 +1435,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "Rich in Calcium & Protein",
+      "Plain",
+      "80g",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 40,
+      "netQuantity": "80.0 gram",
+      "unit": "80g",
+      "discount": 5,
+      "flavour": "Plain",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Zip Packed"
+    }
   },
   {
     "id": 17,
@@ -1202,7 +1524,27 @@ const products = [
         "comment": "Tasty and crispy, but wish they had more seasoning.",
         "review_datetime": "2024-02-12T09:15:00Z"
       }
-    ]
+    ],
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Plant Based",
+      "Foxnut Feast",
+      "Rich in Calcium & Protein",
+      "Plain",
+      "150g",
+      "Low in Calories"
+    ],
+    "compareAttributes": {
+      "price": 42,
+      "netQuantity": "150.0 gram",
+      "unit": "150g",
+      "discount": 5,
+      "flavour": "Plain",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Zip Packed"
+    }
   }
 ];
 

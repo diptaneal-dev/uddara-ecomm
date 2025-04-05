@@ -1,5 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 import {
   faInstagram,
   faWhatsapp,
@@ -20,9 +22,11 @@ import {
   FooterColumn,
   FooterBottom,
   FooterBottomRow,
+  StyledLogoCircle,
   LogoWrapper,
   SocialTray,
   IconCircle,
+  NewsletterColumn
 } from "./Footer.styles";
 
 const Footer = () => {
@@ -33,14 +37,17 @@ const Footer = () => {
         {/* Logo & Social */}
         <FooterColumn>
           <LogoWrapper>
-            <Logo
-              imageSrc="/images/Uddara_logo.png"
-              width="100px"
-              height="100px"
-              textColor="#156082"
-              bgColor="transparent"
-              centered={true}
-            />
+            <StyledLogoCircle>
+              <Logo
+                imageSrc="/images/Uddara_logo.png"
+                width="100%"
+                height="100%"
+                textColor="#156082"
+                bgColor="transparent"
+                centered={true}
+              />
+            </StyledLogoCircle>
+
             <SocialTray>
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
                 <IconCircle>
@@ -61,21 +68,21 @@ const Footer = () => {
           </LogoWrapper>
         </FooterColumn>
 
-        {/* Shop */}
         <FooterColumn>
-          <h5><FontAwesomeIcon icon={faShoppingBag} /> Shop</h5>
-          <ul>
-            <li><a href="/products">Featured Products</a></li>
-          </ul>
-        </FooterColumn>
+          <div style={{ marginBottom: "1rem" }}>
+            <h5><FontAwesomeIcon icon={faShoppingBag} /> Shop</h5>
+            <ul>
+              <li><a href="/products">Featured Products</a></li>
+            </ul>
+          </div>
 
-        {/* About */}
-        <FooterColumn>
-          <h5><FontAwesomeIcon icon={faInfoCircle} /> About Us</h5>
-          <ul>
-            <li><a href="/blog/list">Blog</a></li>
-            <li><a href="/careers">Careers</a></li>
-          </ul>
+          <div>
+            <h5><FontAwesomeIcon icon={faInfoCircle} /> About Us</h5>
+            <ul>
+              <li><a href="/blog/list">Blog</a></li>
+              <li><a href="/careers">Careers</a></li>
+            </ul>
+          </div>
         </FooterColumn>
 
         {/* Quick Links */}
@@ -97,6 +104,17 @@ const Footer = () => {
             <li><em>More coming soon…</em></li>
           </ul>
         </FooterColumn>
+
+        <NewsletterColumn>
+          <h5>Stay Connected</h5>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Your email" required />
+            <button type="submit" aria-label="Subscribe">
+              <FontAwesomeIcon icon={faEnvelope} />
+            </button>
+          </form>
+        </NewsletterColumn>
+
       </FooterGrid>
 
       {/* Bottom Bar */}

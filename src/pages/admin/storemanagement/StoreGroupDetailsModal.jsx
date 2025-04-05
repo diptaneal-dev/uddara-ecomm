@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import {
   ModalOverlay,
@@ -16,6 +16,18 @@ import { Button } from "../../../components/Button/Button";
 
 export default function StoreGroupDetailsModal({ group, onClose }) {
   if (!group) return null;
+
+  // 🔐 Escape key listener
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
 
   return (
     <ModalOverlay onClick={onClose}>

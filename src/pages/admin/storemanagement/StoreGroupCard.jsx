@@ -14,7 +14,15 @@ import {
   GroupButtonGroup
 } from "./StoreGroupCard.styles";
 
-export default function StoreGroupCard({ group, stores, onEdit, onDelete }) {
+export default function StoreGroupCard({
+  group,
+  stores,
+  onEdit,
+  onDelete,
+  onEditStore,
+  onDeleteStore,
+  onViewStore
+}) {
   const [showModal, setShowModal] = useState(false);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [groupDetails, setGroupDetails] = useState(null);
@@ -71,9 +79,9 @@ export default function StoreGroupCard({ group, stores, onEdit, onDelete }) {
         <StoreListModal
           stores={groupStores}
           onClose={() => setShowModal(false)}
-          onEdit={(s) => console.log("Edit store", s)}
-          onDelete={(s) => console.log("Delete store", s)}
-          onView={(s) => console.log("View store details", s)}
+          onEdit={onEditStore}     
+          onDelete={onDeleteStore}
+          onView={onViewStore}
         />
       )}
 
@@ -91,5 +99,8 @@ StoreGroupCard.propTypes = {
   group: PropTypes.object.isRequired,
   stores: PropTypes.array.isRequired,
   onEdit: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired
+  onDelete: PropTypes.func.isRequired,
+  onEditStore: PropTypes.func.isRequired,
+  onDeleteStore: PropTypes.func.isRequired,
+  onViewStore: PropTypes.func.isRequired
 };

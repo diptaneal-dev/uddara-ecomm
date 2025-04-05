@@ -25,7 +25,7 @@ const Logo = ({
   return (
     <div
       className={`logo-container ${className} ${centered ? 'justify-content-center text-center' : 'align-items-center'}`}
-      style={{ backgroundColor: bgColor, color: textColor, padding: '5px' }}
+      style={{ backgroundColor: bgColor, color: textColor, padding: '0' }}
     >
       {imageSrc && (
         <img

@@ -1,5 +1,7 @@
 // src/components/StoreGroupModal/index.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getAllCountries } from "../../../services/RefDataService";
+
 import PropTypes from "prop-types";
 import {
   ModalOverlay,
@@ -24,6 +26,12 @@ export default function StoreGroupModal({
   onClose,
   renderFooter
 }) {
+  const [countryList, setCountryList] = useState([]);
+
+  useEffect(() => {
+    getAllCountries().then(setCountryList);
+  }, []);
+
   return (
     <ModalOverlay onClick={onClose}>
       <ModalDialog onClick={(e) => e.stopPropagation()}>
@@ -49,15 +57,24 @@ export default function StoreGroupModal({
                 <Label>Country</Label>
                 <Select
                   value={groupForm.country}
-                  onChange={(e) => setGroupForm({ ...groupForm, country: e.target.value })}
+                  onChange={(e) => {
+                    const selectedIso = e.target.value;
+                    const selectedCountry = countryList.find(c => c.isoCode === selectedIso);
+
+                    setGroupForm({
+                      ...groupForm,
+                      country: selectedIso,
+                      currency: selectedCountry?.currencyCode || "",
+                      timezone: selectedCountry?.timezone || "",
+                    });
+                  }}
                 >
                   <option value="">Select Country</option>
-                  <option value="India">India</option>
-                  <option value="AU">Australia</option>
-                  <option value="USA">USA</option>
-                  <option value="UK">UK</option>
-                  <option value="Singapore">Singapore</option>
-                  <option value="UAE">UAE</option>
+                  {countryList.map((country) => (
+                    <option key={country.isoCode} value={country.isoCode}>
+                      {country.name}
+                    </option>
+                  ))}
                 </Select>
               </FormGroup>
 
@@ -104,30 +121,22 @@ export default function StoreGroupModal({
 
               <FormGroup>
                 <Label>Currency</Label>
-                <Select
-                  value={groupForm.currency}
-                  onChange={(e) => setGroupForm({ ...groupForm, currency: e.target.value })}
-                >
-                  <option value="">Select Currency</option>
-                  <option value="INR">INR (₹)</option>
-                  <option value="USD">USD ($)</option>
-                  <option value="EUR">EUR (€)</option>
+                <Select value={groupForm.currency || ""} disabled>
+                  <option value={groupForm.currency || ""}>
+                    {groupForm.currency || "Auto-filled from country"}
+                  </option>
                 </Select>
               </FormGroup>
 
               <FormGroup>
                 <Label>Timezone</Label>
-                <Select
-                  value={groupForm.timezone}
-                  onChange={(e) => setGroupForm({ ...groupForm, timezone: e.target.value })}
-                >
-                  <option value="">Select Timezone</option>
-                  <option value="Asia/Kolkata">Asia/Kolkata (IST)</option>
-                  <option value="UTC">UTC</option>
-                  <option value="America/New_York">America/New_York (EST)</option>
-                  <option value="Europe/London">Europe/London (GMT)</option>
+                <Select value={groupForm.timezone || ""} disabled>
+                  <option value={groupForm.timezone || ""}>
+                    {groupForm.timezone || "Auto-filled from country"}
+                  </option>
                 </Select>
               </FormGroup>
+
             </FormGrid>
           </ModalBody>
 

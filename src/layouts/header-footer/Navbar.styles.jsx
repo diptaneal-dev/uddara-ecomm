@@ -29,7 +29,7 @@ export const NavItem = styled.li``;
 
 export const NavLinkItem = styled.span`
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.purple};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease-in-out;
@@ -38,7 +38,7 @@ export const NavLinkItem = styled.span`
   display: inline-block;
 
   &:hover {
-    color: #870343; /* You can add this to the theme if reused */
+    color: ${({ theme }) => theme.colors.teal};  
     font-size: 1.1rem;
     transform: scale(1.05);
   }
@@ -46,7 +46,7 @@ export const NavLinkItem = styled.span`
   &.active-link {
     color: ${({ theme }) => theme.colors.white} !important;
     font-weight: 600;
-    background-color: ${({ theme }) => theme.colors.navy};
+    background-color: ${({ theme }) => theme.colors.teal};
     border-radius: 5px;
     padding: 0.5rem 1rem;
   }

@@ -12,6 +12,8 @@ import {
 } from "./StoreCard.styles";
 
 export default function StoreCard({ store, onEdit, onDelete, onView }) {
+  console.log("Incoming Store in store card is:", store);
+
   return (
     <CardWrapper>
       <CardBody>

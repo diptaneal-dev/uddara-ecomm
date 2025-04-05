@@ -5,6 +5,10 @@ export const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
   }
+  html {
+    font-size: 16px; // or 62.5% if you want 1rem = 10px
+    scroll-behavior: smooth;
+  }
 
   html, body {
     margin: 0;
@@ -41,4 +45,27 @@ export const GlobalStyles = createGlobalStyle`
     letter-spacing: ${({ theme }) => theme.typography.paragraph.letterSpacing};
     color: ${({ theme }) => theme.colors.grey};
   }
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.pink};
+  }
+
+  ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Ensure toasts appear above modals */
+  .Toastify__toast-container {
+    z-index: 9999 !important;
+  }
+
 `;

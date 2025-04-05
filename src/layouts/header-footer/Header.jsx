@@ -12,7 +12,8 @@ import {
   LogoWrapper,
   NavbarWrapper,
   SearchWrapper,
-  IconsWrapper
+  IconsWrapper,
+  StyledLogoCircle
 } from "./HeaderLayout.styles";
 
 const menuItems = [
@@ -29,19 +30,19 @@ const Header = () => {
   return (
     <HeaderContainer>
       <LogoWrapper>
-        <div className="logo-container">
+        <StyledLogoCircle>
           <Link to="/" className="navbar-brand">
             <Logo
               imageSrc="/images/Uddara_logo.png"
-              width="100px"
-              height="100px"
+              width="100%"
+              height="100%"
               className="header-logo"
               textColor="#333"
               bgColor="transparent"
               centered={false}
             />
           </Link>
-        </div>
+        </StyledLogoCircle>
       </LogoWrapper>
 
       <NavbarWrapper>

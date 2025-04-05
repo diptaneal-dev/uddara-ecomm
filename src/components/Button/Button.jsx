@@ -33,23 +33,21 @@ const sizeStyles = {
 
 const variantStyles = {
   primary: (theme, props) => css`
-    background-color: ${props.bg || theme.colors.buttonPrimary};
+    background-color: ${props.$bg || theme.colors.buttonPrimary};
     color: ${props.color || theme.colors.white};
-    border: 2px solid ${props.borderColor || props.bg || theme.colors.buttonPrimary};
+    border: 2px solid ${props.borderColor || props.$bg || theme.colors.buttonPrimary};
 
     &:hover {
       opacity: 0.9;
-    }
-  `,
+    }`,
   secondary: (theme, props) => css`
-    background-color: ${props.bg || theme.colors.buttonSecondary};
+    background-color: ${props.$bg || theme.colors.buttonSecondary};
     color: ${props.color || theme.colors.white};
-    border: 2px solid ${props.borderColor || props.bg || theme.colors.buttonSecondary};
+    border: 2px solid ${props.borderColor || props.$bg || theme.colors.buttonSecondary};
 
     &:hover {
       opacity: 0.9;
-    }
-  `,
+    }`,
   icon: (theme, props) => css`
     background-color: transparent;
     color: ${props.color || theme.colors.pink};
@@ -62,8 +60,7 @@ const variantStyles = {
     &:hover {
       opacity: 0.8;
       transform: scale(1.1);
-    }
-  `,
+    }`,
 };
 
 export const Button = styled.button`
@@ -115,6 +112,25 @@ export const Button = styled.button`
       cursor: not-allowed;
       opacity: 0.7;
     `}
+    
+  ${({ $fitContent }) =>
+    $fitContent &&
+    css`
+      width: auto;
+      min-width: unset;
+    `}
+  
+    ${({ $loading }) =>
+    $loading &&
+    css`
+        pointer-events: none;
+        opacity: 0.6;
+    `}
+
+    ${({ $margin = '0' }) => css`
+    margin: ${$margin};
+  `}
+      
 
   svg.spinner {
     animation: ${loadingSpinner} 1s linear infinite;

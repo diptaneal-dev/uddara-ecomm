@@ -1,10 +1,19 @@
-// src/components/ui/IconButton.jsx
 import styled from 'styled-components';
 
-export const IconButton = styled.button`
+const iconSizes = {
+  xs: "12px",
+  sm: "16px",
+  md: "20px",
+  lg: "24px",
+  xl: "50px",
+};
+
+export const IconButton = styled.button.withConfig({
+  shouldForwardProp: (prop) => !["iconSize"].includes(prop),
+})`
   background: none;
-  border: none;
-  color: ${({ theme }) => theme.colors.navy};
+  border: ${({ borderColor }) => borderColor || 'none'}; /* No border by default */
+  color: ${({ color, theme }) => color || theme.colors.navy};
   padding: 6px;
   border-radius: 50%;
   display: inline-flex;
@@ -14,12 +23,14 @@ export const IconButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.seashell};
+    background-color: ${({ $hoverColor, theme }) => $hoverColor || theme.colors.seashell};
+    color: ${({ $hoverIconColor, theme }) => $hoverIconColor || theme.colors.navy};
     transform: scale(1.1);
+    border-color: ${({ $hoverBorderColor }) => $hoverBorderColor || 'none'}; /* Option to have no border on hover */
   }
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: ${({ iconSize }) => iconSizes[iconSize] || iconSizes.md};
+    height: ${({ iconSize }) => iconSizes[iconSize] || iconSizes.md};
   }
 `;

@@ -5,15 +5,21 @@ import { faHeart, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-ico
 import UserProfileDropdown from "../userprofile/UserProfileDropdown";
 import { IconsWrapper, IconButton, CartIconWrapper, CartBadge } from "./HeaderIcons.styles";
 import { CartContext } from "../../context/CartContext";
+import StoreSwitcherIcon from "../../components/StoreSwitcher/StoreSwitcherIcon";
 
 const HeaderIcons = ({ isAuthenticated, user }) => {
   const navigate = useNavigate();
   const { cart } = useContext(CartContext) || { cart: [] };
 
-  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // ✅ Calculate total quantity
+  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); 
 
   return (
     <IconsWrapper>
+      {/* Store Switcher only if user is logged in and has multiple stores */}
+      {isAuthenticated && user?.stores?.length > 1 && (
+        <StoreSwitcherIcon stores={user.stores} />
+      )}
+
       <IconButton onClick={() => navigate("/favorites")}>
         <FontAwesomeIcon icon={faHeart} />
       </IconButton>

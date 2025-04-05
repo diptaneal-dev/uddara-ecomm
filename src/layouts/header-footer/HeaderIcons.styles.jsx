@@ -11,7 +11,7 @@ export const IconButton = styled.button`
   border: none;
   cursor: pointer;
   font-size: 18px;
-  color: ${({ theme }) => theme.colors.purple};
+  color: ${({ theme }) => theme.colors.white};
   padding: 8px;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -20,9 +20,8 @@ export const IconButton = styled.button`
   justify-content: center;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ theme }) => theme.colors.navy};
-    border: 2px solid ${({ theme }) => theme.colors.navy};
+    color: ${({ theme }) => theme.colors.pink};
+    background-color: transparent;
   }
 `;
 

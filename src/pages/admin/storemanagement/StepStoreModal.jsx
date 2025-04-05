@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
-import storeService from "../../../services/StoreService";
 import {
   ModalOverlay,
   ModalDialog,
@@ -11,7 +10,6 @@ import {
   ModalTitle,
   ModalBody,
   ModalFooter,
-  ProgressBar,
   FormGrid,
   FormGroup,
   Label,
@@ -19,6 +17,9 @@ import {
   Select
 } from "./StepStoreModal.styles";
 import { Button } from "../../../components/Button/Button";
+import TimeSelect from "../../../components/TimeSelect/TimeSelect";
+import StepProgressBar from "../../../components/StepProgressBar/StepProgressBar";
+import storeService from "../../../services/StoreService";
 
 const businessHoursRequiredTypes = [
   "RESTAURANT", "RETAIL", "SUPERMARKET", "PHARMACY", "BAKERY",
@@ -38,7 +39,7 @@ export default function StepStoreModal({ storeGroups, onClose, onSubmit, renderF
     storeName: "",
     storeType: "",
     legalName: "",
-    groupId: "",
+    storeGroupId: "",
     currency: "",
     timezone: "",
     region: "",
@@ -60,13 +61,13 @@ export default function StepStoreModal({ storeGroups, onClose, onSubmit, renderF
   }, []);
 
   useEffect(() => {
-    if (form.groupId) {
-      const group = storeGroups.find((g) => g.id.toString() === form.groupId);
+    if (form.storeGroupId) {
+      const group = storeGroups.find((g) => g.id.toString() === form.storeGroupId);
       if (group && group.currency && !form.currency) {
         setForm((prev) => ({ ...prev, currency: group.currency }));
       }
     }
-  }, [form.groupId, form.currency]);
+  }, [form.storeGroupId, form.currency]);
 
   const saveDraft = () => {
     localStorage.setItem("storeFormDraft", JSON.stringify(form));
@@ -74,7 +75,7 @@ export default function StepStoreModal({ storeGroups, onClose, onSubmit, renderF
   };
 
   const handleNext = () => {
-    if (step === 1 && (!form.storeName || !form.storeType || !form.legalName || !form.groupId)) {
+    if (step === 1 && (!form.storeName || !form.storeType || !form.legalName || !form.storeGroupId)) {
       toast.warning("Please fill required fields in Step 1");
       return;
     }
@@ -92,6 +93,7 @@ export default function StepStoreModal({ storeGroups, onClose, onSubmit, renderF
 
   const handleFinalSubmit = async () => {
     try {
+      console.log("Store Form: ", form);
       await storeService.createStore(form);
       localStorage.removeItem("storeFormDraft");
       toast.success("Store created!");
@@ -124,9 +126,13 @@ export default function StepStoreModal({ storeGroups, onClose, onSubmit, renderF
           </ModalHeader>
 
           <ModalBody>
-            <ProgressBar>
-              <div className="progress-bar" style={{ width: `${(step / 4) * 100}%` }} />
-            </ProgressBar>
+            <StepProgressBar
+              currentStep={step}
+              steps={stepLabels}
+              variant="bubble" // or "fill" or "dot"
+              showLabels={true}
+              showStepText={true}
+            />
 
             {step === 1 && (
               <FormGrid>
@@ -161,7 +167,7 @@ export default function StepStoreModal({ storeGroups, onClose, onSubmit, renderF
                 </FormGroup>
                 <FormGroup>
                   <Label>Store Group</Label>
-                  <Select value={form.groupId} onChange={(e) => setForm({ ...form, groupId: e.target.value })}>
+                  <Select value={form.storeGroupId} onChange={(e) => setForm({ ...form, storeGroupId: e.target.value })}>
                     <option value="">Select Store Group</option>
                     {storeGroups.map((g) => (
                       <option key={g.id} value={g.id}>{g.name}</option>
@@ -203,7 +209,7 @@ export default function StepStoreModal({ storeGroups, onClose, onSubmit, renderF
                       type="checkbox"
                       checked={form.enableDelivery}
                       onChange={(e) => setForm({ ...form, enableDelivery: e.target.checked })}
-                    /> Enable Delivery
+                    />{" Enable Delivery"}
                   </label>
                 </FormGroup>
               </FormGrid>
@@ -213,12 +219,42 @@ export default function StepStoreModal({ storeGroups, onClose, onSubmit, renderF
               <FormGrid>
                 <FormGroup>
                   <Label>Opening Time</Label>
-                  <Input type="time" value={form.businessHours.openingTime} onChange={(e) => setForm({ ...form, businessHours: { ...form.businessHours, openingTime: e.target.value } })} />
+                  <TimeSelect
+                    value={form.businessHours.openingTime}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        businessHours: {
+                          ...form.businessHours,
+                          openingTime: e.target.value,
+                        },
+                      })
+                    }
+                    interval={30}
+                    variant="default" // or "minimal", "borderless"
+                    name="openingTime"
+                  />
                 </FormGroup>
+
                 <FormGroup>
                   <Label>Closing Time</Label>
-                  <Input type="time" value={form.businessHours.closingTime} onChange={(e) => setForm({ ...form, businessHours: { ...form.businessHours, closingTime: e.target.value } })} />
+                  <TimeSelect
+                    value={form.businessHours.closingTime}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        businessHours: {
+                          ...form.businessHours,
+                          closingTime: e.target.value,
+                        },
+                      })
+                    }
+                    interval={30}
+                    variant="default"
+                    name="closingTime"
+                  />
                 </FormGroup>
+
                 <FormGroup style={{ gridColumn: "1 / -1" }}>
                   <Label>Days of Operation</Label>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
@@ -228,7 +264,8 @@ export default function StepStoreModal({ storeGroups, onClose, onSubmit, renderF
                           type="checkbox"
                           checked={form.businessHours.daysOpen.includes(day)}
                           onChange={() => toggleDay(day)}
-                        /> {day}
+                        />{" "}
+                        {day}
                       </label>
                     ))}
                   </div>

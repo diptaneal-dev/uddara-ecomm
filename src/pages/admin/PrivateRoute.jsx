@@ -1,17 +1,15 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { useUserContext } from "../../hooks/UserContext";
 
-const PrivateRoute = ({ children }) => {
+const PrivateRoute = () => {
   const { user } = useUserContext();
-  console.log("User is:", user);
 
-  // ✅ Allow if the user is `diptaneal-1@gmail.com`, OR if the role is `admin`
-  if (user?.username !== "diptaneal-1@gmail.com" && user?.role !== "admin") {
+  if (user?.username !== "diptaneal-1@gmail.com" && user?.role !== "GROUPADMIN") {
     return <Navigate to="/login" replace />;
   }
 
-  return children;
+  return <Outlet />; 
 };
 
 export default PrivateRoute;

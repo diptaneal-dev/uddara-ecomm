@@ -1,14 +1,17 @@
-import { sleep } from "openai/core";
 import API from "./ApiService";
 
 const STORE_API_URL = 'http://localhost:8091/api/stores';
 
 const storeService = {
     getAllStores: () => API.get(STORE_API_URL),
-    getStoreById: (id) => API.get(`${STORE_API_URL}/${id}`),
     createStore: (storeData) => API.post(`${STORE_API_URL}/create-store`, storeData),
     updateStore: (id, storeData) => API.put(`${STORE_API_URL}/${id}`, storeData),
     deleteStore: (id) => API.delete(`${STORE_API_URL}/${id}`),
+
+    getStoreById: async (id) => {
+        const response = await API.get(`${STORE_API_URL}/${id}`);
+        return response.data;
+    },
     getStoresByUser: async (username) => {
         const response = await API.get(`${STORE_API_URL}/user/${username}`);
         return response.data;
@@ -44,6 +47,12 @@ const storeService = {
     getMyStores: async () => {
         const response = await API.get(`${STORE_API_URL}/me`);
         console.log("Fetching stores:", response.data);
+        return response.data;
+    },
+
+    getStoresByGroupId: async (groupId) => {
+        const response = await API.get(`${STORE_API_URL}/group/${groupId}/stores`);
+        console.log("getStoresByGroupId :", response.data);
         return response.data;
     },
 
@@ -100,6 +109,43 @@ const storeService = {
             throw new Error("Failed to subscribe to the store newsletter.");
         }
     },
+
+    // Assign user to a store or store group (scopeType: 'STORE' or 'GROUP')
+    assignUserToScope: async (userId, { scopeType, scopeId, role }) => {
+        if (scopeType === 'STORE') {
+            return await API.post(`${STORE_API_URL}/${scopeId}/user/${userId}?role=${role}`);
+        } else if (scopeType === 'GROUP') {
+            return await API.post(`${STORE_API_URL}/group/${scopeId}/user/${userId}?role=${role}`);
+        } else {
+            throw new Error(`Unknown scopeType: ${scopeType}`);
+        }
+    },
+
+    // Remove user from a store or store group
+    removeUserScopeAssignment: async (assignmentId, scopeType) => {
+        const { userId, scopeId } = assignmentId;
+
+        if (scopeType === 'STORE') {
+            return await API.delete(`${STORE_API_URL}/${scopeId}/user/${userId}`);
+        } else if (scopeType === 'GROUP') {
+            return await API.delete(`${STORE_API_URL}/group/${scopeId}/user/${userId}`);
+        } else {
+            throw new Error(`Unknown scopeType: ${scopeType}`);
+        }
+    },
+
+    // Get all stores assigned to a user
+    getUserStores: async (userId) => {
+        const response = await API.get(`${STORE_API_URL}/user/${userId}/stores`);
+        return response.data;
+    },
+
+    // Get all store groups assigned to a user
+    getUserStoreGroups: async (userId) => {
+        const response = await API.get(`${STORE_API_URL}/user/${userId}/groups`);
+        return response.data;
+    },
+
 
 };
 

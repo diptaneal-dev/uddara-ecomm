@@ -10,6 +10,7 @@ import { UserProvider, useUserContext } from "./hooks/UserContext";
 import FavoriteProvider from "./components/FavouriteButton/FavouriteContext";
 import { ToastContainer } from "react-toastify";
 import { theme } from "./theme";
+import { BrowserRouter } from "react-router-dom";
 
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,7 +20,6 @@ const RazorpayScript = () => {
   useEffect(() => {
     const scriptId = "razorpay-checkout-js";
 
-    // Prevent adding the script multiple times
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
       script.id = scriptId;
@@ -36,32 +36,30 @@ const RazorpayScript = () => {
   return null;
 };
 
-// ✅ Wrapper component to ensure FavoriteProvider gets user context values & RazorpayScript runs
+// ✅ AppWrapper should receive full provider tree
 const AppWrapper = () => {
-  const { isAuthenticated, userId } = useUserContext(); // Get authentication state from UserContext
-
   return (
-    <>
-      <RazorpayScript />
-      <FavoriteProvider>
-        <ThemeProvider>
-          <StyledThemeProvider theme={theme}>
-            <ToastContainer position="top-right" autoClose={3000} />
-            <App />
-          </StyledThemeProvider>
-        </ThemeProvider>
-      </FavoriteProvider>
-    </>
+    <UserProvider>
+      <CartProvider>
+        <FavoriteProvider>
+          <ThemeProvider>
+            <StyledThemeProvider theme={theme}>
+              <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+                <ToastContainer position="top-right" autoClose={3000} />
+                <RazorpayScript />
+                <App />
+              </BrowserRouter>
+            </StyledThemeProvider>
+          </ThemeProvider>
+        </FavoriteProvider>
+      </CartProvider>
+    </UserProvider>
   );
 };
 
 // ✅ Vite-compatible root rendering
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <UserProvider>
-      <CartProvider>
-        <AppWrapper />
-      </CartProvider>
-    </UserProvider>
+    <AppWrapper />
   </React.StrictMode>
 );
