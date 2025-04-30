@@ -1,31 +1,33 @@
 const products = [
   {
     "id": 1,
-    "productSKU": "SKU-FOX-001",
+    "productSKU": "SKU-FOX-JTM-1000",
     "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
+    "brand": "Foxnut Feast",
+    "flavour": "Jaggery Trail Mix",
+    "productKey": [
+      "name",
+      "flavour",
+      "unit"
     ],
-    "price": 10,
-    "oldPrice": 12,
-    "discount": 17,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "30g",
+    "unit": "1000g",
     "unitOfMeasurement": "Grams",
+    "size": "1000 gm (Pack of 1)",
+    "price": 1000,
+    "oldPrice": 1200,
+    "discount": 20,
+    "useBy": "9 months",
+    "currency": "INR",
+    "image": "/images/products/JaggeryTrailMix1000.png",
+    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
+    "category": "foxnuts, Snacks",
+    "images": [
+      "/images/products/JaggeryTrailMix1000.png"
+    ],
     "minOrderQty": 1,
     "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "30 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Peri peri",
-    "packageInformation": "Nitrogen & Zip Packed",
     "itemWeight": "7.05 Ounces",
     "numberOfItems": 1,
-    "netQuantity": "30.0 gram",
     "itemPackageQuantity": 1,
     "numberOfPieces": 1,
     "speciality": [
@@ -38,52 +40,13 @@ const products = [
       "Rich in Nutrition",
       "Protein and Fibre Rich"
     ],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
-    ],
     "specifications": [
       "100% Organic and Gluten-Free",
       "Rich in protein and fiber",
       "Lightly roasted for a perfect crunch"
     ],
-    "additionalInfo": "Consume withihn 9 month from date of manufacturing\nAfter opening pack, store in dry and air right container\nFor best crunch, roast for 30-40 sec in microwave/ pan\n",
-    "ingredients": "1. Salt\n2. Spices & Condiments\n3. Sugar\n4. Acidity Regulators (INS 330, INS 296, INS 334)\n5. Herbs\n6. Anticaking Agent (INS 551)\n7. Raw makhana\n8. Olive oil",
-    "legalDisclaimer": "Allergic Caution: Manufactured in a facility that processes tree nuts\n\nlegalDisclaimer: This product is not intended to diagnose, treat, cure, or prevent any disease.",
-    "aboutThisItem": [
-      "Our products are sourced from the best farms",
-      "our foxnuts are known for their superior taste and nutritional value. We offer a variety of foxnuts \u2013 plain and flavored",
-      "ensuring high quality and consistency.",
-      "Nutritional Benefits:",
-      "Foxnuts are rich in several important nutrients",
-      "including:",
-      "\u2022\tProtein and fiber: Great for a healthy diet.",
-      "\u2022\tMicronutrients: Such as calcium",
-      "magnesium",
-      "iron",
-      "and phosphorus",
-      "Health Benefits:",
-      "1.\tHigh in antioxidants: Helps neutralize harmful free radicals and prevent oxidative stress",
-      "2.\tSupports blood sugar management: Some studies suggest that foxnuts can help stabilize blood sugar levels.",
-      "3.\tAids in weight loss: The high protein and fiber content can help you feel full longer.",
-      "Culinary Uses:",
-      "Foxnuts are versatile and can be used in:",
-      "\u2022\tSnacks: Roasted",
-      "Flavored and seasoned.",
-      "\u2022\tSweets and savories: Like kheer",
-      "raita",
-      "and curries"
-    ],
+    "additionalInfo": "After opening pack, store in dry and airtight container.\nFor best crunch, roast for 30-40 sec in microwave or pan.",
+    "legalDisclaimer": "Allergic Caution: Manufactured in a facility that processes tree nuts.\nThis product is not intended to diagnose, treat, cure, or prevent any disease.",
     "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
     "reviews": [
       {
@@ -99,81 +62,78 @@ const products = [
         "review_datetime": "2024-02-12T09:15:00Z"
       }
     ],
+    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+    "packageInformation": "Zip Packed",
+    "netQuantity": "1000g",
+    "compareAttributes": {
+      "price": 1000,
+      "netQuantity": "1000g",
+      "unit": "1000g",
+      "discount": 20,
+      "flavour": "Jaggery Trail Mix",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Zip Packed"
+    },
     "filterTags": [
       "Gluten Free",
       "Non GMO",
-      "Peri peri",
+      "Jaggery Trail Mix",
       "Plant Based",
       "Foxnut Feast",
-      "30g",
+      "1000g",
       "Rich in Calcium & Protein",
       "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 10,
-      "netQuantity": "30.0 gram",
-      "unit": "30g",
-      "discount": 17,
-      "flavour": "Peri peri",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Nitrogen & Zip Packed"
-    }
+    ]
   },
   {
     "id": 2,
-    "productSKU": "SKU-FOX-002",
+    "productSKU": "SKU-FOX-JTM-500",
     "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
+    "brand": "Foxnut Feast",
+    "flavour": "Jaggery Trail Mix",
+    "productKey": [
+      "name",
+      "flavour",
+      "unit"
     ],
-    "price": 12,
-    "oldPrice": 14,
-    "discount": 14,
-    "isNew": true,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "80g",
+    "unit": "500g",
     "unitOfMeasurement": "Grams",
+    "size": "500 gm (Pack of 1)",
+    "price": 600,
+    "oldPrice": 720,
+    "discount": 20,
+    "useBy": "9 months",
+    "currency": "INR",
+    "image": "/images/products/JaggeryTrailMix500.png",
+    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
+    "category": "foxnuts, Snacks",
+    "images": [
+      "/images/products/JaggeryTrailMix500.png"
+    ],
     "minOrderQty": 1,
     "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "80 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Peri peri",
-    "packageInformation": "Nitrogen & Zip Packed",
     "itemWeight": "7.05 Ounces",
     "numberOfItems": 1,
-    "netQuantity": "80.0 gram",
     "itemPackageQuantity": 1,
     "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
+    "speciality": [
+      "Gluten Free",
+      "Plant Based",
+      "Non-GMO",
+      "Rich in Calcium",
+      "Rich in Antioxidants",
+      "Low in Calories",
+      "Rich in Nutrition",
+      "Protein and Fibre Rich"
     ],
     "specifications": [
       "100% Organic and Gluten-Free",
       "Rich in protein and fiber",
       "Lightly roasted for a perfect crunch"
     ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
+    "additionalInfo": "After opening pack, store in dry and airtight container.\nFor best crunch, roast for 30-40 sec in microwave or pan.",
+    "legalDisclaimer": "Allergic Caution: Manufactured in a facility that processes tree nuts.\nThis product is not intended to diagnose, treat, cure, or prevent any disease.",
     "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
     "reviews": [
       {
@@ -189,80 +149,78 @@ const products = [
         "review_datetime": "2024-02-12T09:15:00Z"
       }
     ],
+    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+    "packageInformation": "Zip Packed",
+    "netQuantity": "500g",
+    "compareAttributes": {
+      "price": 600,
+      "netQuantity": "500g",
+      "unit": "500g",
+      "discount": 20,
+      "flavour": "Jaggery Trail Mix",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Zip Packed"
+    },
     "filterTags": [
       "Gluten Free",
       "Non GMO",
-      "Peri peri",
+      "Jaggery Trail Mix",
       "Plant Based",
       "Foxnut Feast",
+      "500g",
       "Rich in Calcium & Protein",
-      "80g",
       "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 12,
-      "netQuantity": "80.0 gram",
-      "unit": "80g",
-      "discount": 14,
-      "flavour": "Peri peri",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Nitrogen & Zip Packed"
-    }
+    ]
   },
   {
     "id": 3,
-    "productSKU": "SKU-FOX-003",
+    "productSKU": "SKU-FOX-JTM-200",
     "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
+    "brand": "Foxnut Feast",
+    "flavour": "Jaggery Trail Mix",
+    "productKey": [
+      "name",
+      "flavour",
+      "unit"
     ],
-    "price": 14,
-    "oldPrice": 16,
-    "discount": 12,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "150g",
+    "unit": "200g",
     "unitOfMeasurement": "Grams",
+    "size": "200 gm (Pack of 1)",
+    "price": 250,
+    "oldPrice": 300,
+    "discount": 20,
+    "useBy": "9 months",
+    "currency": "INR",
+    "image": "/images/products/JaggeryTrailMix200.png",
+    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
+    "category": "foxnuts, Snacks",
+    "images": [
+      "/images/products/JaggeryTrailMix200.png"
+    ],
     "minOrderQty": 1,
     "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "150 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Peri peri",
-    "packageInformation": "Nitrogen & Zip Packed",
     "itemWeight": "7.05 Ounces",
     "numberOfItems": 1,
-    "netQuantity": "150.0 gram",
     "itemPackageQuantity": 1,
     "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
+    "speciality": [
+      "Gluten Free",
+      "Plant Based",
+      "Non-GMO",
+      "Rich in Calcium",
+      "Rich in Antioxidants",
+      "Low in Calories",
+      "Rich in Nutrition",
+      "Protein and Fibre Rich"
     ],
     "specifications": [
       "100% Organic and Gluten-Free",
       "Rich in protein and fiber",
       "Lightly roasted for a perfect crunch"
     ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
+    "additionalInfo": "After opening pack, store in dry and airtight container.\nFor best crunch, roast for 30-40 sec in microwave or pan.",
+    "legalDisclaimer": "Allergic Caution: Manufactured in a facility that processes tree nuts.\nThis product is not intended to diagnose, treat, cure, or prevent any disease.",
     "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
     "reviews": [
       {
@@ -278,81 +236,78 @@ const products = [
         "review_datetime": "2024-02-12T09:15:00Z"
       }
     ],
+    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+    "packageInformation": "Zip Packed",
+    "netQuantity": "200g",
+    "compareAttributes": {
+      "price": 250,
+      "netQuantity": "200g",
+      "unit": "200g",
+      "discount": 20,
+      "flavour": "Jaggery Trail Mix",
+      "brand": "Foxnut Feast",
+      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+      "packageInformation": "Zip Packed"
+    },
     "filterTags": [
       "Gluten Free",
       "Non GMO",
-      "Peri peri",
+      "Jaggery Trail Mix",
       "Plant Based",
       "Foxnut Feast",
+      "200g",
       "Rich in Calcium & Protein",
-      "150g",
       "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 14,
-      "netQuantity": "150.0 gram",
-      "unit": "150g",
-      "discount": 12,
-      "flavour": "Peri peri",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Nitrogen & Zip Packed"
-    }
+    ]
   },
   {
     "id": 4,
-    "productSKU": "SKU-FOX-004",
+    "productSKU": "SKU-FOX-JM-250",
     "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
+    "brand": "Foxnut Feast",
+    "flavour": "Jaggery Makhana",
+    "productKey": [
+      "name",
+      "flavour",
+      "unit"
     ],
-    "price": 16,
-    "oldPrice": 18,
-    "discount": 11,
-    "isNew": true,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "30g",
+    "unit": "250g",
     "unitOfMeasurement": "Grams",
+    "size": "250 gm (Pack of 1)",
+    "price": 750,
+    "oldPrice": 900,
+    "discount": 20,
+    "useBy": "12 months",
+    "currency": "INR",
+    "image": "/images/products/JaggeryMakhana250.png",
+    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
+    "category": "foxnuts, Snacks",
+    "images": [
+      "/images/products/JaggeryMakhana250.png"
+    ],
     "minOrderQty": 1,
     "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "30 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Himalyan Salt and Pepper",
-    "packageInformation": "Nitrogen & Zip Packed",
     "itemWeight": "7.05 Ounces",
     "numberOfItems": 1,
-    "netQuantity": "30.0 gram",
     "itemPackageQuantity": 1,
     "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
+    "speciality": [
+      "Gluten Free",
+      "Plant Based",
+      "Non-GMO",
+      "Rich in Calcium",
+      "Rich in Antioxidants",
+      "Low in Calories",
+      "Rich in Nutrition",
+      "Protein and Fibre Rich"
     ],
     "specifications": [
       "100% Organic and Gluten-Free",
       "Rich in protein and fiber",
       "Lightly roasted for a perfect crunch"
     ],
-    "additionalInfo": "",
-    "ingredients": "1. Salt\n2. Pepper powder \n3. Olive oil \n4. Raw makhana",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
+    "additionalInfo": "After opening pack, store in dry and airtight container.\nFor best crunch, roast for 30-40 sec in microwave or pan.",
+    "legalDisclaimer": "Allergic Caution: Manufactured in a facility that processes tree nuts.\nThis product is not intended to diagnose, treat, cure, or prevent any disease.",
     "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
     "reviews": [
       {
@@ -368,80 +323,78 @@ const products = [
         "review_datetime": "2024-02-12T09:15:00Z"
       }
     ],
-    "filterTags": [
-      "Gluten Free",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "Himalyan Salt and Pepper",
-      "30g",
-      "Rich in Calcium & Protein",
-      "Low in Calories"
-    ],
+    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+    "packageInformation": "Nitrogen & Zip Packed",
+    "netQuantity": "250g",
     "compareAttributes": {
-      "price": 16,
-      "netQuantity": "30.0 gram",
-      "unit": "30g",
-      "discount": 11,
-      "flavour": "Himalyan Salt and Pepper",
+      "price": 750,
+      "netQuantity": "250g",
+      "unit": "250g",
+      "discount": 20,
+      "flavour": "Jaggery Makhana",
       "brand": "Foxnut Feast",
       "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
       "packageInformation": "Nitrogen & Zip Packed"
-    }
+    },
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Jaggery Makhana",
+      "Plant Based",
+      "Foxnut Feast",
+      "250g",
+      "Rich in Calcium & Protein",
+      "Low in Calories"
+    ]
   },
   {
     "id": 5,
-    "productSKU": "SKU-FOX-005",
+    "productSKU": "SKU-FOX-JM-100",
     "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
-    ],
-    "price": 18,
-    "oldPrice": 20,
-    "discount": 10,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "80g",
+    "brand": "Foxnut Feast",
+    "flavour": "Jaggery Makhana",
+    "unit": "100g",
     "unitOfMeasurement": "Grams",
+    "productKey": [
+      "name",
+      "flavour",
+      "unit"
+    ],
+    "size": "100 gm (Pack of 1)",
+    "price": 250,
+    "oldPrice": 300,
+    "discount": 20,
+    "useBy": "12 months",
+    "currency": "INR",
+    "image": "/images/products/JaggeryMakhana100.png",
+    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
+    "category": "foxnuts, Snacks",
+    "images": [
+      "/images/products/JaggeryMakhana100.png"
+    ],
     "minOrderQty": 1,
     "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "80 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Himalyan Salt and Pepper",
-    "packageInformation": "Nitrogen & Zip Packed",
     "itemWeight": "7.05 Ounces",
     "numberOfItems": 1,
-    "netQuantity": "80.0 gram",
     "itemPackageQuantity": 1,
     "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
+    "speciality": [
+      "Gluten Free",
+      "Plant Based",
+      "Non-GMO",
+      "Rich in Calcium",
+      "Rich in Antioxidants",
+      "Low in Calories",
+      "Rich in Nutrition",
+      "Protein and Fibre Rich"
     ],
     "specifications": [
       "100% Organic and Gluten-Free",
       "Rich in protein and fiber",
       "Lightly roasted for a perfect crunch"
     ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
+    "additionalInfo": "After opening pack, store in dry and airtight container.\nFor best crunch, roast for 30-40 sec in microwave or pan.",
+    "legalDisclaimer": "Allergic Caution: Manufactured in a facility that processes tree nuts.\nThis product is not intended to diagnose, treat, cure, or prevent any disease.",
     "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
     "reviews": [
       {
@@ -457,80 +410,78 @@ const products = [
         "review_datetime": "2024-02-12T09:15:00Z"
       }
     ],
-    "filterTags": [
-      "Gluten Free",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "Himalyan Salt and Pepper",
-      "Rich in Calcium & Protein",
-      "80g",
-      "Low in Calories"
-    ],
+    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+    "packageInformation": "Nitrogen & Zip Packed",
+    "netQuantity": "100g",
     "compareAttributes": {
-      "price": 18,
-      "netQuantity": "80.0 gram",
-      "unit": "80g",
-      "discount": 10,
-      "flavour": "Himalyan Salt and Pepper",
+      "price": 250,
+      "netQuantity": "100g",
+      "unit": "100g",
+      "discount": 20,
+      "flavour": "Jaggery Makhana",
       "brand": "Foxnut Feast",
       "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
       "packageInformation": "Nitrogen & Zip Packed"
-    }
+    },
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Jaggery Makhana",
+      "Plant Based",
+      "Foxnut Feast",
+      "100g",
+      "Rich in Calcium & Protein",
+      "Low in Calories"
+    ]
   },
   {
     "id": 6,
-    "productSKU": "SKU-FOX-006",
+    "productSKU": "SKU-FOX-PM-500",
     "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
+    "brand": "Foxnut Feast",
+    "flavour": "Plain Makhana",
+    "productKey": [
+      "name",
+      "flavour",
+      "unit"
     ],
-    "price": 20,
-    "oldPrice": 22,
-    "discount": 9,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "150g",
+    "unit": "500g",
     "unitOfMeasurement": "Grams",
+    "size": "500 gm (Pack of 1)",
+    "price": 1200,
+    "oldPrice": 1440,
+    "discount": 20,
+    "useBy": "12 months",
+    "currency": "INR",
+    "image": "/images/products/PlainMakhana500.png",
+    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
+    "category": "foxnuts, Snacks",
+    "images": [
+      "/images/products/PlainMakhana500.png"
+    ],
     "minOrderQty": 1,
     "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "150 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Himalyan Salt and Pepper",
-    "packageInformation": "Nitrogen & Zip Packed",
     "itemWeight": "7.05 Ounces",
     "numberOfItems": 1,
-    "netQuantity": "150.0 gram",
     "itemPackageQuantity": 1,
     "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
+    "speciality": [
+      "Gluten Free",
+      "Plant Based",
+      "Non-GMO",
+      "Rich in Calcium",
+      "Rich in Antioxidants",
+      "Low in Calories",
+      "Rich in Nutrition",
+      "Protein and Fibre Rich"
     ],
     "specifications": [
       "100% Organic and Gluten-Free",
       "Rich in protein and fiber",
       "Lightly roasted for a perfect crunch"
     ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
+    "additionalInfo": "After opening pack, store in dry and airtight container.\nFor best crunch, roast for 30-40 sec in microwave or pan.",
+    "legalDisclaimer": "Allergic Caution: Manufactured in a facility that processes tree nuts.\nThis product is not intended to diagnose, treat, cure, or prevent any disease.",
     "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
     "reviews": [
       {
@@ -546,80 +497,78 @@ const products = [
         "review_datetime": "2024-02-12T09:15:00Z"
       }
     ],
-    "filterTags": [
-      "Gluten Free",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "Himalyan Salt and Pepper",
-      "Rich in Calcium & Protein",
-      "150g",
-      "Low in Calories"
-    ],
+    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+    "packageInformation": "Nitrogen & Zip Packed",
+    "netQuantity": "500g",
     "compareAttributes": {
-      "price": 20,
-      "netQuantity": "150.0 gram",
-      "unit": "150g",
-      "discount": 9,
-      "flavour": "Himalyan Salt and Pepper",
+      "price": 1200,
+      "netQuantity": "500g",
+      "unit": "500g",
+      "discount": 20,
+      "flavour": "Plain Makhana",
       "brand": "Foxnut Feast",
       "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
       "packageInformation": "Nitrogen & Zip Packed"
-    }
+    },
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Plain Makhana",
+      "Plant Based",
+      "Foxnut Feast",
+      "500g",
+      "Rich in Calcium & Protein",
+      "Low in Calories"
+    ]
   },
   {
     "id": 7,
-    "productSKU": "SKU-FOX-007",
+    "productSKU": "SKU-FOX-PM-250",
     "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
+    "brand": "Foxnut Feast",
+    "flavour": "Plain Makhana",
+    "productKey": [
+      "name",
+      "flavour",
+      "unit"
     ],
-    "price": 22,
-    "oldPrice": 24,
-    "discount": 8,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "30g",
+    "unit": "250g",
     "unitOfMeasurement": "Grams",
+    "size": "250 gm (Pack of 1)",
+    "price": 700,
+    "oldPrice": 840,
+    "discount": 20,
+    "useBy": "12 months",
+    "currency": "INR",
+    "image": "/images/products/PlainMakahana250.png",
+    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
+    "category": "foxnuts, Snacks",
+    "images": [
+      "/images/products/PlainMakahana250.png"
+    ],
     "minOrderQty": 1,
     "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "30 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Cream and Onion",
-    "packageInformation": "Nitrogen & Zip Packed",
     "itemWeight": "7.05 Ounces",
     "numberOfItems": 1,
-    "netQuantity": "30.0 gram",
     "itemPackageQuantity": 1,
     "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
+    "speciality": [
+      "Gluten Free",
+      "Plant Based",
+      "Non-GMO",
+      "Rich in Calcium",
+      "Rich in Antioxidants",
+      "Low in Calories",
+      "Rich in Nutrition",
+      "Protein and Fibre Rich"
     ],
     "specifications": [
       "100% Organic and Gluten-Free",
       "Rich in protein and fiber",
       "Lightly roasted for a perfect crunch"
     ],
-    "additionalInfo": "",
-    "ingredients": "1. Maltodextrin\n2. Dairy Cream \n3. Powder\n4. Edible Common \n5. Salt\n6. Sugar\n7. Acidity Regulator (INS 170i)\n8. Anticaking Agent (INS 551)\n9. Raw makhana\n10. Olive oil",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
+    "additionalInfo": "After opening pack, store in dry and airtight container.\nFor best crunch, roast for 30-40 sec in microwave or pan.",
+    "legalDisclaimer": "Allergic Caution: Manufactured in a facility that processes tree nuts.\nThis product is not intended to diagnose, treat, cure, or prevent any disease.",
     "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
     "reviews": [
       {
@@ -635,80 +584,78 @@ const products = [
         "review_datetime": "2024-02-12T09:15:00Z"
       }
     ],
-    "filterTags": [
-      "Gluten Free",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "30g",
-      "Rich in Calcium & Protein",
-      "Cream and Onion",
-      "Low in Calories"
-    ],
+    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+    "packageInformation": "Nitrogen & Zip Packed",
+    "netQuantity": "250g",
     "compareAttributes": {
-      "price": 22,
-      "netQuantity": "30.0 gram",
-      "unit": "30g",
-      "discount": 8,
-      "flavour": "Cream and Onion",
+      "price": 700,
+      "netQuantity": "250g",
+      "unit": "250g",
+      "discount": 20,
+      "flavour": "Plain Makhana",
       "brand": "Foxnut Feast",
       "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
       "packageInformation": "Nitrogen & Zip Packed"
-    }
+    },
+    "filterTags": [
+      "Gluten Free",
+      "Non GMO",
+      "Plain Makhana",
+      "Plant Based",
+      "Foxnut Feast",
+      "250g",
+      "Rich in Calcium & Protein",
+      "Low in Calories"
+    ]
   },
   {
     "id": 8,
-    "productSKU": "SKU-FOX-008",
+    "productSKU": "SKU-FOX-PM-100",
     "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
+    "brand": "Foxnut Feast",
+    "flavour": "Plain Makhana",
+    "productKey": [
+      "name",
+      "flavour",
+      "unit"
     ],
-    "price": 24,
-    "oldPrice": 26,
-    "discount": 8,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "80g",
+    "unit": "100g",
     "unitOfMeasurement": "Grams",
+    "size": "100 gm (Pack of 1)",
+    "price": 200,
+    "oldPrice": 240,
+    "discount": 20,
+    "useBy": "12 months",
+    "currency": "INR",
+    "image": "/images/products/PlainMakhana100.png",
+    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
+    "category": "foxnuts, Snacks",
+    "images": [
+      "/images/products/PlainMakhana100.png"
+    ],
     "minOrderQty": 1,
     "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "80 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Cream and Onion",
-    "packageInformation": "Nitrogen & Zip Packed",
     "itemWeight": "7.05 Ounces",
     "numberOfItems": 1,
-    "netQuantity": "80.0 gram",
     "itemPackageQuantity": 1,
     "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
+    "speciality": [
+      "Gluten Free",
+      "Plant Based",
+      "Non-GMO",
+      "Rich in Calcium",
+      "Rich in Antioxidants",
+      "Low in Calories",
+      "Rich in Nutrition",
+      "Protein and Fibre Rich"
     ],
     "specifications": [
       "100% Organic and Gluten-Free",
       "Rich in protein and fiber",
       "Lightly roasted for a perfect crunch"
     ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
+    "additionalInfo": "After opening pack, store in dry and airtight container.\nFor best crunch, roast for 30-40 sec in microwave or pan.",
+    "legalDisclaimer": "Allergic Caution: Manufactured in a facility that processes tree nuts.\nThis product is not intended to diagnose, treat, cure, or prevent any disease.",
     "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
     "reviews": [
       {
@@ -724,827 +671,29 @@ const products = [
         "review_datetime": "2024-02-12T09:15:00Z"
       }
     ],
-    "filterTags": [
-      "Gluten Free",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "80g",
-      "Rich in Calcium & Protein",
-      "Cream and Onion",
-      "Low in Calories"
-    ],
+    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
+    "packageInformation": "Nitrogen & Zip Packed",
+    "netQuantity": "100g",
     "compareAttributes": {
-      "price": 24,
-      "netQuantity": "80.0 gram",
-      "unit": "80g",
-      "discount": 8,
-      "flavour": "Cream and Onion",
+      "price": 200,
+      "netQuantity": "100g",
+      "unit": "100g",
+      "discount": 20,
+      "flavour": "Plain Makhana",
       "brand": "Foxnut Feast",
       "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
       "packageInformation": "Nitrogen & Zip Packed"
-    }
-  },
-  {
-    "id": 9,
-    "productSKU": "SKU-FOX-009",
-    "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
-    ],
-    "price": 26,
-    "oldPrice": 28,
-    "discount": 7,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "150g",
-    "unitOfMeasurement": "Grams",
-    "minOrderQty": 1,
-    "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "150 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Cream and Onion",
-    "packageInformation": "Nitrogen & Zip Packed",
-    "itemWeight": "7.05 Ounces",
-    "numberOfItems": 1,
-    "netQuantity": "150.0 gram",
-    "itemPackageQuantity": 1,
-    "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
-    ],
-    "specifications": [
-      "100% Organic and Gluten-Free",
-      "Rich in protein and fiber",
-      "Lightly roasted for a perfect crunch"
-    ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
-    "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
-    "reviews": [
-      {
-        "name": "Emily R.",
-        "rating": 5,
-        "comment": "Absolutely loved these! The best quality foxnuts I\u2019ve had.",
-        "review_datetime": "2024-02-10T14:30:00Z"
-      },
-      {
-        "name": "John D.",
-        "rating": 4,
-        "comment": "Tasty and crispy, but wish they had more seasoning.",
-        "review_datetime": "2024-02-12T09:15:00Z"
-      }
-    ],
+    },
     "filterTags": [
       "Gluten Free",
       "Non GMO",
+      "Plain Makhana",
       "Plant Based",
       "Foxnut Feast",
-      "Rich in Calcium & Protein",
-      "150g",
-      "Cream and Onion",
-      "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 26,
-      "netQuantity": "150.0 gram",
-      "unit": "150g",
-      "discount": 7,
-      "flavour": "Cream and Onion",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Nitrogen & Zip Packed"
-    }
-  },
-  {
-    "id": 10,
-    "productSKU": "SKU-FOX-010",
-    "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
-    ],
-    "price": 28,
-    "oldPrice": 30,
-    "discount": 7,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "30g",
-    "unitOfMeasurement": "Grams",
-    "minOrderQty": 1,
-    "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "30 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Jaggery",
-    "packageInformation": "Nitrogen & Zip Packed",
-    "itemWeight": "7.05 Ounces",
-    "numberOfItems": 1,
-    "netQuantity": "30.0 gram",
-    "itemPackageQuantity": 1,
-    "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
-    ],
-    "specifications": [
-      "100% Organic and Gluten-Free",
-      "Rich in protein and fiber",
-      "Lightly roasted for a perfect crunch"
-    ],
-    "additionalInfo": "",
-    "ingredients": "1. Jaggery \n2. Raw makhana",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
-    "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
-    "reviews": [
-      {
-        "name": "Emily R.",
-        "rating": 5,
-        "comment": "Absolutely loved these! The best quality foxnuts I\u2019ve had.",
-        "review_datetime": "2024-02-10T14:30:00Z"
-      },
-      {
-        "name": "John D.",
-        "rating": 4,
-        "comment": "Tasty and crispy, but wish they had more seasoning.",
-        "review_datetime": "2024-02-12T09:15:00Z"
-      }
-    ],
-    "filterTags": [
-      "Gluten Free",
-      "Jaggery",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "30g",
+      "100g",
       "Rich in Calcium & Protein",
       "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 28,
-      "netQuantity": "30.0 gram",
-      "unit": "30g",
-      "discount": 7,
-      "flavour": "Jaggery",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Nitrogen & Zip Packed"
-    }
-  },
-  {
-    "id": 11,
-    "productSKU": "SKU-FOX-011",
-    "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
-    ],
-    "price": 30,
-    "oldPrice": 32,
-    "discount": 6,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "80g",
-    "unitOfMeasurement": "Grams",
-    "minOrderQty": 1,
-    "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "80 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Jaggery",
-    "packageInformation": "Nitrogen & Zip Packed",
-    "itemWeight": "7.05 Ounces",
-    "numberOfItems": 1,
-    "netQuantity": "80.0 gram",
-    "itemPackageQuantity": 1,
-    "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
-    ],
-    "specifications": [
-      "100% Organic and Gluten-Free",
-      "Rich in protein and fiber",
-      "Lightly roasted for a perfect crunch"
-    ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
-    "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
-    "reviews": [
-      {
-        "name": "Emily R.",
-        "rating": 5,
-        "comment": "Absolutely loved these! The best quality foxnuts I\u2019ve had.",
-        "review_datetime": "2024-02-10T14:30:00Z"
-      },
-      {
-        "name": "John D.",
-        "rating": 4,
-        "comment": "Tasty and crispy, but wish they had more seasoning.",
-        "review_datetime": "2024-02-12T09:15:00Z"
-      }
-    ],
-    "filterTags": [
-      "Gluten Free",
-      "Jaggery",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "Rich in Calcium & Protein",
-      "80g",
-      "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 30,
-      "netQuantity": "80.0 gram",
-      "unit": "80g",
-      "discount": 6,
-      "flavour": "Jaggery",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Nitrogen & Zip Packed"
-    }
-  },
-  {
-    "id": 12,
-    "productSKU": "SKU-FOX-012",
-    "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
-    ],
-    "price": 32,
-    "oldPrice": 34,
-    "discount": 6,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "150g",
-    "unitOfMeasurement": "Grams",
-    "minOrderQty": 1,
-    "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "150 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Jaggery",
-    "packageInformation": "Nitrogen & Zip Packed",
-    "itemWeight": "7.05 Ounces",
-    "numberOfItems": 1,
-    "netQuantity": "150.0 gram",
-    "itemPackageQuantity": 1,
-    "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
-    ],
-    "specifications": [
-      "100% Organic and Gluten-Free",
-      "Rich in protein and fiber",
-      "Lightly roasted for a perfect crunch"
-    ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
-    "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
-    "reviews": [
-      {
-        "name": "Emily R.",
-        "rating": 5,
-        "comment": "Absolutely loved these! The best quality foxnuts I\u2019ve had.",
-        "review_datetime": "2024-02-10T14:30:00Z"
-      },
-      {
-        "name": "John D.",
-        "rating": 4,
-        "comment": "Tasty and crispy, but wish they had more seasoning.",
-        "review_datetime": "2024-02-12T09:15:00Z"
-      }
-    ],
-    "filterTags": [
-      "Gluten Free",
-      "Jaggery",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "Rich in Calcium & Protein",
-      "150g",
-      "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 32,
-      "netQuantity": "150.0 gram",
-      "unit": "150g",
-      "discount": 6,
-      "flavour": "Jaggery",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Nitrogen & Zip Packed"
-    }
-  },
-  {
-    "id": 13,
-    "productSKU": "SKU-FOX-013",
-    "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
-    ],
-    "price": 34,
-    "oldPrice": 36,
-    "discount": 6,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "30g",
-    "unitOfMeasurement": "Grams",
-    "minOrderQty": 1,
-    "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "30 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Dryfruit Trail Mix",
-    "packageInformation": "Nitrogen & Zip Packed",
-    "itemWeight": "7.05 Ounces",
-    "numberOfItems": 1,
-    "netQuantity": "30.0 gram",
-    "itemPackageQuantity": 1,
-    "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
-    ],
-    "specifications": [
-      "100% Organic and Gluten-Free",
-      "Rich in protein and fiber",
-      "Lightly roasted for a perfect crunch"
-    ],
-    "additionalInfo": "",
-    "ingredients": "1. California Almond \n2. Pumpkin seeds \n3. Sunflower seeds\n4. Rose petals \n5. Jaggery \n6. Cranberry slice",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
-    "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
-    "reviews": [
-      {
-        "name": "Emily R.",
-        "rating": 5,
-        "comment": "Absolutely loved these! The best quality foxnuts I\u2019ve had.",
-        "review_datetime": "2024-02-10T14:30:00Z"
-      },
-      {
-        "name": "John D.",
-        "rating": 4,
-        "comment": "Tasty and crispy, but wish they had more seasoning.",
-        "review_datetime": "2024-02-12T09:15:00Z"
-      }
-    ],
-    "filterTags": [
-      "Gluten Free",
-      "Dryfruit Trail Mix",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "30g",
-      "Rich in Calcium & Protein",
-      "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 34,
-      "netQuantity": "30.0 gram",
-      "unit": "30g",
-      "discount": 6,
-      "flavour": "Dryfruit Trail Mix",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Nitrogen & Zip Packed"
-    }
-  },
-  {
-    "id": 14,
-    "productSKU": "SKU-FOX-014",
-    "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
-    ],
-    "price": 36,
-    "oldPrice": 38,
-    "discount": 5,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "80g",
-    "unitOfMeasurement": "Grams",
-    "minOrderQty": 1,
-    "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "80 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Dryfruit Trail Mix",
-    "packageInformation": "Nitrogen & Zip Packed",
-    "itemWeight": "7.05 Ounces",
-    "numberOfItems": 1,
-    "netQuantity": "80.0 gram",
-    "itemPackageQuantity": 1,
-    "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
-    ],
-    "specifications": [
-      "100% Organic and Gluten-Free",
-      "Rich in protein and fiber",
-      "Lightly roasted for a perfect crunch"
-    ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
-    "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
-    "reviews": [
-      {
-        "name": "Emily R.",
-        "rating": 5,
-        "comment": "Absolutely loved these! The best quality foxnuts I\u2019ve had.",
-        "review_datetime": "2024-02-10T14:30:00Z"
-      },
-      {
-        "name": "John D.",
-        "rating": 4,
-        "comment": "Tasty and crispy, but wish they had more seasoning.",
-        "review_datetime": "2024-02-12T09:15:00Z"
-      }
-    ],
-    "filterTags": [
-      "Gluten Free",
-      "Dryfruit Trail Mix",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "Rich in Calcium & Protein",
-      "80g",
-      "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 36,
-      "netQuantity": "80.0 gram",
-      "unit": "80g",
-      "discount": 5,
-      "flavour": "Dryfruit Trail Mix",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Nitrogen & Zip Packed"
-    }
-  },
-  {
-    "id": 15,
-    "productSKU": "SKU-FOX-015",
-    "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
-    ],
-    "price": 38,
-    "oldPrice": 40,
-    "discount": 5,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "150g",
-    "unitOfMeasurement": "Grams",
-    "minOrderQty": 1,
-    "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "150 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Dryfruit Trail Mix",
-    "packageInformation": "Nitrogen & Zip Packed",
-    "itemWeight": "7.05 Ounces",
-    "numberOfItems": 1,
-    "netQuantity": "150.0 gram",
-    "itemPackageQuantity": 1,
-    "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
-    ],
-    "specifications": [
-      "100% Organic and Gluten-Free",
-      "Rich in protein and fiber",
-      "Lightly roasted for a perfect crunch"
-    ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
-    "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
-    "reviews": [
-      {
-        "name": "Emily R.",
-        "rating": 5,
-        "comment": "Absolutely loved these! The best quality foxnuts I\u2019ve had.",
-        "review_datetime": "2024-02-10T14:30:00Z"
-      },
-      {
-        "name": "John D.",
-        "rating": 4,
-        "comment": "Tasty and crispy, but wish they had more seasoning.",
-        "review_datetime": "2024-02-12T09:15:00Z"
-      }
-    ],
-    "filterTags": [
-      "Gluten Free",
-      "Dryfruit Trail Mix",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "Rich in Calcium & Protein",
-      "150g",
-      "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 38,
-      "netQuantity": "150.0 gram",
-      "unit": "150g",
-      "discount": 5,
-      "flavour": "Dryfruit Trail Mix",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Nitrogen & Zip Packed"
-    }
-  },
-  {
-    "id": 16,
-    "productSKU": "SKU-FOX-016",
-    "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
-    ],
-    "price": 40,
-    "oldPrice": 42,
-    "discount": 5,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "80g",
-    "unitOfMeasurement": "Grams",
-    "minOrderQty": 1,
-    "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "80 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Plain",
-    "packageInformation": "Zip Packed",
-    "itemWeight": "7.05 Ounces",
-    "numberOfItems": 1,
-    "netQuantity": "80.0 gram",
-    "itemPackageQuantity": 1,
-    "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
-    ],
-    "specifications": [
-      "100% Organic and Gluten-Free",
-      "Rich in protein and fiber",
-      "Lightly roasted for a perfect crunch"
-    ],
-    "additionalInfo": "",
-    "ingredients": "1. Raw makhana",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
-    "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
-    "reviews": [
-      {
-        "name": "Emily R.",
-        "rating": 5,
-        "comment": "Absolutely loved these! The best quality foxnuts I\u2019ve had.",
-        "review_datetime": "2024-02-10T14:30:00Z"
-      },
-      {
-        "name": "John D.",
-        "rating": 4,
-        "comment": "Tasty and crispy, but wish they had more seasoning.",
-        "review_datetime": "2024-02-12T09:15:00Z"
-      }
-    ],
-    "filterTags": [
-      "Gluten Free",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "Rich in Calcium & Protein",
-      "Plain",
-      "80g",
-      "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 40,
-      "netQuantity": "80.0 gram",
-      "unit": "80g",
-      "discount": 5,
-      "flavour": "Plain",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Zip Packed"
-    }
-  },
-  {
-    "id": 17,
-    "productSKU": "SKU-FOX-017",
-    "name": "Premium Foxnuts",
-    "image": "/images/product_image.png",
-    "images": [
-      "/images/product_image.png"
-    ],
-    "price": 42,
-    "oldPrice": 44,
-    "discount": 5,
-    "currency": "INR",
-    "category": "foxnuts",
-    "description": "Premium quality foxnuts - Nutritious, Crispy and Delicious.\nIt is a healthy, Nutritious, Antioxidant rich snacks having several health benefits\nEasy to digest, Suitable for all",
-    "unit": "150g",
-    "unitOfMeasurement": "Grams",
-    "minOrderQty": 1,
-    "stock": 1000,
-    "useBy": "15 JAN 2026",
-    "size": "150 gm (Pack of 1)",
-    "brand": "Foxnut Feast",
-    "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-    "flavour": "Plain",
-    "packageInformation": "Zip Packed",
-    "itemWeight": "7.05 Ounces",
-    "numberOfItems": 1,
-    "netQuantity": "150.0 gram",
-    "itemPackageQuantity": 1,
-    "numberOfPieces": 1,
-    "speciality": [],
-    "variants": [
-      {
-        "name": "100g Pack",
-        "price": 10
-      },
-      {
-        "name": "250g Pack",
-        "price": 20
-      },
-      {
-        "name": "500g Pack",
-        "price": 35
-      }
-    ],
-    "specifications": [
-      "100% Organic and Gluten-Free",
-      "Rich in protein and fiber",
-      "Lightly roasted for a perfect crunch"
-    ],
-    "additionalInfo": "",
-    "ingredients": "Foxnuts (100%)",
-    "legalDisclaimer": "Store in a cool, dry place.",
-    "aboutThisItem": [],
-    "shareText": "\ud83c\udf1f Upgrade your snacking game with Premium Foxnuts! \ud83e\udd8a\ud83d\udca5 Crunchy, delicious, and packed with nutrients. Perfect for guilt-free munching! \ud83c\udf7f\u2728 Order now! #HealthySnacks #Foxnuts #Superfood",
-    "reviews": [
-      {
-        "name": "Emily R.",
-        "rating": 5,
-        "comment": "Absolutely loved these! The best quality foxnuts I\u2019ve had.",
-        "review_datetime": "2024-02-10T14:30:00Z"
-      },
-      {
-        "name": "John D.",
-        "rating": 4,
-        "comment": "Tasty and crispy, but wish they had more seasoning.",
-        "review_datetime": "2024-02-12T09:15:00Z"
-      }
-    ],
-    "filterTags": [
-      "Gluten Free",
-      "Non GMO",
-      "Plant Based",
-      "Foxnut Feast",
-      "Rich in Calcium & Protein",
-      "Plain",
-      "150g",
-      "Low in Calories"
-    ],
-    "compareAttributes": {
-      "price": 42,
-      "netQuantity": "150.0 gram",
-      "unit": "150g",
-      "discount": 5,
-      "flavour": "Plain",
-      "brand": "Foxnut Feast",
-      "dietType": "Gluten Free, Plant Based, Non GMO, Rich in Calcium & Protein, Low in Calories",
-      "packageInformation": "Zip Packed"
-    }
+    ]
   }
 ];
 

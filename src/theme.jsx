@@ -8,82 +8,44 @@ export const theme = {
     white: '#FFFFFF',
     black: '#333333',
     seashell: '#FAF6F1',
+    gold: '#D4AF37',
+    amber: '#C58520',
+    green: '#69945e',
+    blue: '#1f759e',
 
-    // Button Colors
+    // Buttons
     buttonPrimary: '#BF437E',
     buttonSecondary: '#663090',
     buttonDisabled: '#CCCCCC',
     buttonText: '#FFFFFF',
     buttonOutline: '#333333',
 
-    // ✅ Backgrounds
+    // Backgrounds
     backgroundPrimary: '#FFFFFF',
     backgroundSecondary: '#FAF6F1',
 
-    // ✅ Progress bar step colors
+    // Progress colors
     progressColors: {
-      step1: '#BF437E',     // pink
-      step2: '#663090',     // purple
-      step3: '#349886',     // teal
-      step4: '#156082',     // navy
-      inactive: '#e0e0e0'   // fallback gray
-    }
+      step1: '#BF437E',
+      step2: '#663090',
+      step3: '#349886',
+      step4: '#156082',
+      inactive: '#e0e0e0',
+    },
   },
 
   typography: {
     fontPrimary: "'Montserrat', sans-serif",
     fontSecondary: "'Open Sans', sans-serif",
-    headingLarge: {
-      fontSize: '56px',
-      fontWeight: 600,
-      lineHeight: '100%',
-      letterSpacing: '0%',
-    },
-    headingMedium: {
-      fontSize: '40px',
-      fontWeight: 600,
-      lineHeight: '110%',
-      letterSpacing: '0%',
-    },
-    headingSmall: {
-      fontSize: '28px',
-      fontWeight: 500,
-      lineHeight: '110%',
-      letterSpacing: '0%',
-    },
-    subHeading: {
-      fontSize: '36px',
-      fontWeight: 400,
-      lineHeight: '100%',
-      letterSpacing: '0%',
-    },
-    subHeadingSmall: {
-      fontSize: '20px',
-      fontWeight: 500,
-      lineHeight: '120%',
-      letterSpacing: '0%',
-    },
-    headingXSmall: {
-      fontSize: '16px',
-      fontWeight: 500,
-      lineHeight: '100%',
-      letterSpacing: '0%',
-    },
-    paragraph: {
-      fontSize: '16px',
-      fontWeight: 400,
-      lineHeight: '150%',
-      letterSpacing: '0%',
-    },
-    bodyText: {
-      fontSize: '16px',
-      fontWeight: 400,
-      lineHeight: '160%',
-    },
-    smallText: {
-      fontSize: '14px',
-      fontWeight: 400,
-    },
+    headingLarge: { fontSize: '56px', fontWeight: 600, lineHeight: '100%' },
+    headingMedium: { fontSize: '40px', fontWeight: 600, lineHeight: '110%' },
+    headingSmall: { fontSize: '28px', fontWeight: 500, lineHeight: '110%' },
+    subHeading: { fontSize: '36px', fontWeight: 400, lineHeight: '100%' },
+    subHeadingSmall: { fontSize: '20px', fontWeight: 500, lineHeight: '120%' },
+    headingXSmall: { fontSize: '16px', fontWeight: 500, lineHeight: '100%' },
+    paragraph: { fontSize: '16px', fontWeight: 400, lineHeight: '150%' },
+    bodyText: { fontSize: '16px', fontWeight: 400, lineHeight: '160%' },
+    smallText: { fontSize: '14px', fontWeight: 400 },
     footerMeta: {
       fontSize: '0.875rem',
       fontWeight: 400,
@@ -98,24 +60,39 @@ export const theme = {
       letterSpacing: '0%',
       color: '#156082',
     },
-    spacing: {
-      xs: '4px',
-      sm: '8px',
-      md: '16px',
-      lg: '24px',
-      xl: '32px',
-    },
-    borderRadius: {
-      small: '4px',
-      medium: '8px',
-      large: '16px',
-    },
     toast: {
       success: '#4BB543',
       error: '#FF5F56',
       info: '#349886',
       warning: '#F0A202',
       text: '#FFFFFF',
-    },    
-  }
+    },
+  },
+
+  spacing: {
+    xs: '4px',
+    sm: '8px',
+    md: '16px',
+    lg: '24px',
+    xl: '32px',
+  },
+
+  borderRadius: {
+    small: '4px',
+    medium: '8px',
+    large: '16px',
+  },
+
+  // 🆕 Added header section
+  header: {
+    background: '#663090',
+    text: '#FFFFFF',
+    hoverText: '#f0e8ff',
+    hoverBg: '#6a0dad',
+    activeText: '#ffd700',
+    underline: '#ffd700',
+    iconColor: '#FFFFFF',
+    height: '95px',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+  },
 };

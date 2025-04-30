@@ -14,6 +14,8 @@ import {
   FormGroup,
   SubmitButton,
 } from "./ContactUs.styles";
+import { Button } from "../../components/Button/Button";
+
 
 const ContactUs = () => {
   const { darkMode } = useTheme();
@@ -39,27 +41,39 @@ const ContactUs = () => {
           <IconWrapper><FaQuestionCircle size={50} /></IconWrapper>
           <h5>Have Questions?</h5>
           <p>Check out our FAQ.</p>
-          <a href="/faq" className="btn btn-primary">Go →</a>
+          <Button as="a"
+            href="/faq"
+            title="Call us at +91 94038 83381"
+            $outline
+          >
+            Go →
+          </Button>
         </ContactCard>
 
         <ContactCard darkMode={darkMode}>
           <IconWrapper><FaPhone size={50} /></IconWrapper>
           <h5>Call Us</h5>
           <p>We are here to help you pick the right product.</p>
-          <a
+          <Button as="a"
             href="tel:+919403883381"
-            className="btn btn-primary"
             title="Call us at +91 94038 83381"
+            $outline
           >
             Call Now →
-          </a>
+          </Button>
         </ContactCard>
 
         <ContactCard darkMode={darkMode}>
           <IconWrapper><FaEnvelope size={50} /></IconWrapper>
           <h5>Write to Us</h5>
           <p>Send us a message using the contact form.</p>
-          <button className="btn btn-primary" onClick={() => setShowModal(true)}>Go →</button>
+          <Button as="a"
+            onClick={() => setShowModal(true)}
+            title="Call us at +91 94038 83381"
+            $outline
+          >
+            Go →
+          </Button>
         </ContactCard>
 
       </CardGrid>

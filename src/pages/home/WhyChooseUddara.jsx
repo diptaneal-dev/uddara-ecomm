@@ -7,11 +7,11 @@ import {
   FeatureRow,
   FeatureCol,
   FeatureCard,
+  UddaraHeading,
   IconWrapper,
   CardTitle,
   CardDescription,
 } from "./WhyChooseUddara.styles";
-import { Heading } from "../../components/Typography/Heading";
 
 const features = [
   {
@@ -26,14 +26,14 @@ const features = [
     title: "Quality Assurance",
     description:
       "We adhere to strict quality control measures to ensure the best products.",
-    colorKey: "navy",
+    colorKey: "purple",
   },
   {
     icon: UserCheck,
     title: "Customer-Centric Approach",
     description:
       "We build long-term relationships with our customers by providing personalized service and support.",
-    colorKey: "grey",
+    colorKey: "purple",
   },
 ];
 
@@ -43,7 +43,7 @@ const WhyChooseUddara = () => {
   return (
     <Section>
       <div className="container">
-        <Heading>Why Choose Uddara?</Heading>
+        <UddaraHeading>Why Choose Uddara?</UddaraHeading>
         <FeatureRow>
           {features.map((feature, index) => {
             const IconComponent = feature.icon;

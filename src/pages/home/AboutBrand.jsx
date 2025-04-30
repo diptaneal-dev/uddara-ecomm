@@ -38,7 +38,7 @@ const AboutBrand = () => {
           </LeftCol>
 
           <RightCol>
-            <img src="/images/uddara_experience.webp" alt="Happy Customer! Healthy Customer!" />
+            <img src="/images/AboutUDDARA.png" alt="Happy Customer! Healthy Customer!" />
           </RightCol>
         </Row>
       </div>

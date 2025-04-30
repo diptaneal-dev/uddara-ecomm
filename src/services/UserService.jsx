@@ -87,19 +87,30 @@ const userService = {
         return userData ? JSON.parse(userData) : null;
     },
 
-    sendInvitation: async ({ email, role, scopeType, scopeId, expiration }) => {
+    sendInvitation: async (form) => {
+        const {
+            email,
+            role,
+            scopeType,
+            scopeId,
+            expiration,
+            domain
+        } = form;
+    
         const payload = {
             email,
             role,
             scopeType,
             scopeId,
+            domain,
             expiration: expiration || null
         };
+    
         const response = await API.post(`${USER_CONTEXT_API_URL}/invite`, payload);
         console.log("Incoming response:", response);
         return response.data;
     },
-
+        
     toggleUserStatus: async (userId, isActive) => {
         const response = await API.patch(`${API_URL}/${userId}/status`, { isActive });
         return response.data;

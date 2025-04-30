@@ -1,26 +1,38 @@
 import React, { useState, useEffect } from "react";
 import clientService from "../../services/ClientService";  
+import { useUserContext } from "../../hooks/UserContext";
 
 const ClientManagement = () => {
   const [clients, setClients] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const { user, isAuthenticated, currentStoreId } = useUserContext();
 
   useEffect(() => {
-    fetchClients();
-  }, []);
-
-  const fetchClients = async () => {
+    if (currentStoreId) {
+      fetchClients(currentStoreId);
+    }
+  }, [currentStoreId]);
+  
+  const fetchClients = async (storeId) => {
     try {
-      const data = await clientService.fetchClients();  
-      setClients(data);
+      const data = await clientService.fetchClients(storeId);
+      console.log("Fetched client data:", data);
+      
+      const sanitized = data.map(client => ({
+        ...client,
+        fullName: `${client.firstName ?? ""} ${client.lastName ?? ""}`.trim(),
+        roleAssignments: undefined // prevent infinite nesting
+      }));
+  
+      setClients(sanitized);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching clients:", error);
       setLoading(false);
     }
   };
-
+    
   const handleToggleStatus = async (clientId, currentStatus) => {
     try {
       await clientService.toggleClientStatus(clientId, !currentStatus);

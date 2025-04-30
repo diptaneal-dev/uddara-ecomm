@@ -19,7 +19,7 @@ export const Heading = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: ${({ theme }) => theme.colors.navy};
+  color: ${({ theme }) => theme.colors.purple};
   text-align: left;
 `;
 

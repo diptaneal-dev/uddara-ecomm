@@ -46,11 +46,11 @@ const BlogsSummarySection = () => {
         <Section>
             <Container>
                 <Header>
-                    <Heading size="medium" as="h2" margin="0 0 0.5rem 0">
+                    <Heading size="medium" as="h2" $margin="0 0 0.5rem 0">
                         In the blogs
                     </Heading>
 
-                    <Button variant="primary" outline onClick={() => navigate("/blogs")}>
+                    <Button $variant="primary" $outline onClick={() => navigate("/blogs")}>
                         View All
                     </Button>
                 </Header>
@@ -60,7 +60,7 @@ const BlogsSummarySection = () => {
                         <BlogCard key={blog.id} onClick={() => navigate(`/blog/${blog.id}`)}>
                             <BlogImage src={blog.coverImageUrl} alt={blog.title} />
                             <BlogContent>
-                                <Heading size="small" as="h5" margin="0 0 0.5rem 0">
+                                <Heading size="small" as="h5" $margin="0 0 0.5rem 0">
                                     {blog.title}
                                 </Heading>
                                 <p>{extractText(blog.content).substring(0, 100)}...</p>

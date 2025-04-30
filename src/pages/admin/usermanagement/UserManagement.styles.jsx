@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react';
 
 export const Container = styled.div`
   max-width: 600px;
@@ -102,8 +103,6 @@ export const CardWrapper = styled.div`
 `;
 
 // --- SelectBox Wrapper with Label Support ---
-
-import React from 'react';
 
 const SelectWrapper = styled.div`
   display: flex;

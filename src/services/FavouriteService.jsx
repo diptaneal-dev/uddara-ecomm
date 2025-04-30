@@ -11,7 +11,7 @@ const favoriteService = {
                 const guestFavorites = JSON.parse(sessionStorage.getItem("favorites")) || [];
                 return guestFavorites;
             }
-
+            console.log("Fetching favourite for userId", userId);
             const response = await API.get(`${API_URL}/${userId}`);
             return response.data; // Returns list of favorite products
         } catch (error) {

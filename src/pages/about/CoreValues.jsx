@@ -20,19 +20,19 @@ const coreValues = [
     icon: <ShieldCheck size={40} />,
     title: "Integrity",
     description: "We conduct our business with honesty and transparency.",
-    color: "#156082",
+    color: "#BF437E",
   },
   {
     icon: <Users size={40} />,
     title: "Customer Satisfaction",
     description: "We prioritize our customers' needs and strive to exceed their expectations.",
-    color: "#888A89",
+    color: "#BF437E",
   },
   {
     icon: <CheckCircle size={40} />,
     title: "Sustainability",
     description: "We are committed to sustainable and eco-friendly practices.",
-    color: "#2E4F35",
+    color: "#BF437E",
   },
 ];
 

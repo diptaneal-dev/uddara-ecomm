@@ -15,7 +15,7 @@ export const Row = styled.div`
 
 export const LeftCol = styled.div`
   flex: 1 1 50%;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.green};
   height: 350px;
   padding: 40px;
   color: ${({ theme }) => theme.colors.black};
@@ -36,7 +36,7 @@ export const RightCol = styled.div`
   img {
     width: 100%;
     height: 350px;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   @media (max-width: 768px) {

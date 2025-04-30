@@ -54,6 +54,35 @@ export const CartItem = styled.section`
   }
 `;
 
+export const CartActionTray = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  .quantity-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-width: 2rem;
+    text-align: center;
+    color: ${({ theme }) => theme.colors.black};
+  }
+
+  .action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+
+    .label {
+      font-size: 0.7rem;
+      color: ${({ theme }) => theme.colors.greyText || '#888'};
+    }
+  }
+`;
+
 export const SummaryBox = styled.div`
   background-color: ${({ theme, darkMode }) =>
     darkMode ? theme.colors.grey : theme.colors.white};

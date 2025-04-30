@@ -1,0 +1,141 @@
+/* ===== HERO CAPTIONS SYSTEM ===== */
+
+/* 🧱 Base Caption Block */
+.caption {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+    animation: fadeInUp 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+}
+
+/* 📝 Text Variants */
+.caption-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.caption-sub {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.caption-cta {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-transform: none;
+    letter-spacing: normal;
+    align-self: flex-start;
+}
+
+.caption-cta:hover {
+    background-color: #e6ac00;
+}
+
+/* 🌐 CENTERED WIDE */
+.caption-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+}
+
+/* 👉 RIGHT ALIGNED */
+.caption-right {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    text-align: right;
+    align-items: flex-end;
+    max-width: 400px;
+}
+
+/* 👈 LEFT ALIGNED */
+.caption-left {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    text-align: left;
+    align-items: flex-start;
+    max-width: 400px;
+}
+
+/* Optional offset position */
+.caption-offset-top {
+    top: 20%;
+    transform: translateY(0);
+}
+
+/* 🌑 Dark Theme (default) */
+.caption-dark {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  /* ☀️ Light Theme */
+  .caption-light {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+  }
+  
+  .caption-light .caption-cta {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .caption-light .caption-cta:hover {
+    background-color: #333;
+  }
+  
+
+/* 📱 RESPONSIVE for Mobile */
+@media (max-width: 768px) {
+
+    .caption,
+    .caption-center,
+    .caption-right,
+    .caption-left {
+        top: auto;
+        bottom: 10%;
+        left: 5%;
+        right: 5%;
+        transform: none;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .caption-heading {
+        font-size: 2rem;
+    }
+
+    .caption-sub {
+        font-size: 1rem;
+    }
+
+    .caption-cta {
+        align-self: center;
+        font-size: 0.9rem;
+    }
+}

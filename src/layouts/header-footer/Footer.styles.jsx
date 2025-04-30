@@ -208,9 +208,9 @@ export const NewsletterColumn = styled(FooterColumn)`
     button {
       width: 40px;
       height: 40px;
-      border-radius: 8px; // <-- square with soft corners
+      border-radius: 8px;
       border: none;
-      background-color: ${({ theme }) => theme.colors.teal};
+      background-color: ${({ theme }) => theme.colors.gold};
       color: white;
       font-size: 1rem;
       cursor: pointer;
@@ -229,10 +229,18 @@ export const NewsletterColumn = styled(FooterColumn)`
     form {
       flex-direction: column;
       align-items: stretch;
+      gap: 0.75rem;
+
+      input[type="email"] {
+        width: 100%;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.85rem;
+      }
 
       button {
         width: 100%;
-        height: 40px;
+        height: 38px;
+        font-size: 0.9rem;
         border-radius: 6px;
       }
     }

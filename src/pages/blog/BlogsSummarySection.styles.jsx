@@ -54,8 +54,9 @@ export const Heading = styled.h2`
   line-height: ${({ theme }) => theme.typography.headingMedium.lineHeight};
   letter-spacing: ${({ theme }) => theme.typography.headingMedium.letterSpacing};
   color: ${({ theme }) => theme.colors.purple}; // optional override
-  margin: ${({ margin }) => margin || '0'};
+  margin: ${({ $margin }) => $margin || '0'};
 `;
+
 
 export const BlogImage = styled.img`
   width: 100%;

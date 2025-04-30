@@ -7,40 +7,39 @@ import {
   NavList,
   NavItem,
   NavLinkItem
-} from "./Navbar.styles";
+} from "./HeaderLayout.styles";
 
 const Navbar = ({ menuItems = [], isAuthenticated, user }) => {
   const location = useLocation();
   const { isAnyAdmin } = useUserContext();
-
   const isAdmin = isAuthenticated && isAnyAdmin();
-  const mergedMenuItems = [...menuItems];
-  
+
+  // Combine default menu items with conditional admin
+  const fullMenu = [...menuItems];
+  if (isAdmin) {
+    fullMenu.push({ path: "/admin", label: "Admin" });
+  }
+
   return (
     <NavContainer>
       <NavList>
-        {mergedMenuItems.map(({ path, label }) => (
-          <NavItem key={path}>
-            <Link to={path} style={{ textDecoration: 'none' }}>
+        {fullMenu.map(({ path, label }) => {
+          const isActive = location.pathname === path;
+
+          return (
+            <NavItem key={path}>
               <NavLinkItem
-                className={location.pathname === path ? "active-link" : ""}
+                to={path}
+                as={Link}
+                className={isActive ? "active-link" : ""}
+                $underlineOnActive
+                aria-current={isActive ? "page" : undefined}
               >
                 {label}
               </NavLinkItem>
-            </Link>
-          </NavItem>
-        ))}
-        {isAdmin && (
-          <NavItem>
-            <Link to="/admin" style={{ textDecoration: 'none' }}>
-              <NavLinkItem
-                className={location.pathname === "/admin" ? "active-link" : ""}
-              >
-                Admin
-              </NavLinkItem>
-            </Link>
-          </NavItem>
-        )}
+            </NavItem>
+          );
+        })}
       </NavList>
     </NavContainer>
   );

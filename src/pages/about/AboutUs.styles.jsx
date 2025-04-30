@@ -10,6 +10,22 @@ export const Container = styled.div`
     darkMode ? theme.colors.white : theme.colors.black};
 `;
 
+export const PurpleCard = styled.div`
+  background-color: #6a0dad; /* purple */
+  border-radius: 1.5rem;
+  padding: 2rem;
+  color: white;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+`;
+
+export const BoxParagraph = styled.div`
+  line-height: 1.7;
+  text-align: justify;
+  overflow: hidden; /* Ensures it clears float properly if needed */
+`;
+
+
 export const IntroSection = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -28,15 +44,21 @@ export const IntroText = styled.div`
   flex: 1;
 `;
 
+// In AboutUs.styles.js
 export const IntroImage = styled.img`
-  flex: 1;
-  width: 30%;
-  max-width: 100%;
+  float: right;
+  width: 300px;
   height: auto;
-  border-radius: 10px;
+  margin: 0 0 1rem 2rem;
+  border-radius: 1rem;
+  object-fit: cover;
 
   @media (max-width: 768px) {
+    float: none;
+    display: block;
+    margin: 1.5rem auto;
     width: 100%;
+    max-width: 100%;
   }
 `;
 

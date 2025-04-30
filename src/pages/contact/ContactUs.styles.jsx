@@ -39,7 +39,7 @@ export const ContactCard = styled.div`
 
 export const IconWrapper = styled.div`
   margin-bottom: 1rem;
-  color: ${({ theme }) => theme.colors.pink};
+  color: ${({ theme }) => theme.colors.purple};
 `;
 
 export const ModalOverlay = styled.div`
@@ -118,7 +118,7 @@ export const FormGroup = styled.div`
 `;
 
 export const SubmitButton = styled.button`
-  background-color: ${({ theme }) => theme.colors.buttonPrimary};
+  background-color: ${({ theme }) => theme.colors.navy};
   color: ${({ theme }) => theme.colors.buttonText};
   padding: 0.75rem 1.5rem;
   font-weight: bold;

@@ -59,7 +59,7 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faInstagram} />
                 </IconCircle>
               </a>
-              <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer">
+              <a href="https://wa.me/919403883381" target="_blank" rel="noreferrer">
                 <IconCircle>
                   <FontAwesomeIcon icon={faWhatsapp} />
                 </IconCircle>

@@ -14,14 +14,14 @@ const statements = [
     title: "Mission Statement",
     description:
       "To provide top-quality products to our global customers, ensuring the highest standards of quality, sustainability, and customer service.",
-    color: "#BF437E", // Magenta from theme
+    color: "#BF437E",
   },
   {
     icon: <Globe size={50} />,
     title: "Vision Statement",
     description:
-      "To be a leading exporter in the industry, known for our quality products, ethical business practices, and exceptional customer service.",
-    color: "#156082", // Navy from theme
+      "To be a leading retailer, supplier and exporter in the industry, known for our quality products, ethical business practices, and exceptional customer service.",
+    color: "#BF437E", 
   },
 ];
 

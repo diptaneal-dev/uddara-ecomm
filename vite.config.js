@@ -5,7 +5,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    port: 5173,
+    port: 6090,
+    hmr: true,
     strictPort: true,
     cors: {
       origin: [
@@ -21,7 +22,9 @@ export default defineConfig({
       'admin.uddara.com',
       'www.uddara.com',
       'whouse.uddara.com',
-      // Add other dev domains here
-    ],
+      'store1.uddara.com',    
+      'store2.uddara.com',    
+      'register.uddara.com',  
+    ],    
   },
 });

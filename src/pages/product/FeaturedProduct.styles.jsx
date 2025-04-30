@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  background-color: ${({ theme }) => theme.colors.backgroundSecondary}; // ✅ Secondary background
+  background-color: ${({ theme }) => theme.colors.white}; 
   padding: 3rem 0;
 `;
 

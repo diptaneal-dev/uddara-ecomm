@@ -2,13 +2,13 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  background-color: ${({ theme }) => theme.colors.seashell};
   padding: 3rem 0;
 `;
 
 export const Heading = styled.h2`
-  text-align: left;
-  color: ${({ theme }) => theme.colors.purple};
+  text-align: center;
+  color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.typography.fontPrimary};
   font-size: ${({ theme }) => theme.typography.headingMedium.fontSize};
   font-weight: ${({ theme }) => theme.typography.headingMedium.fontWeight};

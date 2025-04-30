@@ -33,7 +33,6 @@ API.interceptors.response.use(
     });
 
     if (!error.response) {
-      toast.error("⚠️ Network error: Server unreachable.");
       return Promise.reject(error);
     }
 
@@ -41,6 +40,7 @@ API.interceptors.response.use(
 
     // 🔐 Handle 401 Unauthorized (attempt token refresh)
     if (error.response.status === 401) {
+
       if (originalRequest._retry) {
         userService.logout();
         window.location.href = "/login";
@@ -83,7 +83,6 @@ API.interceptors.response.use(
         message.includes("access denied");
 
       if (isBusiness403) {
-        toast.error(`🚫 ${message}`);
         return Promise.reject(error);
       }
 

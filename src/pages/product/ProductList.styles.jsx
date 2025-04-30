@@ -5,9 +5,14 @@ import { Button } from '../../components/Button/Button';
 export const PageWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundPrimary};
   min-height: 100vh;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
   color: ${({ theme, $darkMode }) => ($darkMode ? theme.colors.white : theme.colors.black)};
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
 `;
+
 
 export const Title = styled.h2`
   text-align: center;
@@ -26,64 +31,22 @@ export const CategoryFilter = styled.div`
   margin-bottom: 1.5rem;
 `;
 
+
 export const ProductGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+  gap: ${({ theme }) => theme.spacing.lg};
+  width: 100%;
+  padding-bottom: ${({ theme }) => theme.spacing.md};
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
-export const ProductCard = styled.div`
-  flex: 1 1 30%;
-  min-width: 250px;
-  background-color: ${({ theme }) => theme.colors.white};
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-  }
-
-img {
-  aspect-ratio: 112 / 95;
-  object-fit: contain;
+export const CardGridWrapper = styled.div`
   width: 100%;
-  height: auto;
-}
-
-
-  .card-body {
-    padding: 1rem;
-    text-align: center;
-  }
-
-  h5 {
-    font-family: ${({ theme }) => theme.typography.fontPrimary};
-    font-size: 1.1rem;
-    margin: 0.75rem 0;
-    color: ${({ theme }) => theme.colors.black};
-  }
-
-  .price {
-    font-weight: bold;
-    color: ${({ theme }) => theme.colors.pink};
-  }
-
-  .old-price {
-    text-decoration: line-through;
-    color: ${({ theme }) => theme.colors.grey};
-    margin-right: 0.5rem;
-  }
-
-  .badge {
-    background-color: ${({ theme }) => theme.colors.teal};
-    color: ${({ theme }) => theme.colors.white};
-    margin-left: 0.5rem;
-    font-size: 0.8rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 8px;
-  }
+  padding: ${({ theme }) => theme.spacing.md};
 `;
 
 export const CartPanel = styled.div`
@@ -131,7 +94,6 @@ export const CartFooter = styled.div`
   }
 `;
 
-
 // 🎯 1. Teal Filter Button
 export const FilterButton = styled(Button)`
   ${({ theme, $outline }) =>
@@ -160,13 +122,106 @@ export const FilterButton = styled(Button)`
   padding: 0.25rem 0.75rem;
 `;
 
-// 🎯 2. Navy Cart Navigation Button
+// 2. Navy Cart Navigation Button
 export const CartNavButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.navy};
+  background-color: ${({ theme }) => theme.colors.gold};
   color: ${({ theme }) => theme.colors.white};
-  border: 2px solid ${({ theme }) => theme.colors.navy};
-  border-radius: 100px;
+  border: 1px solid ${({ theme }) => theme.colors.gold};
+  border-radius: 50px;
   &:hover {
     opacity: 0.9;
   }
 `;
+
+export const SidebarFilters = styled.div`
+  width: 220px;
+  flex-shrink: 0;
+  background-color: ${({ theme }) => theme.colors.white || "#f7f7f7"};
+  border-right: none;
+  height: 100%;
+  position: relative;
+  left: 0; 
+  padding: 20px;
+  @media (max-width: 768px) {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+  }
+`;
+
+export const FilterGroup = styled.div`
+  margin-bottom: 1.5rem;
+`;
+
+export const FilterLabel = styled.div`
+  font-weight: bold; /* 👈 strong font */
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: ${({ theme }) => theme.colors.primary || "#333"};
+`;
+
+export const FilterOption = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: ${({ theme }) => theme.colors.text || "#333"};
+
+  input[type="checkbox"] {
+    accent-color: ${({ theme }) => theme.colors.primary || "#6b46c1"};
+    cursor: pointer;
+  }
+`;
+
+export const MobileFilterToggle = styled.button`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: ${({ theme }) => theme.colors.primary};
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+`;
+
+export const ClearFilterButton = styled.button`
+  margin-bottom: 1rem;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #444;
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+`;
+
+export const ContentLayout = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+export const ProductResults = styled.div`
+  flex: 1;
+  min-width: 0;
+`;
+

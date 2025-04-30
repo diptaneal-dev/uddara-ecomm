@@ -2,16 +2,16 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  background-color: #FAF6F1;
+  background-color: ${({ theme }) => theme.colors.white};
   padding: 60px 0;
   text-align: center;
 `;
 
-export const Heading = styled.h2`
+export const UddaraHeading = styled.h2`
   font-family: ${({ theme }) => theme.typography.fontPrimary};
   font-weight: ${({ theme }) => theme.typography.headingMedium.fontWeight};
   font-size: ${({ theme }) => theme.typography.headingMedium.fontSize};
-  color: ${({ theme }) => theme.colors.purple};
+  color: ${({ theme }) => theme.colors.white};
   margin-bottom: 40px;
 `;
 
@@ -29,7 +29,7 @@ export const FeatureCol = styled.div`
 `;
 
 export const FeatureCard = styled.div`
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.seashell};
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -53,7 +53,7 @@ export const IconWrapper = styled.div`
 `;
 
 export const CardTitle = styled.h4`
-  font-family: ${({ theme }) => theme.typography.fontPrimary};
+  font-family: ${({ theme }) => theme.typography.white};
   font-weight: 600;
   font-size: 1.25rem;
   margin-bottom: 10px;

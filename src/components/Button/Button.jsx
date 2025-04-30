@@ -29,6 +29,25 @@ const sizeStyles = {
     height: 52px;
     min-width: 160px;
   `,
+  squareSm: css`
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 0.85rem;
+`,
+squareMd: css`
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 1rem;
+`,
+squareLg: css`
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  font-size: 1.2rem;
+`,
+
 };
 
 const variantStyles = {
@@ -48,19 +67,65 @@ const variantStyles = {
     &:hover {
       opacity: 0.9;
     }`,
+
+  iconSquare: (theme, props) => css`
+    background-color: ${props.$bg || 'transparent'};
+    color: ${props.color || theme.colors.navy};
+    border: 2px solid ${props.borderColor || 'transparent'};
+    border-radius: 8px; // or 50% if you want circular instead
+    padding: 0;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: ${theme.colors.purple || '#f1f1f1'};
+    color: ${theme.colors.white};
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px ${theme.colors.pink}33;
+  }
+
+  svg {
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+  }
+`,
+
   icon: (theme, props) => css`
-    background-color: transparent;
+    background-color: ${props.$bg || theme.colors.backgroundTertiary || 'transparent'};
     color: ${props.color || theme.colors.pink};
     border: none;
-    padding: 0.25rem;
-    height: auto;
-    min-width: auto;
-    font-size: 1rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
 
-    &:hover {
-      opacity: 0.8;
-      transform: scale(1.1);
-    }`,
+  &:hover {
+    background-color: ${theme.colors.backgroundHover || '#f1f1f1'};
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px ${theme.colors.pink}33;
+  }
+
+  svg {
+    pointer-events: none;
+  }
+`
 };
 
 export const Button = styled.button`
@@ -73,6 +138,7 @@ export const Button = styled.button`
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  text-decoration: none;
 
   ${({ $size = 'md' }) => sizeStyles[$size] || sizeStyles.md};
 

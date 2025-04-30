@@ -6,9 +6,9 @@ const CLIENT_API_URL = `${API_GATEWAY_URL}/api/clients`;
 const clientService = {
 
     // Fetch all clients (Users with role USER and store_id = 33)
-    fetchClients: async () => {
+    fetchClients: async (storeId) => {
         try {
-            const response = await API.get(`${CLIENT_API_URL}/all?storeId=33`);
+            const response = await API.get(`${CLIENT_API_URL}/all?storeId=${storeId}`);
             console.log("✅ Clients Fetched:", response.data);
             return response.data;
         } catch (error) {
@@ -16,7 +16,7 @@ const clientService = {
             throw error.response?.data || "Failed to fetch clients";
         }
     },
-
+    
     // Fetch a specific client by ID
     fetchClientById: async (clientId) => {
         try {

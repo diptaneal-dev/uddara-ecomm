@@ -1,0 +1,50 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ClientHeader, useHeaderConfig, LogoContainer } from 'react-vector'; // 👈 import it
+import HeaderIcons from './HeaderIcons';
+import { useUserContext } from '../../hooks/UserContext';
+
+const navLinks = [
+  { href: '/home', label: 'Home' },
+  { href: '/products', label: 'Shop' },
+  { href: '/about', label: 'About' },
+  { href: '/blog/list', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/admin', label: 'Admin Panel', allowedRoles: ['admin'] },
+];
+
+const UddaraHeader = () => {
+  const navigate = useNavigate();
+  const { user, isAuthenticated } = useUserContext() || {};
+
+  const userRoles = Array.isArray(user?.roles) && user.roles.length > 0
+    ? user.roles
+    : ['guest'];
+
+  const header = useHeaderConfig({
+    logo: (
+      <LogoContainer
+        src="/images/Uddara_logo.png"
+        alt="Uddara Logo"
+        size="64px"                // 📏 Maintain good size
+        backgroundColor="#ffffff"  // 🎨 White background
+        shape="circle"             // 🛞 Circle shape
+        encapsulate={true}         // ✅ Put it inside a circle
+      />
+    ),
+    logoHref: '/',
+    userRoles,
+    navLinks,
+    iconTray: <HeaderIcons isAuthenticated={isAuthenticated} user={user} />,
+    showSearch: true,
+    searchPlaceholder: 'Search products...',
+    layoutDirection: 'row',
+    spacing: '1rem',
+    position: 'sticky',
+    mobileMenuBehavior: 'slide',
+  });
+
+  return <ClientHeader {...header} />;
+};
+
+export default UddaraHeader;

@@ -2,13 +2,13 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faBookmark, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { CartContext } from '../../context/CartContext';
-import { useTheme } from '../../context/ThemeContext';
 import {
   PageWrapper,
   Heading,
   CartItem,
+  CartActionTray,
   SummaryBox,
   StickyBar,
 } from './Cart.styles';
@@ -21,10 +21,17 @@ const formatCurrency = (amount, currency) =>
   }).format(amount);
 
 const Cart = () => {
-  const { cart, addToCart, removeFromCart } = useContext(CartContext);
-  const { darkMode } = useTheme();
+  const { cart, addToCart, removeFromCart, deleteFromCart } = useContext(CartContext);
   const navigate = useNavigate();
+  const { saveForLater } = useContext(CartContext);
 
+  const handleSaveForLater = (item) => {
+    saveForLater(item); 
+    removeFromCart(item.id);
+    toast.info(`${item.name} saved for later.`);
+  };
+
+  console.log("Cart INBOUND is:", cart);
   const [promoCode, setPromoCode] = useState('');
   const [discount, setDiscount] = useState(0);
   const [loadingItemId, setLoadingItemId] = useState(null);
@@ -32,7 +39,7 @@ const Cart = () => {
   const cartCurrency = cart[0]?.currency || 'INR';
 
   const increaseQuantity = (productId) => {
-    const item = cart.find((i) => i.id === productId);
+    const item = cart.find((i) => i.productId === productId);
     if (item) {
       setLoadingItemId(productId);
       addToCart(item);
@@ -70,7 +77,7 @@ const Cart = () => {
   };
 
   return (
-    <PageWrapper darkMode={darkMode}>
+    <PageWrapper>
       <Heading>My Cart</Heading>
 
       {cart.length === 0 ? (
@@ -89,7 +96,7 @@ const Cart = () => {
               style={{
                 fontSize: '1.5rem',
                 fontWeight: 600,
-                color: darkMode ? '#ccc' : '#444',
+                color: '#444',
               }}
             >
               🛒 Your cart is empty
@@ -100,19 +107,20 @@ const Cart = () => {
           </div>
 
           <div style={{ width: '100%', maxWidth: '250px', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <Button variant="secondary" fullWidth onClick={() => navigate('/products')}>
+            <Button $variant="secondary" onClick={() => navigate('/products')}>
               Browse Products
             </Button>
-            <Button variant="outline" fullWidth onClick={() => navigate('/favorites')}>
+            <Button $variant="outline" onClick={() => navigate('/favorites')}>
               View Wishlist
             </Button>
           </div>
         </div>
       ) : (
         <div className="row">
+
           <div className="col-lg-8">
             {cart.map((item) => (
-              <CartItem key={item.id} darkMode={darkMode}>
+              <CartItem key={item.id}>
                 <div className="col-3">
                   <img src={item.image} alt={item.name} />
                 </div>
@@ -120,30 +128,61 @@ const Cart = () => {
                   <h5>{item.name}</h5>
                   <p>{item.description}</p>
 
-                  <div className="quantity-control">
-                    <Button size="sm" variant="secondary" outline onClick={() => decreaseQuantity(item.id)}>
-                      -
-                    </Button>
-                    <span>{item.quantity}</span>
+                  <CartActionTray>
+                    {/* Decrease */}
                     <Button
-                      size="sm"
-                      variant="secondary"
-                      outline
-                      disabled={loadingItemId === item.id}
-                      onClick={() => increaseQuantity(item.id)}
+                      $variant="iconSquare"
+                      $size="squareMd"
+                      $outline
+                      title="Decrease quantity"
+                      onClick={() => decreaseQuantity(item.id)}
                     >
-                      {loadingItemId === item.id ? <span className="spinner-border spinner-border-sm" /> : '+'}
+                      <FontAwesomeIcon icon={faMinus} />
                     </Button>
-                  </div>
 
-                  {/* ✅ Bin moved below and centered */}
-                  <div style={{ marginTop: '0.5rem', textAlign: 'center' }}>
-                    <Button variant="icon" size="sm" onClick={() => removeFromCart(item.id)} title="Remove item">
-                      <FontAwesomeIcon icon={faTrashAlt} />
+                    {/* Quantity Text */}
+                    <span className="quantity-text">{item.quantity}</span>
+
+                    {/* Increase */}
+                    <Button
+                      $variant="iconSquare"
+                      $size="squareMd"
+                      title="Increase quantity"
+                      $outline
+                      onClick={() => increaseQuantity(item.id)}
+                      disabled={loadingItemId === item.id}
+                    >
+                      {loadingItemId === item.id ? (
+                        <span className="spinner-border spinner-border-sm" />
+                      ) : (
+                        <FontAwesomeIcon icon={faPlus} />
+                      )}
                     </Button>
-                    <div style={{ fontSize: '0.75rem', color: '#888' }}>Remove</div>
-                  </div>
 
+                    {/* Remove */}
+                    <div className="action" style={{ float: "right", marginLeft: "40px" }}>
+                    <Button
+                        $variant="iconSquare"
+                        $size="squareSm"
+                        title="Remove item"
+                        onClick={() => deleteFromCart(item.id)}
+                      >
+                        <FontAwesomeIcon icon={faTrashAlt} />
+                      </Button>
+                    </div>
+
+                    {/* Save */}
+                    <div className="action">
+                      <Button
+                        $variant="iconSquare"
+                        $size="squareSm"
+                        title="Save for later"
+                        onClick={() => handleSaveForLater(item)}
+                      >
+                        <FontAwesomeIcon icon={faBookmark} />
+                      </Button>
+                    </div>
+                  </CartActionTray>
 
                   <p className="price">{formatCurrency(item.price, item.currency)}</p>
                 </div>
@@ -152,7 +191,7 @@ const Cart = () => {
           </div>
 
           <div className="col-lg-4">
-            <SummaryBox darkMode={darkMode}>
+            <SummaryBox>
               <h4>Cart Summary</h4>
               <div className="line">
                 <span>Subtotal ({totalItems} items):</span>
@@ -177,7 +216,7 @@ const Cart = () => {
               <p className="final-total">
                 You Pay: {formatCurrency(finalTotal, cartCurrency)}
               </p>
-              <Button variant="secondary" fullWidth onClick={handleCheckout}>
+              <Button $variant="secondary" onClick={handleCheckout}>
                 Proceed to Checkout
               </Button>
             </SummaryBox>
@@ -187,12 +226,12 @@ const Cart = () => {
 
       {/* Mobile Only Summary Bar */}
       {cart.length > 0 && (
-        <StickyBar darkMode={darkMode} className="d-lg-none">
+        <StickyBar className="d-lg-none">
           <div className="d-flex justify-content-between align-items-center mb-2">
             <strong>Total:</strong>
             <span>{formatCurrency(finalTotal, cartCurrency)}</span>
           </div>
-          <Button variant="primary" fullWidth onClick={handleCheckout}>
+          <Button $variant="primary" onClick={handleCheckout}>
             Checkout
           </Button>
         </StickyBar>

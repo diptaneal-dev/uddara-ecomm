@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-  padding: 60px 0;
+  padding: 20px 0;
   text-align: center;
 `;
 

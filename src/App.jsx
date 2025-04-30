@@ -8,7 +8,7 @@ import Header from './layouts/header-footer/Header';
 import Footer from './layouts/header-footer/Footer';
 import Register from './layouts/register/Register';
 import SignInPage from './layouts/signin/SignInPage';
-
+import UddaraBanner from './components/Banner/UddaraBanner';
 
 import LandingPage from './pages/landingPage/LandingPage';
 import AboutUs from './pages/about/AboutUs';
@@ -73,6 +73,9 @@ import CategoryList from './pages/admin/refdatamanagement/CategoryList';
 import BulkUploadCategories from './pages/admin/refdatamanagement/BulkUploadCategories';
 import CreateUserForm from './pages/admin/usermanagement/CreateUserForm';
 import UserContextView from './hooks/UserContextView';
+import WhyFoxnuts from './pages/blogstatic/WhyFoxnuts';
+import WhyMillets from './pages/blogstatic/WhyMillets';
+import UddaraHeader from './layouts/header-footer/UddaraHeader';
 
 const App = () => {
     const { darkMode } = useTheme();
@@ -82,7 +85,8 @@ const App = () => {
 
     return (
         <div className={darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}>
-            <Header />
+            <UddaraBanner />
+            <UddaraHeader />
             <main className={`container-fluid px-0 py-0`} style={{ backgroundColor: "#FFF" }}>
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
@@ -153,6 +157,8 @@ const App = () => {
                     <Route path="/checkout" element={<CheckoutPage />} />
                     <Route path="/place-order" element={<PlaceOrderPage />} />
                     <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
+                    <Route path="/blog/foxnut-benefits" element={<WhyFoxnuts />} />
+                    <Route path="/blog/millet-benefits" element={<WhyMillets />} />
 
                     <Route path="/store/:id" element={<StoreDetailsPage />} />
 

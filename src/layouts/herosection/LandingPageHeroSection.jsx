@@ -1,20 +1,23 @@
-// src/layouts/herosection/LandingPageHeroSection.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   HeroSection,
-  HeroFrame,
+  HeroOverlay,
+  HeroFrame, // ✅ Use this instead
   HeroTopSection,
   HeroHeading,
   HeroSubheading,
   HeroBottomSection,
-  HeroImage
 } from './HeroSection.Styles';
 
 import { Button } from '../../components/Button/Button';
 
 const LandingPageHeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <HeroSection>
+      <HeroOverlay />
       <HeroFrame>
         <HeroTopSection>
           <HeroHeading>
@@ -26,27 +29,14 @@ const LandingPageHeroSection = () => {
         </HeroTopSection>
 
         <HeroBottomSection>
-          <Button
-            $variant="primary"
-            onClick={() => window.location.href = '/explore-products'}
-          >
+          <Button $variant="primary" onClick={() => navigate('/explore')}>
             Explore Products
           </Button>
-
-          <Button
-            $variant="secondary"
-            onClick={() => window.location.href = '/shop'}
-          >
+          <Button $variant="secondary" onClick={() => navigate('/products')}>
             Shop Now
           </Button>
-
         </HeroBottomSection>
       </HeroFrame>
-
-      <HeroImage
-        src="/images/uddara_herosection.webp"
-        alt="Global Business Expansion"
-      />
     </HeroSection>
   );
 };
