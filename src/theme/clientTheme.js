@@ -12,6 +12,8 @@ export const clientTheme = {
       amber: '#C58520',
       green: '#69945e',
       blue: '#1f759e',
+      gunmetal: '#8D918D',
+      charcoal: '#36454F',
   
       // Buttons
       buttonPrimary: '#BF437E',
@@ -37,10 +39,12 @@ export const clientTheme = {
     typography: {
       fontPrimary: "'Montserrat', sans-serif",
       fontSecondary: "'Open Sans', sans-serif",
-  
+      fontUddaraHeading: "Cormorant, serif",
       headingLarge: { fontSize: '56px', fontWeight: 600, lineHeight: '100%' },
       headingMedium: { fontSize: '40px', fontWeight: 600, lineHeight: '110%' },
       headingSmall: { fontSize: '28px', fontWeight: 500, lineHeight: '110%' },
+      uddaraHeading: { fontSize: '60px', fontWeight: 400, lineHeight: '60px' },
+      uddaraHeadingMobile: { fontSize: '38px', fontWeight: 500, lineHeight: '38px' },
       subHeading: { fontSize: '36px', fontWeight: 400, lineHeight: '100%' },
       subHeadingSmall: { fontSize: '20px', fontWeight: 500, lineHeight: '120%' },
       headingXSmall: { fontSize: '16px', fontWeight: 500, lineHeight: '100%' },
@@ -97,17 +101,28 @@ export const clientTheme = {
         activeText: '#ffd700',
         underline: '#ffd700',
         iconColor: '#FFFFFF',
-        height: '95px',
+        height: '80px',
         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
         paddingLeft: '2rem',
         paddingRight: '2rem',
         logoVariant: 'light', 
+        position: 'sticky',
 
         searchTextColor: '#1A1D91', 
         searchPlaceholderColor: 'grey', 
         searchBg: 'white', 
         searchBorderColor: 'grey',  
         searchWidth: '300px',   
+
+        showCenterline: false,
+        centerlineColor: 'yellow', 
+        centerlineTop: '45%',
+        slots: {
+          brand: {
+            position: { top: '5px', left: '1.5rem' }, // ⬅️ shift logo down by 5px
+            gap: '1rem'
+          },
+        },
 
       },
       navbar: {
@@ -118,6 +133,12 @@ export const clientTheme = {
         underline: '#ffd700',
         activeFontWeight: 700,
       },
+      banner: {
+        backgroundColor: 'black',
+        textColor: 'white',
+        height: '40px',
+        fontSize: '12px',
+      },  
     },
   };
   

@@ -8,11 +8,18 @@ export const Section = styled.section`
 `;
 
 export const UddaraHeading = styled.h2`
-  font-family: ${({ theme }) => theme.typography.fontPrimary};
-  font-weight: ${({ theme }) => theme.typography.headingMedium.fontWeight};
-  font-size: ${({ theme }) => theme.typography.headingMedium.fontSize};
-  color: ${({ theme }) => theme.colors.white};
+  font-family: ${({ theme }) => theme.typography.fontUddaraHeading};
+  font-weight: ${({ theme }) => theme.typography.uddaraHeading.fontWeight};
+  font-size: ${({ theme }) => theme.typography.uddaraHeading.fontSize};
+  color: ${({ theme }) => theme.colors.charcoal};
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.typography.uddaraHeadingMobile.fontSize};
+    font-weight: ${({ theme }) => theme.typography.uddaraHeadingMobile.fontWeight};
+    line-height: ${({ theme }) => theme.typography.uddaraHeadingMobile.lineHeight};
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const FeatureRow = styled.div`

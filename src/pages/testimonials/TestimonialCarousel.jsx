@@ -51,7 +51,10 @@ const TestimonialCarousel = () => {
     return (
         <Section>
             <div className="container position-relative">
-                <Heading>What Our Customers Say...</Heading>
+                <Heading>
+                    What Our <span style={{ fontStyle: 'italic' }}>Customers Say...</span>?
+                </Heading>
+
                 <Slider {...settings}>
                     {testimonials.map((testimonial) => (
                         <div key={testimonial.id} className="px-3 my-4">

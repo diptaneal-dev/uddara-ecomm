@@ -25,9 +25,8 @@ const LandingPage = () => {
 
             <WhyChooseUddara />
 
-            <BlogsSummarySection />
-
             <TestimonialCarousel />
+            <BlogsSummarySection />
 
         </div>
     );

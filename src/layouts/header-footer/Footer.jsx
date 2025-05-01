@@ -7,6 +7,7 @@ import {
   faWhatsapp,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
+
 import {
   faShoppingBag,
   faInfoCircle,
@@ -14,7 +15,7 @@ import {
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Logo from "./Logo";
+import { LogoContainer } from 'react-vector';
 
 import {
   FooterContainer,
@@ -37,35 +38,30 @@ const Footer = () => {
         {/* Logo & Social */}
         <FooterColumn>
           <LogoWrapper>
-            <StyledLogoCircle>
-              <Logo
-                imageSrc="/images/Uddara_logo.png"
-                width="100%"
-                height="100%"
-                textColor="#156082"
-                bgColor="transparent"
-                centered={true}
-              />
-            </StyledLogoCircle>
+            <LogoContainer
+              src="/images/Uddara_logo.png"
+              shape="circle"
+              encapsulate={true}
+              backgroundColor="#ffffff"
+              width="120px"
+              height="120px"
+              widthMobile="90px"
+              heightMobile="90px"
+            />
 
             <SocialTray>
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
-                <IconCircle>
-                  <FontAwesomeIcon icon={faFacebook} />
-                </IconCircle>
+                <IconCircle><FontAwesomeIcon icon={faFacebook} /></IconCircle>
               </a>
               <a href="https://instagram.com" target="_blank" rel="noreferrer">
-                <IconCircle>
-                  <FontAwesomeIcon icon={faInstagram} />
-                </IconCircle>
+                <IconCircle><FontAwesomeIcon icon={faInstagram} /></IconCircle>
               </a>
               <a href="https://wa.me/919403883381" target="_blank" rel="noreferrer">
-                <IconCircle>
-                  <FontAwesomeIcon icon={faWhatsapp} />
-                </IconCircle>
+                <IconCircle><FontAwesomeIcon icon={faWhatsapp} /></IconCircle>
               </a>
             </SocialTray>
           </LogoWrapper>
+
         </FooterColumn>
 
         <FooterColumn>

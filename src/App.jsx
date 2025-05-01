@@ -4,7 +4,6 @@ import { useTheme } from './context/ThemeContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
-import Header from './layouts/header-footer/Header';
 import Footer from './layouts/header-footer/Footer';
 import Register from './layouts/register/Register';
 import SignInPage from './layouts/signin/SignInPage';

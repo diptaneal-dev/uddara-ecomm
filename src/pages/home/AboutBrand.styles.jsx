@@ -15,7 +15,7 @@ export const Row = styled.div`
 
 export const LeftCol = styled.div`
   flex: 1 1 50%;
-  background-color: ${({ theme }) => theme.colors.green};
+  background-color: ${({ theme }) => theme.colors.seashell};
   height: 350px;
   padding: 40px;
   color: ${({ theme }) => theme.colors.black};
@@ -45,11 +45,18 @@ export const RightCol = styled.div`
 `;
 
 export const Heading = styled.h2`
-  font-family: ${({ theme }) => theme.typography.fontPrimary};
-  font-weight: ${({ theme }) => theme.typography.headingMedium.fontWeight};
-  font-size: ${({ theme }) => theme.typography.headingMedium.fontSize};
-  color: ${({ theme }) => theme.colors.purple};
-  margin-bottom: 12px;
+  font-family: ${({ theme }) => theme.typography.fontUddaraHeading};
+  font-weight: ${({ theme }) => theme.typography.uddaraHeading.fontWeight};
+  font-size: ${({ theme }) => theme.typography.uddaraHeading.fontSize};
+  color: ${({ theme }) => theme.colors.charcoal};
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.typography.uddaraHeadingMobile.fontSize};
+    font-weight: ${({ theme }) => theme.typography.uddaraHeadingMobile.fontWeight};
+    line-height: ${({ theme }) => theme.typography.uddaraHeadingMobile.lineHeight};
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const Divider = styled.hr`

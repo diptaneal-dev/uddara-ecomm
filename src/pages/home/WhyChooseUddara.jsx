@@ -43,7 +43,9 @@ const WhyChooseUddara = () => {
   return (
     <Section>
       <div className="container">
-        <UddaraHeading>Why Choose Uddara?</UddaraHeading>
+        <UddaraHeading>
+          Why Choose <span style={{ fontStyle: 'italic' }}>Uddara</span>?
+        </UddaraHeading>
         <FeatureRow>
           {features.map((feature, index) => {
             const IconComponent = feature.icon;

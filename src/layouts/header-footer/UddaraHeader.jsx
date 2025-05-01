@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ClientHeader, useHeaderConfig, LogoContainer } from 'react-vector'; // 👈 import it
+import { ClientHeader, useHeaderConfig, LogoContainer } from 'react-vector';
 import HeaderIcons from './HeaderIcons';
 import { useUserContext } from '../../hooks/UserContext';
 
@@ -16,20 +16,31 @@ const navLinks = [
 const UddaraHeader = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated } = useUserContext() || {};
+  const [searchTerm, setSearchTerm] = useState('');
 
   const userRoles = Array.isArray(user?.roles) && user.roles.length > 0
     ? user.roles
     : ['guest'];
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (typeof searchTerm !== 'string') return;
+
+    const trimmed = searchTerm.trim();
+    if (trimmed) {
+      navigate(`/products?search=${encodeURIComponent(trimmed)}`);
+    }
+  };
 
   const header = useHeaderConfig({
     logo: (
       <LogoContainer
         src="/images/Uddara_logo.png"
         alt="Uddara Logo"
-        size="64px"                // 📏 Maintain good size
-        backgroundColor="#ffffff"  // 🎨 White background
-        shape="circle"             // 🛞 Circle shape
-        encapsulate={true}         // ✅ Put it inside a circle
+        size="64px"
+        backgroundColor="#ffffff"
+        shape="circle"
+        encapsulate={true}
       />
     ),
     logoHref: '/',
@@ -40,8 +51,12 @@ const UddaraHeader = () => {
     searchPlaceholder: 'Search products...',
     layoutDirection: 'row',
     spacing: '1rem',
-    position: 'sticky',
     mobileMenuBehavior: 'slide',
+    searchInputProps: {
+      value: searchTerm,
+      onChange: (e) => setSearchTerm(e.target.value),
+    },
+    onSearchSubmit: handleSearch,
   });
 
   return <ClientHeader {...header} />;

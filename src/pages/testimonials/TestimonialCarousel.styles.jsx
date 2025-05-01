@@ -8,11 +8,19 @@ export const Section = styled.section`
 
 export const Heading = styled.h2`
   text-align: center;
-  color: ${({ theme }) => theme.colors.white};
-  font-family: ${({ theme }) => theme.typography.fontPrimary};
-  font-size: ${({ theme }) => theme.typography.headingMedium.fontSize};
-  font-weight: ${({ theme }) => theme.typography.headingMedium.fontWeight};
+  color: ${({ theme }) => theme.colors.charcoal};
+  font-family: ${({ theme }) => theme.typography.fontUddaraHeading};
+  font-size: ${({ theme }) => theme.typography.uddaraHeading.fontSize};
+  font-weight: ${({ theme }) => theme.typography.uddaraHeading.fontWeight};
+  line-height: ${({ theme }) => theme.typography.uddaraHeading.lineHeight};
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.typography.uddaraHeadingMobile.fontSize};
+    font-weight: ${({ theme }) => theme.typography.uddaraHeadingMobile.fontWeight};
+    line-height: ${({ theme }) => theme.typography.uddaraHeadingMobile.lineHeight};
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const SlideCard = styled.div`
