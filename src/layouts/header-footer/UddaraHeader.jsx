@@ -41,6 +41,7 @@ const UddaraHeader = () => {
         backgroundColor="#ffffff"
         shape="circle"
         encapsulate={true}
+        style={{ border: '1px solid white' }}
       />
     ),
     logoHref: '/',

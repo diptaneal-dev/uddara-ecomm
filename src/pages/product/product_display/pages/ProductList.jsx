@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import products from "../../data/products";
+import products from "../../../../data/products";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faFilter } from "@fortawesome/free-solid-svg-icons";
-import { CartContext } from "../../context/CartContext";
-import { useTheme } from "../../context/ThemeContext";
-import { IconButton } from "../../components/Button/IconButton";
-import { ProductCard } from "./ProductCard"; 
+import { CartContext } from "../../../../context/CartContext";
+import { useTheme } from "../../../../context/ThemeContext";
+import { IconButton } from "react-vector";
+import { ProductGridList } from "../components/Product/ProductGridList";
 
 import {
   PageWrapper,
@@ -15,7 +15,6 @@ import {
   FilterGroup,
   FilterLabel,
   FilterOption,
-  ProductGrid,
   CartPanel,
   CartHeader,
   CartBody,
@@ -24,8 +23,7 @@ import {
   ClearFilterButton,
   ProductResults
 } from "./ProductList.styles";
-
-import { Button } from "../../components/Button/Button";
+import { Button } from "react-vector";
 
 const formatCurrency = (amount, currency) =>
   new Intl.NumberFormat("en-US", {
@@ -171,22 +169,13 @@ const ProductList = () => {
         )}
 
         <ProductResults>
-          <ProductGrid>
-            {filteredProducts.length ? (
-              filteredProducts.map((product) => (
-                <ProductCard
-                  key={[product.name, product.flavour, product.unit].filter(Boolean).join('|')}
-                  product={product}
-                  onClick={() =>
-                    navigate(`/product/${product.id}`, { state: { product } })
-                  }
-                  onAddToCart={addToCart}
-                />
-              ))
-            ) : (
-              <p>No products found.</p>
-            )}
-          </ProductGrid>
+          <ProductGridList
+            products={filteredProducts}
+            onProductClick={(product) =>
+              navigate(`/product/${product.id}`, { state: { product } })
+            }
+            onAddToCart={addToCart}
+          />
         </ProductResults>
       </ContentLayout>
 

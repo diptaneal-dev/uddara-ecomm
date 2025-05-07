@@ -32,7 +32,6 @@ import StoreManagementPage from './pages/admin/storemanagement/StoreManagementPa
 
 // Ecommerce
 import { Explore } from './pages/Explore';
-import ProductList from './pages/product/ProductList';
 import ProductDetailsPage from './pages/product/detailspage/ProductDetails';
 import OrderConfirmationPage from './pages/OrderConfirmationPage';
 
@@ -75,6 +74,8 @@ import UserContextView from './hooks/UserContextView';
 import WhyFoxnuts from './pages/blogstatic/WhyFoxnuts';
 import WhyMillets from './pages/blogstatic/WhyMillets';
 import UddaraHeader from './layouts/header-footer/UddaraHeader';
+import CreateBlog from './components/Blogs/CreateBlog';
+import ProductList from './pages/product/product_display/pages/ProductList';
 
 const App = () => {
     const { darkMode } = useTheme();
@@ -98,7 +99,7 @@ const App = () => {
 
                     <Route path="/usercontext" element={<UserContextView />} />
 
-
+                    <Route path="/create-blog" element={<CreateBlog />} />
                     {/* Blogs Support */}
                     <Route path="/blog" element={<BlogEditor />} />
                     <Route path="/blog/:id" element={<BlogView />} />

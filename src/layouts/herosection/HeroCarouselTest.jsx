@@ -6,10 +6,14 @@ const slides = [
   {
     image: "/images/MakhanaCarousel2.png",
     theme: "light",
+    vPosition: "top", 
+    hPosition: "center"
   },
   {
     image: "/images/MakhanaCarousel1.png",
     theme: "light",
+    vPosition: "top", 
+    hPosition: "center"
   },
 ];
 
