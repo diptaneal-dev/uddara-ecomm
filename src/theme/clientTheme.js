@@ -95,10 +95,10 @@ export const clientTheme = {
 
   components: {
     header: {
-      logoWidthDesktop: '70px',  // 🆕
-      logoHeightDesktop: '70px',  // 🆕
-      logoWidthMobile: '48px',   // 🆕
-      logoHeightMobile: '48px',   // 🆕  
+      logoWidthDesktop: '70px',  
+      logoHeightDesktop: '70px', 
+      logoWidthMobile: '48px',   
+      logoHeightMobile: '48px',    
 
       background: '#663090',
       text: '#FFFFFF',
@@ -120,16 +120,37 @@ export const clientTheme = {
       searchBorderColor: 'grey',
       searchWidth: '300px',
 
-      showCenterline: false,
+      showCenterline: true,
       centerlineColor: 'yellow',
-      centerlineTop: '45%',
+      centerlineTop: '50%',
+
       slots: {
         brand: {
-          position: { top: '5px', left: '1.5rem' }, // ⬅️ shift logo down by 5px
-          gap: '1rem'
+          position: {
+            desktop: { top: "50%", left: "80px" },
+            mobile: { top: "8px", left: "1rem" },
+          },
+          gap: "1rem",
+        },
+        nav: {
+          position: {
+            desktop: { top: "50%", left: "200px" },
+            mobile: { top: "4rem", left: "1rem" },
+          },
+          gap: "1rem",
+        },
+        cta: {
+          position: {
+            desktop: { top: "50%", right: "2rem" },
+            mobile: { top: "1rem", right: "1rem" },
+          },
+          gap: "1rem",
         },
       },
-
+    },
+    
+    breadcrumbs: {
+      currentColor: 'white',
     },
 
     navbar: {
@@ -255,6 +276,6 @@ export const clientTheme = {
         },
       },
     },
-  
+
   },
 };
