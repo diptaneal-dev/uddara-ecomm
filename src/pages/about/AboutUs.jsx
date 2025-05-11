@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import MissionVision from "./MissionVision";
 import CoreValues from "./CoreValues";
-import HeroCarouselAbout from "./HeroCarouselAbout";
+import { HeroCarouselAbout } from "./HeroCarouselAbout";
+
 import { motion } from "framer-motion";
 const pinkColor = '#BF437E';
 
