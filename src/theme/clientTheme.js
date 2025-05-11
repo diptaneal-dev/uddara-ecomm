@@ -120,7 +120,7 @@ export const clientTheme = {
       searchBorderColor: 'grey',
       searchWidth: '300px',
 
-      showCenterline: true,
+      showCenterline: false,
       centerlineColor: 'yellow',
       centerlineTop: '50%',
 
@@ -148,9 +148,14 @@ export const clientTheme = {
         },
       },
     },
-    
+
     breadcrumbs: {
       currentColor: 'white',
+    },
+
+    heroCarousel: {
+      titleColor: '#FFF',
+      subtitleColor: '#D4AF37',  
     },
 
     navbar: {

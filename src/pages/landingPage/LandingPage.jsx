@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import TestimonialCarousel from '../testimonials/TestimonialCarousel';
 import AboutBrand from '../home/AboutBrand';
-import BlogsSummarySection from '../blog/BlogsSummarySection';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WhyChooseUddara from '../home/WhyChooseUddara';
 import FeaturedProduct from '../product/FeaturedProduct';
 import HomePageHero from '../../layouts/herosection/HomePageHero';
+import BrandShowcase from '../product/product_display/pages/BrandShowcase';
+import StaticBlogsSummarySection from '../blogstatic/StaticBlogsSummarySection';
 
 const LandingPage = () => {
     const { darkMode } = useTheme();
@@ -17,6 +18,8 @@ const LandingPage = () => {
             {/* Hero Section with Carousel */}
             <HomePageHero />
 
+            <BrandShowcase />
+
             <FeaturedProduct />
 
             {/* About Brand Section */}
@@ -25,8 +28,8 @@ const LandingPage = () => {
             <WhyChooseUddara />
 
             <TestimonialCarousel />
-            <BlogsSummarySection />
 
+            <StaticBlogsSummarySection />
         </div>
     );
 }

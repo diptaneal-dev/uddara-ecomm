@@ -71,11 +71,11 @@ import CategoryList from './pages/admin/refdatamanagement/CategoryList';
 import BulkUploadCategories from './pages/admin/refdatamanagement/BulkUploadCategories';
 import CreateUserForm from './pages/admin/usermanagement/CreateUserForm';
 import UserContextView from './hooks/UserContextView';
-import WhyFoxnuts from './pages/blogstatic/WhyFoxnuts';
-import WhyMillets from './pages/blogstatic/WhyMillets';
 import UddaraHeader from './layouts/header-footer/UddaraHeader';
 import CreateBlog from './components/Blogs/CreateBlog';
 import ProductList from './pages/product/product_display/pages/ProductList';
+import StaticBlogDetails from './pages/blogstatic/pages/StaticBlogDetails';
+import StaticBlogsSummarySection from './pages/blogstatic/StaticBlogsSummarySection';
 
 const App = () => {
     const { darkMode } = useTheme();
@@ -132,7 +132,6 @@ const App = () => {
                             <Route index element={<UserDirectory />} />
                             <Route path="inviteUser" element={<InviteUserScreen />} />
                             <Route path="createUser" element={<CreateUserForm />} />
-
                         </Route>
 
                         <Route path="reference" element={<ReferenceAdminLayout />}>
@@ -157,8 +156,9 @@ const App = () => {
                     <Route path="/checkout" element={<CheckoutPage />} />
                     <Route path="/place-order" element={<PlaceOrderPage />} />
                     <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
-                    <Route path="/blog/foxnut-benefits" element={<WhyFoxnuts />} />
-                    <Route path="/blog/millet-benefits" element={<WhyMillets />} />
+
+                    <Route path="/sblog/:id" element={<StaticBlogDetails />} />
+                    <Route path="/sblog/list" element={<StaticBlogsSummarySection />} />
 
                     <Route path="/store/:id" element={<StoreDetailsPage />} />
 

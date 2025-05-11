@@ -60,7 +60,7 @@ export const Heading = styled.h2`
 
 export const BlogImage = styled.img`
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
 `;
 

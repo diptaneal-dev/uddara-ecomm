@@ -4,13 +4,13 @@ import { BasicHeroCarousel } from "react-vector";
 const slides = [
   {
     image: "/images/HeroCarousel1.png",
-    title: "Welcome to Our Platform",
-    subtitle: "Delivering value with innovation and care.",
-  },
+    title: "Introducing Foxnut Feast!",
+    subtitle: "Wholesome, crunchy, and crafted with care — your new favorite healthy snack.",
+},
   {
     image: "/images/MakhanaCarousel1.png",
-    title: "Built for Every Device",
-    subtitle: "Optimized for performance, built for responsiveness.",
+    title: "A New Chapter Begins",
+    subtitle: "Diverse flavors. Singular quality. Explore our new family of brands.",
   },
 ];
 

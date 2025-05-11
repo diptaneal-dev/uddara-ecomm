@@ -5,7 +5,7 @@ import { CartProvider } from "./context/CartContext";
 import { UserProvider } from "./hooks/UserContext";
 import FavoriteProvider from "./components/FavouriteButton/FavouriteContext";
 import AuthWrapper from "./external/auth/AuthWrapper";
-import { clientTheme } from './theme/clientTheme'; 
+import { clientTheme } from './theme/clientTheme';
 
 // 🌐 Environment config
 const apiBase = import.meta.env.VITE_AUTH_API;

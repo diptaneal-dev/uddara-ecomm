@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import {
     Card,
@@ -14,6 +14,7 @@ import {
     CardMediaResponsive,
     Button,
 } from 'react-vector';
+import { CartContext } from '../../../../../context/CartContext';
 
 // Layout wrappers
 const CardWrapper = styled.div`
@@ -90,7 +91,7 @@ export const ProductCard = ({
         variants = [],
         reviews = [],
     } = product;
-
+    const { addToCart, setSidebarVisible } = useContext(CartContext);
     const avgRating = reviews.length
         ? reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length
         : null;
@@ -161,6 +162,11 @@ export const ProductCard = ({
                                     $borderColor="#222"
                                     $hoverBg="#222"
                                     $hoverTextColor="#fff"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        onAddToCart?.(product);
+                                        setSidebarVisible(true);
+                                    }}
                                 >
                                     Add to Cart
                                 </Button>

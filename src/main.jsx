@@ -9,6 +9,7 @@ import { AppProviders } from "./AppProviders";
 
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { CartSidebar } from "./pages/product/product_display/components/Cart/CartSidebar";
 
 // ✅ Razorpay loader
 const RazorpayScript = () => {
@@ -35,6 +36,7 @@ const AppWrapper = () => {
     <AppProviders>
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <ToastContainer position="top-right" autoClose={3000} />
+          <CartSidebar />
         <RazorpayScript />
         <App />
       </BrowserRouter>

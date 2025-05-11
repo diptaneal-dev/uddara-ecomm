@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "../../context/ThemeContext";
-import { FaQuestionCircle, FaPhone, FaEnvelope, FaTwitter } from "react-icons/fa";
+import { FaQuestionCircle, FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+
 import {
   PageWrapper,
   SectionHeading,
@@ -73,6 +74,22 @@ const ContactUs = () => {
             $outline
           >
             Go →
+          </Button>
+        </ContactCard>
+
+        <ContactCard darkMode={darkMode}>
+          <IconWrapper><FaWhatsapp size={50} /></IconWrapper>
+          <h5>WhatsApp Us</h5>
+          <p>Chat with our support team directly on WhatsApp.</p>
+          <Button
+            as="a"
+            href="https://wa.me/919403883381?text=Hi%20there,%20I%20have%20a%20question%20about%20your%20products!"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Chat on WhatsApp"
+            $outline
+          >
+            Chat Now →
           </Button>
         </ContactCard>
 

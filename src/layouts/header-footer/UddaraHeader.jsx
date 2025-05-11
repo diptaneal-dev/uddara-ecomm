@@ -8,7 +8,7 @@ const navLinks = [
   { href: '/home', label: 'Home' },
   { href: '/products', label: 'Shop' },
   { href: '/about', label: 'About' },
-  { href: '/blog/list', label: 'Blog' },
+  { href: '/sblog/list', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
   { href: '/admin', label: 'Admin Panel', allowedRoles: ['admin'] },
 ];

@@ -7,6 +7,7 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const { user, isAuthenticated, currentStoreId } = useUserContext();
   const userId = user?.userId;
+  const [sidebarVisible, setSidebarVisible] = useState(false);
 
   const [cart, setCart] = useState([]);
 
@@ -156,7 +157,9 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         deleteFromCart,
         clearCart,
-        syncCart
+        syncCart,
+        sidebarVisible,
+        setSidebarVisible,
       }}
     >
       {children}

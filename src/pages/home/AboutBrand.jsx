@@ -41,7 +41,7 @@ const AboutBrand = () => {
           </LeftCol>
 
           <RightCol>
-            <img src="/images/AboutUDDARA.png" alt="Happy Customer! Healthy Customer!" />
+            <img src="/images/HomePage_About.png" alt="Happy Customer! Healthy Customer!" />
           </RightCol>
         </Row>
       </div>

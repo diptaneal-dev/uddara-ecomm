@@ -1,12 +1,15 @@
-import React, { useEffect, useState, useContext } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import products from "../../../../data/products";
+import { useProductFilters } from "../hooks/useProductFilters";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faFilter } from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../../../../context/CartContext";
 import { useTheme } from "../../../../context/ThemeContext";
 import { IconButton } from "react-vector";
 import { ProductGridList } from "../components/Product/ProductGridList";
+import { filterProducts } from "../utils/Filters/filterProducts";
+import { ProductFilters } from "../components/Filters/ProductFilters";
 
 import {
   PageWrapper,
@@ -24,6 +27,7 @@ import {
   ProductResults
 } from "./ProductList.styles";
 import { Button } from "react-vector";
+import { getFilterMetadataFromProducts } from "../utils/Filters/getFilterMetadataFromProducts";
 
 const formatCurrency = (amount, currency) =>
   new Intl.NumberFormat("en-US", {
@@ -36,40 +40,53 @@ const allBrands = ["Foxnut Feast", "Super Snacks"];
 const allCategories = ["All", "Snacks"];
 
 const ProductList = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
   const { darkMode } = useTheme();
 
-  const params = new URLSearchParams(location.search);
-  const queryParam = decodeURIComponent(params.get("query") || "").replace(/\+/g, " ");
+  const {
+    searchQuery,
+    setSearchQuery,
+    selectedFlavours,
+    setSelectedFlavours,
+    selectedBrands,
+    setSelectedBrands,
+    selectedCategory,
+    setSelectedCategory,
+    clearFilters,
+  } = useProductFilters();
 
-  const flavourParam = params.getAll("flavour");
-  const brandParam = params.getAll("brand");
-  const categoryParam = params.get("category") || "All";
-
-  const [searchQuery, setSearchQuery] = useState(queryParam);
-  const [selectedFlavours, setSelectedFlavours] = useState(flavourParam);
-  const [selectedBrands, setSelectedBrands] = useState(brandParam);
-  const [selectedCategory, setSelectedCategory] = useState(categoryParam);
   const [showCart, setShowCart] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
 
-  // sync filters to URL
-  useEffect(() => {
-    const newParams = new URLSearchParams();
-    if (searchQuery) newParams.set("query", searchQuery);
-    if (selectedCategory && selectedCategory !== "All") newParams.set("category", selectedCategory);
-    selectedFlavours.forEach((f) => newParams.append("flavour", f));
-    selectedBrands.forEach((b) => newParams.append("brand", b));
-    navigate(`/products?${newParams.toString()}`, { replace: true });
-  }, [searchQuery, selectedFlavours, selectedBrands, selectedCategory]);
-
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const queryParam = decodeURIComponent(params.get("query") || "").replace(/\+/g, " ");
-    setSearchQuery(queryParam);
-  }, [location.search]);
+  const filterFields = ["category", "brand", "flavour"];
+  const filterValues = getFilterMetadataFromProducts(products, filterFields);
+  const filterConfig = [
+    {
+      key: "category",
+      label: "Category",
+      type: "radio",
+      options: filterValues.category,
+      getValue: () => selectedCategory,
+      setValue: setSelectedCategory,
+    },
+    {
+      key: "flavour",
+      label: "Flavour",
+      type: "checkbox",
+      options: filterValues.flavour,
+      getValue: () => selectedFlavours,
+      setValue: setSelectedFlavours,
+    },
+    {
+      key: "brand",
+      label: "Brand",
+      type: "select",
+      options: filterValues.brand,
+      getValue: () => selectedBrands[0] || "",
+      setValue: (value) => setSelectedBrands(value ? [value] : []),
+    },
+  ];
 
   const handleMultiSelect = (value, selected, setSelected) => {
     if (selected.includes(value)) {
@@ -79,36 +96,20 @@ const ProductList = () => {
     }
   };
 
-  const handleClearFilters = () => {
-    setSearchQuery("");
-    setSelectedFlavours([]);
-    setSelectedBrands([]);
-    setSelectedCategory("All");
+  const activeFilters = {
+    searchQuery,
+    selectedBrands,
+    selectedFlavours,
+    selectedCategory,
+    // minPrice, maxPrice, minRating could be added here too
   };
 
-  const filteredProducts = products.filter((product) => {
-    const matchesSearch =
-      !searchQuery ||
-      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.brand?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.flavour?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.filterTags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      product.dietType?.toLowerCase().includes(searchQuery.toLowerCase());
-
-    const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
-    const matchesFlavour = selectedFlavours.length === 0 || selectedFlavours.includes(product.flavour);
-    const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
-
-    return matchesSearch && matchesCategory && matchesFlavour && matchesBrand;
-  });
-
+  const filteredProducts = filterProducts(products, activeFilters);
   const cartSubTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
     <PageWrapper $darkMode={darkMode}>
-
-      <MobileFilterToggle onClick={() => setShowFilters((prev) => !prev)}>
+      <MobileFilterToggle onClick={() => setShowFilters(prev => !prev)}>
         <FontAwesomeIcon icon={faFilter} /> Filters
       </MobileFilterToggle>
 
@@ -118,54 +119,17 @@ const ProductList = () => {
         </p>
       )}
 
+      {selectedBrands.length > 0 && (
+        <h2>Products for: {selectedBrands.join(", ")}</h2>
+      )}
+
       <ContentLayout>
         {(showFilters || window.innerWidth > 768) && (
-          <SidebarFilters>
-            <ClearFilterButton onClick={handleClearFilters}>Clear All Filters</ClearFilterButton>
-
-            <FilterGroup>
-              <FilterLabel>Category</FilterLabel>
-              {allCategories.map((cat) => (
-                <FilterOption key={cat}>
-                  <input
-                    type="radio"
-                    name="category"
-                    checked={selectedCategory === cat}
-                    onChange={() => setSelectedCategory(cat)}
-                  />
-                  {cat}
-                </FilterOption>
-              ))}
-            </FilterGroup>
-
-            <FilterGroup>
-              <FilterLabel>Flavour</FilterLabel>
-              {allFlavours.map((flav) => (
-                <FilterOption key={flav}>
-                  <input
-                    type="checkbox"
-                    checked={selectedFlavours.includes(flav)}
-                    onChange={() => handleMultiSelect(flav, selectedFlavours, setSelectedFlavours)}
-                  />
-                  {flav}
-                </FilterOption>
-              ))}
-            </FilterGroup>
-
-            <FilterGroup>
-              <FilterLabel>Brand</FilterLabel>
-              {allBrands.map((brand) => (
-                <FilterOption key={brand}>
-                  <input
-                    type="checkbox"
-                    checked={selectedBrands.includes(brand)}
-                    onChange={() => handleMultiSelect(brand, selectedBrands, setSelectedBrands)}
-                  />
-                  {brand}
-                </FilterOption>
-              ))}
-            </FilterGroup>
-          </SidebarFilters>
+          <ProductFilters
+            config={filterConfig}
+            clearFilters={clearFilters}
+            handleMultiSelect={handleMultiSelect}
+          />
         )}
 
         <ProductResults>
@@ -179,7 +143,6 @@ const ProductList = () => {
         </ProductResults>
       </ContentLayout>
 
-      {/* Cart Panel */}
       <CartPanel $show={showCart} $darkMode={darkMode}>
         <CartHeader>
           <h5>Cart Summary</h5>

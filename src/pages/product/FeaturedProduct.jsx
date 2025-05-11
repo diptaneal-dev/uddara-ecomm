@@ -36,7 +36,7 @@ const FeaturedProduct = () => {
           {/* Product Info Column */}
           <InfoCol>
             <div>
-              <Title>{selectedProduct.name ?? "Product Name"}</Title>
+              <Title>{selectedProduct.brand ?? "Product Name"}</Title>
               <Price>
                 {selectedProduct.currency ?? "INR"} {selectedProduct.price?.toFixed(2) ?? "0.00"}
               </Price>

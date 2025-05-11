@@ -33,11 +33,12 @@ export const LeftCol = styled.div`
 export const RightCol = styled.div`
   flex: 1 1 50%;
 
-  img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-  }
+img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center bottom; // Focus on bottom
+}
 
   @media (max-width: 768px) {
     flex: 1 1 100%;
