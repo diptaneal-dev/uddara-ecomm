@@ -71,11 +71,11 @@ import CategoryList from './pages/admin/refdatamanagement/CategoryList';
 import BulkUploadCategories from './pages/admin/refdatamanagement/BulkUploadCategories';
 import CreateUserForm from './pages/admin/usermanagement/CreateUserForm';
 import UserContextView from './hooks/UserContextView';
-import UddaraHeader from './layouts/header-footer/UddaraHeader';
 import CreateBlog from './components/Blogs/CreateBlog';
 import ProductList from './pages/product/product_display/pages/ProductList';
 import StaticBlogDetails from './pages/blogstatic/pages/StaticBlogDetails';
 import StaticBlogsSummarySection from './pages/blogstatic/StaticBlogsSummarySection';
+import UddaraHeader from './layouts/header/UddaraHeader';
 
 const App = () => {
     const { darkMode } = useTheme();
@@ -86,7 +86,9 @@ const App = () => {
     return (
         <div className={darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}>
             <UddaraBanner />
+
             <UddaraHeader />
+
             <main className={`container-fluid px-0 py-0`} style={{ backgroundColor: "#FFF" }}>
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
