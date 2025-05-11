@@ -4,15 +4,14 @@ import { useLocation, useNavigate } from "react-router-dom";
 export const useProductFilters = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const skipNextSync = useRef(false);
   const hasHandledShowcaseRedirect = useRef(false);
-  const skipSyncRef = useRef(false);
 
-  // ✅ Memoize parsed query parameters so they don't recompute on every render
   const {
     initialQuery,
     initialFlavours,
     initialBrands,
-    initialCategory,
+    initialCategory
   } = useMemo(() => {
     const urlParams = new URLSearchParams(location.search);
     return {
@@ -23,19 +22,16 @@ export const useProductFilters = () => {
     };
   }, [location.search]);
 
-  // ✅ Memoize state check to avoid triggering unnecessary re-renders
-  const fromShowcase = useMemo(() => location.state?.fromBrandShowcase, [location.state]);
-
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [selectedFlavours, setSelectedFlavours] = useState(initialFlavours);
   const [selectedBrands, setSelectedBrands] = useState(initialBrands);
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
 
-  // ✅ Initial load or brand showcase redirect logic
+  const fromShowcase = useMemo(() => location.state?.fromBrandShowcase, [location.state]);
+
   useEffect(() => {
     if (fromShowcase && !hasHandledShowcaseRedirect.current) {
       hasHandledShowcaseRedirect.current = true;
-
       setSearchQuery("");
       setSelectedFlavours([]);
       setSelectedBrands(initialBrands);
@@ -43,7 +39,7 @@ export const useProductFilters = () => {
 
       navigate(location.pathname + location.search, {
         replace: true,
-        state: {}, // clear the flag
+        state: {},
       });
     } else {
       setSearchQuery(initialQuery);
@@ -62,31 +58,42 @@ export const useProductFilters = () => {
     navigate,
   ]);
 
-  // ✅ Sync UI state back to the URL (loop-safe)
   useEffect(() => {
-    if (skipSyncRef.current) {
-      skipSyncRef.current = false;
+    if (skipNextSync.current) {
+      skipNextSync.current = false;
       return;
     }
 
-    const newParams = new URLSearchParams();
-    if (searchQuery) newParams.set("query", searchQuery);
-    if (selectedCategory && selectedCategory !== "All") newParams.set("category", selectedCategory);
-    selectedFlavours.forEach((f) => newParams.append("flavour", f));
-    selectedBrands.forEach((b) => newParams.append("brand", b));
+    const buildParams = () => {
+      const params = new URLSearchParams();
+      if (searchQuery) params.set("query", searchQuery);
+      if (selectedCategory && selectedCategory !== "All") params.set("category", selectedCategory);
+      selectedFlavours.forEach((f) => params.append("flavour", f));
+      selectedBrands.forEach((b) => params.append("brand", b));
+      return params;
+    };
 
+    const newParams = buildParams();
     const currentParams = new URLSearchParams(location.search);
-    if (newParams.toString() !== currentParams.toString()) {
-      skipSyncRef.current = true;
+
+    // Compare logically
+    const areEqual = [...newParams.entries()].every(([key, value]) => {
+      const current = currentParams.getAll(key).sort().join(",");
+      const next = newParams.getAll(key).sort().join(",");
+      return current === next;
+    });
+
+    if (!areEqual) {
+      skipNextSync.current = true;
       navigate(`/products?${newParams.toString()}`, { replace: true });
     }
   }, [
     searchQuery,
-    selectedCategory,
     selectedFlavours,
     selectedBrands,
+    selectedCategory,
     location.search,
-    navigate,
+    navigate
   ]);
 
   const clearFilters = () => {
