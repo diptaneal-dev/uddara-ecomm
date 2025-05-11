@@ -48,13 +48,18 @@ export const BlogCard = styled.div`
 `;
 
 export const Heading = styled.h2`
-  font-family: ${({ theme }) => theme.typography.fontPrimary};
-  font-size: ${({ theme }) => theme.typography.headingMedium.fontSize};
-  font-weight: ${({ theme }) => theme.typography.headingMedium.fontWeight};
-  line-height: ${({ theme }) => theme.typography.headingMedium.lineHeight};
-  letter-spacing: ${({ theme }) => theme.typography.headingMedium.letterSpacing};
-  color: ${({ theme }) => theme.colors.purple}; // optional override
-  margin: ${({ $margin }) => $margin || '0'};
+  font-family: ${({ theme }) => theme.typography.fontUddaraHeading};
+  font-weight: ${({ theme }) => theme.typography.uddaraHeading.fontWeight};
+  font-size: ${({ theme }) => theme.typography.uddaraHeading.fontSize};
+  color: ${({ theme }) => theme.colors.charcoal};
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.typography.uddaraHeadingMobile.fontSize};
+    font-weight: ${({ theme }) => theme.typography.uddaraHeadingMobile.fontWeight};
+    line-height: ${({ theme }) => theme.typography.uddaraHeadingMobile.lineHeight};
+    margin-bottom: 1.5rem;
+  }
 `;
 
 

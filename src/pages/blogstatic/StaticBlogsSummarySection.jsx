@@ -13,8 +13,6 @@ import {
   BlogContent,
 } from "../blog/BlogsSummarySection.styles";
 
-import { Button } from "../../components/Button/Button";
-
 const StaticBlogsSummarySection = () => {
   const navigate = useNavigate();
   const latestThreeBlogs = staticBlogs.slice(0, 3);
@@ -23,8 +21,8 @@ const StaticBlogsSummarySection = () => {
     <Section>
       <Container>
         <Header>
-          <Heading size="medium" as="h2" $margin="0 0 0.5rem 0">
-            In the blogs
+          <Heading>
+            In the <span style={{ fontStyle: 'italic' }}>Blogs</span>
           </Heading>
         </Header>
 

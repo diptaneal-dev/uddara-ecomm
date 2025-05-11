@@ -75,7 +75,7 @@ const Footer = () => {
           <div>
             <h5><FontAwesomeIcon icon={faInfoCircle} /> About Us</h5>
             <ul>
-              <li><a href="/blog/list">Blog</a></li>
+              <li><a href="/sblog/list">Blog</a></li>
               <li><a href="/careers">Careers</a></li>
             </ul>
           </div>
@@ -95,7 +95,7 @@ const Footer = () => {
         <FooterColumn>
           <h5><FontAwesomeIcon icon={faGlobe} /> Mini Sitemap</h5>
           <ul>
-            <li><a href="#">Our Mission</a></li>
+            <li><a href="/about">Our Mission</a></li>
             <li><a href="#">Sustainability</a></li>
             <li><em>More coming soon…</em></li>
           </ul>
